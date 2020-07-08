@@ -1,0 +1,86 @@
+html {
+        height: 100%;
+
+        background-image: linear-gradient(
+                180deg,
+                rgba(90, 92, 106, 1) 0%,
+                rgba(32, 45, 58, 1) 81.3%
+        );
+        box-sizing: border-box;
+        font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+        box-sizing: inherit;
+}
+body {
+        font-size: 1.6em;
+}
+
+//Codigos Reutilizables
+$fuente-titulos: "Work Sans", sans-serif; //500-900
+$fuente-texto: "Inter", sans-serif; //400-900
+$color-azulado: #669db3ff;
+$color-blanco: #f0f6f7ff;
+$color-marron: #a89c94ff;
+$color-rojizo: #ff4f58ff;
+
+%barra-background {
+        background-color: $color-azulado;
+        padding: 20px 0;
+}
+
+//Pagina Codigo Principal
+
+.contenedor {
+        width: 90%;
+        margin: auto auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+        font-family: $fuente-titulos;
+}
+p {
+        font-family: $fuente-texto;
+}
+a {
+        font-family: $fuente-titulos;
+        text-decoration: none;
+        color: black;
+}
+@mixin tranform($property) {
+        -webkit-transform: $property;
+        -ms-transform: $property;
+        transform: $property;
+}
+
+@mixin button($color) {
+        background-color: $color;
+}
+
+//Barra Header
+
+.barra-header {
+        @extend %barra-background;
+        .barra-header-contenido {
+                display: grid;
+                grid-template-columns: 30% 70%;
+
+                img {
+                        margin-left: 20px;
+                }
+                div {
+                        display: flex;
+                        justify-content: flex-end;
+                        a {
+                                font-size: 2rem;
+                                margin-right: 60px;
+                                color: $color-blanco;
+                        }
+                }
+        }
+}
