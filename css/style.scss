@@ -22,6 +22,7 @@ body {
 $fuente-titulos: "Work Sans", sans-serif; //500-900
 $fuente-texto: "Inter", sans-serif; //400-900
 $color-azulado: #669db3ff;
+$color-azulado-oscuro: rgb(47, 89, 105);
 $color-blanco: #f0f6f7ff;
 $color-marron: #a89c94ff;
 $color-rojizo: #ff4f58ff;
@@ -30,37 +31,97 @@ $color-rojizo: #ff4f58ff;
         background-color: $color-azulado;
         padding: 20px 0;
 }
-
-//Pagina Codigo Principal
-
-.contenedor {
-        width: 90%;
-        margin: auto auto;
-}
-
-h1,
-h2,
-h3,
-h4 {
-        font-family: $fuente-titulos;
-}
-p {
-        font-family: $fuente-texto;
-}
-a {
-        font-family: $fuente-titulos;
-        text-decoration: none;
-        color: black;
-}
 @mixin tranform($property) {
         -webkit-transform: $property;
         -ms-transform: $property;
         transform: $property;
 }
 
-@mixin button($color) {
+@mixin button($color, $padding-top, $padding-right, $margin-top, $margin-right, $border, $font) {
         background-color: $color;
+        padding: $padding-top $padding-right;
+        margin: $margin-top $margin-right;
+        border-radius: $border;
+        font-size: $font;
 }
+
+@font-face {
+        font-family: wishper-script;
+        src: url(../wishper-script.ttf);
+}
+
+//Paginas Codigo Principal
+
+.background-color {
+        background-color: $color-azulado-oscuro;
+        -webkit-box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
+        width: 70%;
+        margin: 0 auto;
+}
+
+.seccion {
+        padding: 50px 50px;
+        width: 50%;
+        margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4 {
+        font-family: $fuente-titulos;
+        margin: 0 auto;
+        text-align: center;
+}
+p {
+        font-family: $fuente-texto;
+        text-align: center;
+        margin: 0 auto;
+}
+a {
+        font-family: $fuente-titulos;
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        margin: 0 auto;
+}
+// Pagina Principal
+
+//Header
+.background-color-header {
+        background-color: rgb(47, 89, 105);
+}
+header {
+        padding-bottom: 0 !important;
+        .header-contenedor {
+                h1 {
+                        font-family: wishper-script;
+                        font-size: 6em;
+                        color: $color-rojizo;
+                }
+                p {
+                        font-family: $fuente-titulos;
+                        font-size: 3em;
+                        color: $color-rojizo;
+                }
+        }
+}
+
+.enlaces-header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        background-color: $color-azulado;
+        font-size: 1.2em;
+        a {
+                transition: 0.3s ease-in all;
+        }
+        a:hover {
+                @include tranform(scale(1.1));
+        }
+}
+//My pages
 
 //Barra Header
 
@@ -78,8 +139,14 @@ a {
                         justify-content: flex-end;
                         a {
                                 font-size: 2rem;
-                                margin-right: 60px;
                                 color: $color-blanco;
+                        }
+                        .button-header-mypages {
+                                @include button($color-marron, 10px, 20px, 0, 30px, 5px, 1.5rem);
+                                transition: 0.3s ease all;
+                        }
+                        .button-header-mypages:hover {
+                                @include tranform(scale(1.3));
                         }
                 }
         }
