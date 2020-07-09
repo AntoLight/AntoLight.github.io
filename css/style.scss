@@ -1,13 +1,8 @@
 html {
         height: 100%;
-
-        background-image: linear-gradient(
-                180deg,
-                rgba(90, 92, 106, 1) 0%,
-                rgba(32, 45, 58, 1) 81.3%
-        );
         box-sizing: border-box;
         font-size: 62.5%;
+        background-color: #fd9496;
 }
 *,
 *:before,
@@ -21,17 +16,9 @@ body {
 //Codigos Reutilizables
 $fuente-titulos: "Work Sans", sans-serif; //500-900
 $fuente-texto: "Inter", sans-serif; //400-900
-$color-azulado: #669db3ff;
-$color-azulado-oscuro: rgb(47, 89, 105);
-$color-blanco: #f0f6f7ff;
-$color-marron: #a89c94ff;
-$color-rojizo: #ff4f58ff;
-
-%barra-background {
-        background-color: $color-azulado;
-        padding: 20px 0;
-}
-@mixin tranform($property) {
+$color-principal: rgb(97, 26, 132);
+$color-principal-oscuro: rgb(57, 14, 78);
+@mixin transform($property) {
         -webkit-transform: $property;
         -ms-transform: $property;
         transform: $property;
@@ -52,20 +39,6 @@ $color-rojizo: #ff4f58ff;
 
 //Paginas Codigo Principal
 
-.background-color {
-        background-color: $color-azulado-oscuro;
-        -webkit-box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 28px -4px rgba(0, 0, 0, 0.75);
-        width: 70%;
-        margin: 0 auto;
-}
-
-.seccion {
-        padding: 50px 50px;
-        width: 50%;
-        margin: 0 auto;
-}
 h1,
 h2,
 h3,
@@ -86,68 +59,84 @@ a {
         text-align: center;
         margin: 0 auto;
 }
+
+img {
+        width: 100%;
+        height: auto;
+}
+
+.contenedor {
+        width: 80%;
+        margin: 0 auto;
+}
 // Pagina Principal
 
 //Header
-.background-color-header {
-        background-color: rgb(47, 89, 105);
-}
-header {
-        padding-bottom: 0 !important;
-        .header-contenedor {
+.hero {
+        position: relative;
+        img {
+                height: 100%;
+        }
+        .text-header {
+                position: absolute;
+                top: 20%;
+                left: 25%;
+                right: 25%;
+                bottom: 80%;
+                width: 50%;
+
                 h1 {
+                        font-size: 6.5vw;
                         font-family: wishper-script;
-                        font-size: 6em;
-                        color: $color-rojizo;
+                        color: $color-principal;
                 }
                 p {
                         font-family: $fuente-titulos;
-                        font-size: 3em;
-                        color: $color-rojizo;
+                        font-size: 2vw;
+                        color: $color-principal;
+                        padding-top: 15px;
                 }
         }
-}
-
-.enlaces-header {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        background-color: $color-azulado;
-        font-size: 1.2em;
-        a {
-                transition: 0.3s ease-in all;
+        .barra {
+                position: absolute;
+                background-color: #db2e3c;
+                height: 25px;
+                width: 100%;
+                bottom: -10px;
         }
-        a:hover {
-                @include tranform(scale(1.1));
+        .barra-header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 4vw;
+                .icons {
+                        i {
+                                margin-left: 4vw;
+                                font-size: 3vw;
+                                color: $color-principal-oscuro;
+                                transition: all ease 0.3s;
+                        }
+                        i:hover {
+                                @include transform(scale(1.1));
+                        }
+                }
+                .pages {
+                        a {
+                                margin-right: 4vw;
+                                font-size: 1.7vw;
+                                color: $color-principal-oscuro;
+                                transition: all ease-in 0.3s;
+                                display: inline-block;
+                        }
+                        a:hover {
+                                @include transform(scale(1.1));
+                        }
+                }
         }
 }
 //My pages
 
 //Barra Header
-
-.barra-header {
-        @extend %barra-background;
-        .barra-header-contenido {
-                display: grid;
-                grid-template-columns: 30% 70%;
-
-                img {
-                        margin-left: 20px;
-                }
-                div {
-                        display: flex;
-                        justify-content: flex-end;
-                        a {
-                                font-size: 2rem;
-                                color: $color-blanco;
-                        }
-                        .button-header-mypages {
-                                @include button($color-marron, 10px, 20px, 0, 30px, 5px, 1.5rem);
-                                transition: 0.3s ease all;
-                        }
-                        .button-header-mypages:hover {
-                                @include tranform(scale(1.3));
-                        }
-                }
-        }
-}
