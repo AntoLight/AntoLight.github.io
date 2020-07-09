@@ -66,8 +66,12 @@ img {
 }
 
 .contenedor {
-        width: 80%;
+        width: 70%;
         margin: 0 auto;
+}
+
+.seccion {
+        margin: 40px auto;
 }
 // Pagina Principal
 
@@ -137,6 +141,36 @@ img {
                 }
         }
 }
+
+//Freelancer
+
+.barra-freelancer {
+        background-color: $color-principal;
+        height: 0.5vw;
+        width: 50%;
+        margin-top: 120px;
+        position: relative;
+        i {
+                position: absolute;
+                color: $color-principal;
+                top: -400%;
+                left: 80%;
+                font-size: 4vw;
+        }
+}
+.freelancer-contenido {
+        width: 50%;
+        h1 {
+                text-align: left;
+                color: $color-principal-oscuro;
+        }
+        p {
+                margin-top: 10px;
+                text-align: left;
+                line-height: 2;
+        }
+}
+
 //My pages
 
 //Barra Header

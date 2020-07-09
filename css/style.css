@@ -51,8 +51,12 @@ img {
 }
 
 .contenedor {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+}
+
+.seccion {
+  margin: 40px auto;
 }
 
 .hero {
@@ -132,5 +136,36 @@ img {
 .hero .barra-header .pages a:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.barra-freelancer {
+  background-color: #611a84;
+  height: 0.5vw;
+  width: 50%;
+  margin-top: 120px;
+  position: relative;
+}
+
+.barra-freelancer i {
+  position: absolute;
+  color: #611a84;
+  top: -400%;
+  left: 80%;
+  font-size: 4vw;
+}
+
+.freelancer-contenido {
+  width: 50%;
+}
+
+.freelancer-contenido h1 {
+  text-align: left;
+  color: #390e4e;
+}
+
+.freelancer-contenido p {
+  margin-top: 10px;
+  text-align: left;
+  line-height: 2;
 }
 /*# sourceMappingURL=style.css.map */
