@@ -56,7 +56,7 @@ img {
 }
 
 .seccion {
-  margin: 40px auto;
+  margin: 4vw auto;
 }
 
 .hero {
@@ -92,7 +92,7 @@ img {
 .hero .barra {
   position: absolute;
   background-color: #db2e3c;
-  height: 25px;
+  height: 2.5vw;
   width: 100%;
   bottom: -10px;
 }
@@ -142,7 +142,7 @@ img {
   background-color: #611a84;
   height: 0.5vw;
   width: 50%;
-  margin-top: 120px;
+  margin-top: 12vw;
   position: relative;
 }
 
@@ -161,11 +161,13 @@ img {
 .freelancer-contenido h1 {
   text-align: left;
   color: #390e4e;
+  font-size: 2.5vw;
 }
 
 .freelancer-contenido p {
-  margin-top: 10px;
+  margin-top: 1vw;
   text-align: left;
   line-height: 2;
+  font-size: 1.3vw;
 }
 /*# sourceMappingURL=style.css.map */
