@@ -18,6 +18,8 @@ $fuente-titulos: "Work Sans", sans-serif; //500-900
 $fuente-texto: "Inter", sans-serif; //400-900
 $color-principal: rgb(97, 26, 132);
 $color-principal-oscuro: rgb(57, 14, 78);
+$color-secundario-rojo: #db2e3c;
+$color-secundario-naranja: #ed5d45;
 @mixin transform($property) {
         -webkit-transform: $property;
         -ms-transform: $property;
@@ -83,93 +85,167 @@ img {
         }
         .text-header {
                 position: absolute;
-                top: 20%;
-                left: 25%;
-                right: 25%;
-                bottom: 80%;
-                width: 50%;
+                top: 5%;
+                left: 15%;
+                right: 15%;
+                bottom: 95%;
+                width: 70%;
 
                 h1 {
-                        font-size: 6.5vw;
+                        font-size: 11vw;
                         font-family: wishper-script;
                         color: $color-principal;
                 }
                 p {
                         font-family: $fuente-titulos;
-                        font-size: 2vw;
+                        font-size: 4vw;
                         color: $color-principal;
-                        padding-top: 15px;
+                        padding-top: 1vw;
                 }
         }
-        .barra {
-                position: absolute;
-                background-color: #db2e3c;
-                height: 2.5vw;
-                width: 100%;
-                bottom: -10px;
+}
+.barra-header-movile {
+        background-color: $color-secundario-rojo;
+        text-align: center;
+        i {
+                color: $color-principal-oscuro;
         }
-        .barra-header {
-                position: absolute;
-                top: 0;
-                left: 0;
+        .barra-hero {
                 width: 100%;
-                display: flex;
                 justify-content: space-between;
-                margin-top: 4vw;
+                background-color: $color-secundario-naranja;
                 .icons {
+                        padding-top: 2vw;
+                        border-bottom: 1px solid $color-secundario-rojo;
                         i {
-                                margin-left: 4vw;
-                                font-size: 3vw;
+                                font-size: 4vw;
                                 color: $color-principal-oscuro;
-                                transition: all ease 0.3s;
                         }
-                        i:hover {
-                                @include transform(scale(1.1));
-                        }
+                }
+                .icons a:first-child i {
+                        margin-right: 4vw;
+                }
+                .icons a:nth-child(2) i {
+                        margin-left: 4vw;
                 }
                 .pages {
                         a {
-                                margin-right: 4vw;
-                                font-size: 1.7vw;
+                                padding-top: 2vw;
+                                border-bottom: 1px solid $color-secundario-rojo;
+                                width: 100%;
+                                font-size: 4vw;
                                 color: $color-principal-oscuro;
-                                transition: all ease-in 0.3s;
-                                display: inline-block;
+                                display: block;
                         }
-                        a:hover {
-                                @include transform(scale(1.1));
+                }
+        }
+}
+@media only screen and (min-width: 768px) {
+        .hero {
+                .text-header {
+                        top: 15%;
+                        left: 25%;
+                        right: 25%;
+                        bottom: 85%;
+                        width: 50%;
+                        h1 {
+                                font-size: 6.5vw;
+                        }
+                        p {
+                                font-size: 2vw;
+                        }
+                }
+                .barra-header {
+                        position: absolute;
+                        background-color: $color-secundario-rojo;
+                        height: 2.5vw;
+                        width: 100%;
+                        bottom: -10px;
+                }
+                .barra-hero {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        display: flex !important;
+                        justify-content: space-between;
+                        margin-top: 4vw;
+                        .icons {
+                                i {
+                                        margin-top: 0;
+                                        margin-left: 4vw;
+                                        font-size: 3vw;
+                                        color: $color-principal-oscuro;
+                                        transition: all ease 0.3s;
+                                }
+                                i:hover {
+                                        @include transform(scale(1.1));
+                                }
+                        }
+                        .pages {
+                                a {
+                                        width: auto;
+                                        margin-right: 4vw;
+                                        font-size: 1.7vw;
+                                        color: $color-principal-oscuro;
+                                        transition: all ease-in 0.3s;
+                                        display: inline-block;
+                                }
+                                a:hover {
+                                        @include transform(scale(1.1));
+                                }
                         }
                 }
         }
 }
 
 //Freelancer
-
 .barra-freelancer {
         background-color: $color-principal;
-        height: 0.5vw;
-        width: 50%;
-        margin-top: 12vw;
+        height: 1.5vw;
+        width: 60%;
+        margin-top: 8vw;
         position: relative;
         i {
                 position: absolute;
                 color: $color-principal;
-                top: -400%;
+                top: -300%;
                 left: 80%;
-                font-size: 4vw;
+                font-size: 8vw;
         }
 }
 .freelancer-contenido {
-        width: 50%;
+        width: 60%;
         h1 {
                 text-align: left;
                 color: $color-principal-oscuro;
-                font-size: 2.5vw;
+                font-size: 5.5vw;
         }
         p {
                 margin-top: 1vw;
                 text-align: left;
                 line-height: 2;
-                font-size: 1.3vw;
+                font-size: 2.5vw;
+        }
+}
+@media only screen and (min-width: 768px) {
+        .barra-freelancer {
+                height: 0.8vw;
+                width: 50%;
+                margin-top: 10vw;
+                i {
+                        top: -250%;
+                        font-size: 4vw;
+                }
+        }
+        .freelancer-contenido {
+                width: 50%;
+                h1 {
+                        font-size: 2.5vw;
+                }
+                p {
+                        font-size: 1.3vw;
+                }
         }
 }
 
