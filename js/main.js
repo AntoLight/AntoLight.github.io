@@ -12,7 +12,7 @@ $(document).ready(function () {
                                 menu.show();
                                 barra_hero.hide();
                                 menu.on("click", function () {
-                                        barra_hero.slideToggle();
+                                        barra_hero.stop().slideToggle("slow");
                                 });
                         } else {
                                 hero.append(barra_hero);
