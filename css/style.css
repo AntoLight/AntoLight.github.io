@@ -1,5 +1,5 @@
 html {
-  height: 100%;
+  min-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
@@ -38,7 +38,7 @@ p {
 }
 
 a {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   text-decoration: none;
   color: black;
   text-align: center;
@@ -51,12 +51,19 @@ img {
 }
 
 .contenedor {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 768px) {
+  .contenedor {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
 .seccion {
-  margin: 4vw auto;
+  margin: 3em auto;
 }
 
 .hero {
@@ -70,23 +77,23 @@ img {
 .hero .text-header {
   position: absolute;
   top: 5%;
-  left: 15%;
-  right: 15%;
+  left: 0%;
+  right: 0%;
   bottom: 95%;
-  width: 70%;
+  width: 100%;
 }
 
 .hero .text-header h1 {
-  font-size: 11vw;
+  font-size: 4rem;
   font-family: wishper-script;
   color: #611a84;
 }
 
 .hero .text-header p {
   font-family: "Work Sans", sans-serif;
-  font-size: 4vw;
+  font-size: 1.7rem;
   color: #611a84;
-  padding-top: 1vw;
+  padding-top: 0.5em;
 }
 
 .barra-header-movile {
@@ -107,28 +114,28 @@ img {
 }
 
 .barra-header-movile .barra-hero .icons {
-  padding-top: 2vw;
+  padding-top: 0.5em;
   border-bottom: 1px solid #db2e3c;
 }
 
 .barra-header-movile .barra-hero .icons i {
-  font-size: 4vw;
+  font-size: 1.5rem;
   color: #390e4e;
 }
 
 .barra-header-movile .barra-hero .icons a:first-child i {
-  margin-right: 4vw;
+  margin-right: 1.5em;
 }
 
 .barra-header-movile .barra-hero .icons a:nth-child(2) i {
-  margin-left: 4vw;
+  margin-left: 1.5em;
 }
 
 .barra-header-movile .barra-hero .pages a {
-  padding-top: 2vw;
+  padding-top: 0.5em;
   border-bottom: 1px solid #db2e3c;
   width: 100%;
-  font-size: 4vw;
+  font-size: 1.6rem;
   color: #390e4e;
   display: block;
 }
@@ -136,21 +143,21 @@ img {
 @media only screen and (min-width: 768px) {
   .hero .text-header {
     top: 15%;
-    left: 25%;
-    right: 25%;
+    left: 15%;
+    right: 15%;
     bottom: 85%;
-    width: 50%;
+    width: 70%;
   }
   .hero .text-header h1 {
-    font-size: 6.5vw;
+    font-size: 8rem;
   }
   .hero .text-header p {
-    font-size: 2vw;
+    font-size: 2.7rem;
   }
   .hero .barra-header {
     position: absolute;
     background-color: #db2e3c;
-    height: 2.5vw;
+    height: 2em;
     width: 100%;
     bottom: -10px;
   }
@@ -165,12 +172,12 @@ img {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-top: 4vw;
+    padding: 1.7em 0;
   }
   .hero .barra-hero .icons i {
     margin-top: 0;
-    margin-left: 4vw;
-    font-size: 3vw;
+    margin-left: 2em;
+    font-size: 3.5rem;
     color: #390e4e;
     -webkit-transition: all ease 0.3s;
     transition: all ease 0.3s;
@@ -181,70 +188,137 @@ img {
   }
   .hero .barra-hero .pages a {
     width: auto;
-    margin-right: 4vw;
-    font-size: 1.7vw;
+    margin-right: 2em;
+    font-size: 2rem;
     color: #390e4e;
     -webkit-transition: all ease-in 0.3s;
     transition: all ease-in 0.3s;
     display: inline-block;
   }
   .hero .barra-hero .pages a:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  .hero .activo-barra {
+    background-color: #ed5d45;
+    position: fixed;
+    padding: 0.7em 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+  }
+  .hero .activo-barra .pages a {
+    padding: 0.3em 0;
   }
 }
 
-.barra-freelancer {
-  background-color: #611a84;
-  height: 1.5vw;
-  width: 60%;
-  margin-top: 8vw;
-  position: relative;
+.freelancer-seccion {
+  margin-top: 4em;
 }
 
-.barra-freelancer i {
-  position: absolute;
-  color: #611a84;
-  top: -300%;
-  left: 80%;
-  font-size: 8vw;
+.freelancer-seccion .common-freelancer {
+  background-color: #fff;
+  background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+  -webkit-box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
+  box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
+  padding-bottom: 3em;
 }
 
-.freelancer-contenido {
-  width: 60%;
+.freelancer-seccion .common-freelancer .freelancer {
+  width: 80%;
+  margin-top: 2em;
 }
 
-.freelancer-contenido h1 {
+.freelancer-seccion .common-freelancer .freelancer h1 {
   text-align: left;
   color: #390e4e;
-  font-size: 5.5vw;
+  font-size: 2rem;
 }
 
-.freelancer-contenido p {
+.freelancer-seccion .common-freelancer .freelancer p {
   margin-top: 1vw;
   text-align: left;
   line-height: 2;
-  font-size: 2.5vw;
+  font-size: 1rem;
+}
+
+.freelancer-seccion .common-freelancer .barra-freelancer {
+  background-color: #611a84;
+  height: 0.3em;
+  width: 80%;
+  position: relative;
+}
+
+.freelancer-seccion .common-freelancer .barra-freelancer i {
+  position: absolute;
+  color: #611a84;
+  top: -350%;
+  left: 80%;
+  font-size: 3.5rem;
+}
+
+.freelancer-seccion .freelancer-page {
+  position: relative;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.freelancer-seccion .freelancer-page .barra-freelancer {
+  position: absolute;
+}
+
+.freelancer-seccion .freelancer-page .freelancer h1,
+.freelancer-seccion .freelancer-page .freelancer p {
+  text-align: right;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.freelancer-seccion .freelancer-page .freelancer h1 {
+  padding-top: 2em;
 }
 
 @media only screen and (min-width: 768px) {
-  .barra-freelancer {
-    height: 0.8vw;
-    width: 50%;
-    margin-top: 10vw;
+  .freelancer-seccion {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 20% 40%;
+        grid-template-columns: 40% 20% 40%;
+    margin-top: 4em;
   }
-  .barra-freelancer i {
-    top: -250%;
-    font-size: 4vw;
+  .freelancer-seccion .common-freelancer .freelancer {
+    width: 100%;
   }
-  .freelancer-contenido {
-    width: 50%;
+  .freelancer-seccion .common-freelancer .freelancer h1 {
+    font-size: 3rem;
   }
-  .freelancer-contenido h1 {
-    font-size: 2.5vw;
+  .freelancer-seccion .common-freelancer .freelancer p {
+    font-size: 1.5rem;
   }
-  .freelancer-contenido p {
-    font-size: 1.3vw;
+  .freelancer-seccion .common-freelancer .barra-freelancer {
+    height: 0.7em;
+    width: 100%;
+  }
+  .freelancer-seccion .common-freelancer .barra-freelancer i {
+    top: -160%;
+    font-size: 4.7rem;
+  }
+  .freelancer-seccion .freelancer-page {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
+  .freelancer-seccion .freelancer-page .barra-freelancer {
+    top: 0;
+  }
+  .freelancer-seccion .freelancer-page .freelancer h1 {
+    padding-top: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

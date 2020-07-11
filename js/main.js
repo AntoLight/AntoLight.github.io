@@ -24,4 +24,29 @@ $(document).ready(function () {
 
                 window.addEventListener("resize", mediaSize, false);
         })(jQuery);
+
+        //Barra Hero Desktop Follow
+        (function ($) {
+                function mediaSize() {
+                        if (window.matchMedia("(min-width: 768px)").matches) {
+                                var windowsAltura = $(window).height() - 815;
+                                var barraAltura = barra_hero.innerHeight();
+                                $(window).scroll(function () {
+                                        var scroll = $(window).scrollTop();
+                                        if (scroll > windowsAltura) {
+                                                barra_hero.addClass("activo-barra");
+                                                $("body").css({});
+                                        } else {
+                                                barra_hero.removeClass("activo-barra");
+                                                $("body").css({ "margin-top": "0px" });
+                                        }
+                                });
+                        } else {
+                        }
+                }
+
+                mediaSize();
+
+                window.addEventListener("resize", mediaSize, false);
+        })(jQuery);
 });
