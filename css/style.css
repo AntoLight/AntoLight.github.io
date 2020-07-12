@@ -63,7 +63,7 @@ img {
 }
 
 .seccion {
-  margin: 3em auto;
+  margin: 3em inherit;
 }
 
 .hero {
@@ -200,7 +200,7 @@ img {
     transform: scale(0.9);
   }
   .hero .activo-barra {
-    background-color: #ed5d45;
+    background-color: rgba(0, 0, 0, 0.675);
     position: fixed;
     padding: 0.7em 0;
     top: 0;
@@ -211,114 +211,134 @@ img {
   }
   .hero .activo-barra .pages a {
     padding: 0.3em 0;
+    color: white;
+  }
+  .hero .activo-barra .icons a i {
+    color: white;
   }
 }
 
-.freelancer-seccion {
-  margin-top: 4em;
+.freelancer {
+  position: relative;
+  height: 15em;
+  margin-top: 5em;
 }
 
-.freelancer-seccion .common-freelancer {
-  background-color: #fff;
-  background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee 0.1em, transparent 0.1em);
-  background-size: 100% 1.2em;
-  -webkit-box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
-  box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
-  padding-bottom: 3em;
-}
-
-.freelancer-seccion .common-freelancer .freelancer {
+.freelancer .center-freelancer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #702fad;
   width: 80%;
-  margin-top: 2em;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  border-right: #390e4e 15px solid;
+  padding-top: 15px;
+  -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
 }
 
-.freelancer-seccion .common-freelancer .freelancer h1 {
+.freelancer .center-freelancer h1,
+.freelancer .center-freelancer p {
   text-align: left;
-  color: #390e4e;
-  font-size: 2rem;
 }
 
-.freelancer-seccion .common-freelancer .freelancer p {
-  margin-top: 1vw;
-  text-align: left;
+.freelancer .center-freelancer p {
+  margin-top: 1em;
   line-height: 2;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
-.freelancer-seccion .common-freelancer .barra-freelancer {
-  background-color: #611a84;
-  height: 0.3em;
-  width: 80%;
-  position: relative;
+.freelancer .center-freelancer h1 {
+  font-size: 2.5rem;
 }
 
-.freelancer-seccion .common-freelancer .barra-freelancer i {
+.freelancer .icono-1 {
   position: absolute;
-  color: #611a84;
-  top: -350%;
-  left: 80%;
-  font-size: 3.5rem;
+  top: 30px;
+  right: -2px;
+  color: #390e4e;
+  font-size: 2.5em;
 }
 
-.freelancer-seccion .freelancer-page {
-  position: relative;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.freelancer-seccion .freelancer-page .barra-freelancer {
+.freelancer .icono-2 {
   position: absolute;
-}
-
-.freelancer-seccion .freelancer-page .freelancer h1,
-.freelancer-seccion .freelancer-page .freelancer p {
-  text-align: right;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.freelancer-seccion .freelancer-page .freelancer h1 {
-  padding-top: 2em;
+  bottom: 30px;
+  right: -2px;
+  color: #390e4e;
+  font-size: 2.5em;
 }
 
 @media only screen and (min-width: 768px) {
-  .freelancer-seccion {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 40% 20% 40%;
-        grid-template-columns: 40% 20% 40%;
-    margin-top: 4em;
+  .freelancer {
+    height: 18em;
+    margin-top: 10em;
   }
-  .freelancer-seccion .common-freelancer .freelancer {
-    width: 100%;
+  .freelancer .center-freelancer {
+    width: 40%;
+    border-right: #390e4e 20px solid;
+    padding-top: 30px;
   }
-  .freelancer-seccion .common-freelancer .freelancer h1 {
-    font-size: 3rem;
+  .freelancer .center-freelancer p {
+    margin-top: 1.2em;
+    line-height: 2;
+    font-size: 1em;
   }
-  .freelancer-seccion .common-freelancer .freelancer p {
-    font-size: 1.5rem;
+  .freelancer .center-freelancer h1 {
+    font-size: 2em;
   }
-  .freelancer-seccion .common-freelancer .barra-freelancer {
-    height: 0.7em;
-    width: 100%;
+  .icono-1 {
+    font-size: 3em;
   }
-  .freelancer-seccion .common-freelancer .barra-freelancer i {
-    top: -160%;
-    font-size: 4.7rem;
+  .icono-2 {
+    font-size: 3em;
   }
-  .freelancer-seccion .freelancer-page {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2 / 3;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3 / 4;
+}
+
+.activo-freelancer .center-freelancer {
+  -webkit-animation: center-animate 3s ease;
+          animation: center-animate 3s ease;
+}
+
+@-webkit-keyframes center-animate {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
-  .freelancer-seccion .freelancer-page .barra-freelancer {
-    top: 0;
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
-  .freelancer-seccion .freelancer-page .freelancer h1 {
-    padding-top: 0;
+}
+
+@keyframes center-animate {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+.freelancer-page {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+  height: 18em;
+}
+
+.freelancer-page h1,
+.freelancer-page p {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .freelancer-page {
+    height: 25em;
   }
 }
 /*# sourceMappingURL=style.css.map */

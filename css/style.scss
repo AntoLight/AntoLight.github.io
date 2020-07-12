@@ -18,6 +18,7 @@ $fuente-titulos: "Work Sans", sans-serif; //500-900
 $fuente-texto: "Inter", sans-serif; //400-900
 $color-principal: rgb(97, 26, 132);
 $color-principal-oscuro: rgb(57, 14, 78);
+$color-principal-liviano: rgb(112, 47, 173);
 $color-secundario-rojo: #db2e3c;
 $color-secundario-naranja: #ed5d45;
 $color-secundario-naranja-oscuro: #ff7259;
@@ -80,7 +81,7 @@ img {
 }
 
 .seccion {
-        margin: 3em auto;
+        margin: 3em inherit;
 }
 // Pagina Principal
 
@@ -204,7 +205,7 @@ img {
                         }
                 }
                 .activo-barra {
-                        background-color: $color-secundario-naranja;
+                        background-color: rgba(0, 0, 0, 0.675);
                         position: fixed;
                         padding: 0.7em 0;
                         top: 0;
@@ -214,111 +215,115 @@ img {
                         .pages {
                                 a {
                                         padding: 0.3em 0;
+                                        color: white;
                                 }
+                        }
+                        .icons a i {
+                                color: white;
                         }
                 }
         }
 }
 
 //Freelancer
-.freelancer-seccion {
-        margin-top: 4em;
-        .common-freelancer {
-                background-color: #fff;
-                background-image: linear-gradient(
-                                90deg,
-                                transparent 79px,
-                                #abced4 79px,
-                                #abced4 81px,
-                                transparent 81px
-                        ),
-                        linear-gradient(#eee 0.1em, transparent 0.1em);
-                background-size: 100% 1.2em;
-                -webkit-box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
-                -moz-box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
-                box-shadow: 13px 15px 15px 0px rgba(0, 0, 0, 0.65);
-                padding-bottom: 3em;
-
-                .freelancer {
-                        width: 80%;
-                        margin-top: 2em;
-                        h1 {
-                                text-align: left;
-                                color: $color-principal-oscuro;
-                                font-size: 2rem;
-                        }
-                        p {
-                                margin-top: 1vw;
-                                text-align: left;
-                                line-height: 2;
-                                font-size: 1rem;
-                        }
+.freelancer {
+        position: relative;
+        height: 15em;
+        margin-top: 5em;
+        .center-freelancer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                background-color: $color-principal-liviano;
+                width: 80%;
+                transform: scaleX(1);
+                transform-origin: left;
+                border-right: $color-principal-oscuro 15px solid;
+                padding-top: 15px;
+                -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+                -moz-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+                box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+                h1,
+                p {
+                        text-align: left;
                 }
-                .barra-freelancer {
-                        background-color: $color-principal;
-                        height: 0.3em;
-                        width: 80%;
-                        position: relative;
-                        i {
-                                position: absolute;
-                                color: $color-principal;
-                                top: -350%;
-                                left: 80%;
-                                font-size: 3.5rem;
+                p {
+                        margin-top: 1em;
+                        line-height: 2;
+                        font-size: 1.2rem;
+                }
+                h1 {
+                        font-size: 2.5rem;
+                }
+        }
+        .icono-1 {
+                position: absolute;
+                top: 30px;
+                right: -2px;
+                color: $color-principal-oscuro;
+                font-size: 2.5em;
+        }
+        .icono-2 {
+                position: absolute;
+                bottom: 30px;
+                right: -2px;
+                color: $color-principal-oscuro;
+                font-size: 2.5em;
+        }
+}
+@media only screen and (min-width: 768px) {
+        .freelancer {
+                height: 18em;
+                margin-top: 10em;
+                .center-freelancer {
+                        width: 40%;
+
+                        border-right: $color-principal-oscuro 20px solid;
+                        padding-top: 30px;
+
+                        p {
+                                margin-top: 1.2em;
+                                line-height: 2;
+                                font-size: 1em;
+                        }
+                        h1 {
+                                font-size: 2em;
                         }
                 }
         }
-        .freelancer-page {
-                position: relative;
-                transform: scaleX(-1);
-                .barra-freelancer {
-                        position: absolute;
+        .icono-1 {
+                font-size: 3em;
+        }
+        .icono-2 {
+                font-size: 3em;
+        }
+}
+.activo-freelancer {
+        .center-freelancer {
+                animation: center-animate 3s ease;
+        }
+
+        @keyframes center-animate {
+                0% {
+                        transform: scaleX(0);
                 }
-                .freelancer h1,
-                .freelancer p {
-                        text-align: right;
-                        transform: scaleX(-1);
-                }
-                .freelancer h1 {
-                        padding-top: 2em;
+                100% {
+                        transform: scaleX(1);
                 }
         }
 }
 
+.freelancer-page {
+        transform: scale(-1, 1);
+        h1,
+        p {
+                transform: scale(-1, 1);
+        }
+        height: 18em;
+}
 @media only screen and (min-width: 768px) {
-        .freelancer-seccion {
-                display: grid;
-                grid-template-columns: 40% 20% 40%;
-                margin-top: 4em;
-                .common-freelancer {
-                        .freelancer {
-                                width: 100%;
-                                h1 {
-                                        font-size: 3rem;
-                                }
-                                p {
-                                        font-size: 1.5rem;
-                                }
-                        }
-                        .barra-freelancer {
-                                height: 0.7em;
-                                width: 100%;
-                                i {
-                                        top: -160%;
-                                        font-size: 4.7rem;
-                                }
-                        }
-                }
-                .freelancer-page {
-                        grid-row: 2 / 3;
-                        grid-column: 3 / 4;
-                        .barra-freelancer {
-                                top: 0;
-                        }
-                        .freelancer h1 {
-                                padding-top: 0;
-                        }
-                }
+        .freelancer-page {
+                height: 25em;
         }
 }
 

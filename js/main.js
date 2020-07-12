@@ -49,4 +49,22 @@ $(document).ready(function () {
 
                 window.addEventListener("resize", mediaSize, false);
         })(jQuery);
+
+        //Freelancer Animation
+        var freelancer_square = $(".freelancer");
+        freelancer_square.css({ visibility: "hidden" });
+        $(".center-freelancer div h1, .center-freelancer div p").hide();
+        var waypoint = new Waypoint({
+                element: $(freelancer_square),
+                handler: function (direction) {
+                        if (direction == "down") {
+                                freelancer_square.addClass("activo-freelancer");
+                                freelancer_square.css({ visibility: "visible" });
+                                $(".center-freelancer div h1, .center-freelancer div p").fadeIn(
+                                        4000
+                                );
+                        }
+                },
+                offset: 600,
+        });
 });
