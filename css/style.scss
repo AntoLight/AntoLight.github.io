@@ -100,34 +100,37 @@ img {
                 width: 100%;
 
                 h1 {
-                        font-size: 4rem;
+                        font-size: 4.5rem;
                         font-family: wishper-script;
-                        color: $color-principal;
+                        color: rgb(23, 23, 75);
+                        text-shadow: 0px 4px 4px rgba(41, 41, 41, 0.84);
                 }
                 p {
                         font-family: $fuente-titulos;
                         font-size: 1.7rem;
-                        color: $color-principal;
+                        color: rgb(24, 24, 95);
                         padding-top: 0.5em;
+                        text-shadow: 0px 4px 4px rgba(41, 41, 41, 0.84);
                 }
         }
 }
+
 .barra-header-movile {
-        background-color: $color-secundario-rojo;
+        background-color: rgb(29, 29, 29);
         text-align: center;
         i {
-                color: $color-principal-oscuro;
+                color: rgb(189, 189, 189);
         }
         .barra-hero {
                 width: 100%;
                 justify-content: space-between;
-                background-color: $color-secundario-naranja;
+                background-color: rgb(44, 44, 44);
                 .icons {
                         padding-top: 0.5em;
-                        border-bottom: 1px solid $color-secundario-rojo;
+                        border-bottom: 1px solid rgb(29, 29, 29);
                         i {
                                 font-size: 1.5rem;
-                                color: $color-principal-oscuro;
+                                color: rgb(189, 189, 189);
                         }
                 }
                 .icons a:first-child i {
@@ -139,10 +142,10 @@ img {
                 .pages {
                         a {
                                 padding-top: 0.5em;
-                                border-bottom: 1px solid $color-secundario-rojo;
+                                border-bottom: 1px solid rgb(29, 29, 29);
                                 width: 100%;
                                 font-size: 1.6rem;
-                                color: $color-principal-oscuro;
+                                color: rgb(189, 189, 189);
                                 display: block;
                         }
                 }
@@ -158,9 +161,11 @@ img {
                         width: 70%;
                         h1 {
                                 font-size: 8rem;
+                                color: $color-principal;
                         }
                         p {
                                 font-size: 2.7rem;
+                                color: $color-principal;
                         }
                 }
                 .barra-header {
@@ -239,7 +244,7 @@ img {
                 transform: scaleX(1);
                 transform-origin: left;
                 border-right: $color-principal-oscuro 15px solid;
-                padding-top: 15px;
+                padding: 1.5em 0;
                 -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
                 -moz-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
                 box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
@@ -254,6 +259,14 @@ img {
                 }
                 h1 {
                         font-size: 2.5rem;
+                        color: $color-principal-oscuro;
+                }
+                span {
+                        color: $color-secundario-rojo;
+                        font-size: $fuente-titulos;
+                        font-weight: 900;
+                        text-shadow: 0px 6px 6px rgba(26, 26, 26, 0.911);
+                        animation: span-shadow infinite alternate 4s;
                 }
         }
         .icono-1 {
@@ -273,14 +286,11 @@ img {
 }
 @media only screen and (min-width: 768px) {
         .freelancer {
-                height: 18em;
+                height: 20em;
                 margin-top: 10em;
                 .center-freelancer {
                         width: 40%;
-
                         border-right: $color-principal-oscuro 20px solid;
-                        padding-top: 30px;
-
                         p {
                                 margin-top: 1.2em;
                                 line-height: 2;
@@ -298,6 +308,27 @@ img {
                 font-size: 3em;
         }
 }
+.freelancer-page {
+        transform: scale(-1, 1);
+        height: 16em;
+        h1,
+        p {
+                transform: scale(-1, 1);
+        }
+        span:last-child {
+                font-size: 1.2em;
+                color: $color-principal-oscuro;
+                animation: none;
+                text-shadow: none;
+        }
+}
+@media only screen and (min-width: 768px) {
+        .freelancer-page {
+                height: 25em;
+        }
+}
+
+//Animacion Freelancer
 .activo-freelancer {
         .center-freelancer {
                 animation: center-animate 3s ease;
@@ -313,20 +344,16 @@ img {
         }
 }
 
-.freelancer-page {
-        transform: scale(-1, 1);
-        h1,
-        p {
-                transform: scale(-1, 1);
-        }
-        height: 18em;
-}
-@media only screen and (min-width: 768px) {
-        .freelancer-page {
-                height: 25em;
-        }
-}
+// Span animacion
 
+@keyframes span-shadow {
+        0% {
+                text-shadow: 0px 6px 6px rgba(26, 26, 26, 0);
+        }
+        100% {
+                text-shadow: 0px 6px 6px rgba(26, 26, 26, 0.911);
+        }
+}
 //My pages
 
 //Barra Header

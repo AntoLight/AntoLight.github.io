@@ -1,4 +1,23 @@
 $(document).ready(function () {
+        //Variables Hero
+        var hero_desktop = $("#hero_desktop");
+        var hero_movile = $("#hero_movile");
+        //Cambio de Hero
+        (function ($) {
+                function mediaSize() {
+                        if (window.matchMedia("(min-width: 768px)").matches) {
+                                hero_desktop.show();
+                                hero_movile.hide();
+                        } else {
+                                hero_desktop.hide();
+                                hero_movile.show();
+                        }
+                }
+
+                mediaSize();
+
+                window.addEventListener("resize", mediaSize, false);
+        })(jQuery);
         //Variables Resize Menu inicial
         var barra_hero = $("#barra_hero");
         var barra_header = $("#barra_header");
