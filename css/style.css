@@ -224,7 +224,7 @@ img {
 
 .freelancer {
   position: relative;
-  height: 15em;
+  height: 17em;
   margin-top: 5em;
 }
 
@@ -313,7 +313,7 @@ img {
 .freelancer-page {
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
-  height: 16em;
+  height: 19em;
 }
 
 .freelancer-page h1,
