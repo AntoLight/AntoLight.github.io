@@ -83,6 +83,10 @@ img {
 .seccion {
         margin: 3em inherit;
 }
+
+.revertir {
+        transform: scale(-1, 1);
+}
 // Pagina Principal
 
 //Header
@@ -212,7 +216,7 @@ img {
                 .activo-barra {
                         background-color: rgba(0, 0, 0, 0.675);
                         position: fixed;
-                        padding: 0.7em 0;
+                        padding: 0.5em 0;
                         top: 0;
                         left: 0;
                         z-index: 2;
@@ -230,25 +234,36 @@ img {
         }
 }
 
+// Grid content Freelnace-WebPage
+.display-grid-fw > div {
+        margin-top: 4em;
+}
+@media only screen and (min-width: 768px) {
+        .display-grid-fw {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 8em;
+        }
+        .display-grid-fw > div {
+                margin-top: 0;
+        }
+}
 //Freelancer
-.freelancer {
-        position: relative;
-        height: 17em;
-        margin-top: 5em;
-        .center-freelancer {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                background-color: $color-principal-liviano;
-                width: 80%;
-                transform: scaleX(1);
-                transform-origin: left;
-                border-right: $color-principal-oscuro 15px solid;
-                padding: 1.5em 0;
-                -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
-                -moz-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
-                box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
-                h1,
+
+.center-freelancer {
+        background-color: $color-principal-liviano;
+        width: 80%;
+        height: 18em;
+        transform: scaleX(1);
+        transform-origin: left;
+        border-right: $color-principal-oscuro 15px solid;
+        padding: 1.5em 0;
+        -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+        -moz-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+        box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
+        .center-freelancer-content {
+                margin: 0 0.5em 0 1.5em;
+                h2,
                 p {
                         text-align: left;
                 }
@@ -257,7 +272,7 @@ img {
                         line-height: 2;
                         font-size: 1.2rem;
                 }
-                h1 {
+                h2 {
                         font-size: 2.5rem;
                         color: $color-principal-oscuro;
                 }
@@ -269,38 +284,40 @@ img {
                         animation: span-shadow infinite alternate 4s;
                 }
         }
-        .icono-1 {
-                position: absolute;
-                top: 30px;
-                right: -2px;
-                color: $color-principal-oscuro;
-                font-size: 2.5em;
-        }
-        .icono-2 {
-                position: absolute;
-                bottom: 30px;
-                right: -2px;
-                color: $color-principal-oscuro;
-                font-size: 2.5em;
-        }
 }
-@media only screen and (min-width: 768px) {
-        .freelancer {
-                height: 20em;
-                margin-top: 10em;
-                .center-freelancer {
-                        width: 40%;
-                        border-right: $color-principal-oscuro 20px solid;
+.icono-1 {
+        position: absolute;
+        top: 30px;
+        right: -2px;
+        color: $color-principal-oscuro;
+        font-size: 2.5em;
+}
+.icono-2 {
+        position: absolute;
+        bottom: 30px;
+        right: -2px;
+        color: $color-principal-oscuro;
+        font-size: 2.5em;
+}
+
+@media only screen and (min-width: 400px) {
+        .center-freelancer {
+                width: 80%;
+                padding: 2em 0;
+                border-right: $color-principal-oscuro 20px solid;
+                .center-freelancer-content {
                         p {
-                                margin-top: 1.2em;
-                                line-height: 2;
+                                margin-top: 1em;
+                                line-height: 1.8;
                                 font-size: 1em;
                         }
-                        h1 {
+                        h2 {
                                 font-size: 2em;
+                                line-height: 1;
                         }
                 }
         }
+
         .icono-1 {
                 font-size: 3em;
         }
@@ -308,33 +325,22 @@ img {
                 font-size: 3em;
         }
 }
-.freelancer-page {
-        transform: scale(-1, 1);
-        height: 19em;
-        h1,
-        p {
-                transform: scale(-1, 1);
-        }
-        span:last-child {
-                font-size: 1.2em;
-                color: $color-principal-oscuro;
-                animation: none;
-                text-shadow: none;
-        }
-}
-@media only screen and (min-width: 768px) {
-        .freelancer-page {
-                height: 25em;
-        }
-}
 
+//Freelancer Page
+.freelance-page {
+        text-align: right;
+        .center-freelancer-content {
+                transform: scale(-1, 1);
+                h2,
+                p {
+                        text-align: right;
+                }
+        }
+}
 //Animacion Freelancer
 .activo-freelancer {
-        .center-freelancer {
-                animation: center-animate 3s ease;
-        }
-
-        @keyframes center-animate {
+        animation: animation-freelancer 3s ease;
+        @keyframes animation-freelancer {
                 0% {
                         transform: scaleX(0);
                 }
@@ -352,6 +358,90 @@ img {
         }
         100% {
                 text-shadow: 0px 6px 6px rgba(26, 26, 26, 0.911);
+        }
+}
+
+// Web page Information
+
+.web-page {
+        background-color: $color-secundario-rojo;
+        width: 95%;
+
+        border: #6e0d15 10px solid;
+        border-radius: 10px;
+        h2 {
+                font-size: 3rem;
+                color: #6e0d15;
+                padding-top: 0.5em;
+                line-height: 1.2;
+        }
+}
+@media only screen and (min-width: 768px) {
+        .web-page {
+                height: 24em;
+        }
+}
+@media only screen and (min-width: 992px) {
+        .web-page {
+                height: 22em;
+        }
+}
+.web-page-content {
+        padding: 1em;
+        div {
+                text-align: center;
+                margin: 1.5em 0.5em 0 0.5em;
+                background-color: rgba(189, 147, 147, 1);
+                border-radius: 10px;
+
+                p {
+                        font-size: 1.5rem;
+                        line-height: 1.8;
+                }
+                span {
+                        font-weight: 900;
+                        font-size: 1.8rem;
+                }
+        }
+}
+@media only screen and (min-width: 768px) {
+        .web-page-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                div {
+                        margin: 1em 0.3em 0 0.3em;
+                        p {
+                                font-size: 1.4rem;
+                                line-height: 1.4;
+                        }
+                }
+        }
+}
+
+@media only screen and (min-width: 992px) {
+        .web-page-content {
+                div {
+                        margin: 1em 0.5em 0 0.5em;
+                        p {
+                                font-size: 1.35rem;
+                                line-height: 1.7;
+                        }
+                }
+        }
+}
+// Web page Animacion
+
+.activo-web-all-div {
+        animation: animation-web-div forwards 14s ease;
+        @keyframes animation-web-div {
+                0% {
+                        box-shadow: none;
+                }
+                100% {
+                        -webkit-box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+                        -moz-box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+                        box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+                }
         }
 }
 //My pages

@@ -57,11 +57,10 @@
                         </div>
                 </header>
                 <!--Freelancer-->
-
-                <div class="freelancer">
+                <div class="display-grid-fw">
                         <div class="center-freelancer">
-                                <div class="contenedor">
-                                        <h1>About Me</h1>
+                                <div class="center-freelancer-content">
+                                        <h2>About Me</h2>
                                         <p>
                                                 I'm a freelancer worker, specialized in
                                                 <span>web design and developing</span> . My studies
@@ -70,31 +69,66 @@
                                                 independent pages. <br />
                                                 Based in La Plata, Argentina
                                         </p>
+                                        <i class="fas fa-caret-left icono-1"></i>
+                                        <i class="fas fa-caret-left icono-2"></i>
                                 </div>
-                                <i class="fas fa-caret-left icono-1"></i>
-                                <i class="fas fa-caret-left icono-2"></i>
+                        </div>
+
+                        <div class="web-page">
+                                <h2>Importance of A good Design in Web Pages</h2>
+                                <div class="web-page-content">
+                                        <div class="web-page-content-div">
+                                                <p>
+                                                        The <br /><span
+                                                                id="animacion_numero_1"
+                                                        ></span
+                                                        >%
+                                                        <br />
+                                                        of first impressions relate to your site’s
+                                                        web design
+                                                </p>
+                                        </div>
+                                        <div class="web-page-content-div">
+                                                <p>
+                                                        Around <br />
+                                                        <span id="animacion_numero_2"></span>%
+                                                        <br />of people prefer to look at a
+                                                        beautifully designed website if given 15
+                                                        minutes to consume content
+                                                </p>
+                                        </div>
+                                        <div class="web-page-content-div">
+                                                <p>
+                                                        The <br /><span
+                                                                id="animacion_numero_3"
+                                                        ></span
+                                                        >%<br />of website credibility comes from
+                                                        design
+                                                </p>
+                                        </div>
+                                </div>
                         </div>
                 </div>
-                <div class="freelancer freelancer-page">
-                        <div class="center-freelancer">
-                                <div class="contenedor">
-                                        <h1>Creating a page</h1>
-                                        <p>
-                                                For creating a page you just have to give me
-                                                <span> your prefered photos and text</span> for
-                                                putting it in the web. The style and colors are
-                                                elegible, or you let decide me and later view if you
-                                                like it. This comes with a price that will discuss
-                                                in the moment creating the page. <br />
-                                                <span>
-                                                        Upgrades or changes are free for 3
-                                                        months.</span
-                                                >
-                                        </p>
+                <div class="display-grid-fw revertir">
+                        <div class="freelance-page">
+                                <div class="center-freelancer">
+                                        <div class="center-freelancer-content">
+                                                <h2>Creating a page</h2>
+                                                <p>
+                                                        For creating a page you just have to give me
+                                                        <span> your prefered photos and text</span>
+                                                        for putting it in the web. The style and
+                                                        colors are elegible, or you let decide me
+                                                        and later view if you like it. <br />
+                                                        <span>
+                                                                Upgrades or changes are free for 3
+                                                                months.</span
+                                                        >
+                                                </p>
+                                        </div>
+                                        <i class="fas fa-caret-left icono-1"></i>
+                                        <i class="fas fa-caret-left icono-2"></i>
                                 </div>
-
-                                <i class="fas fa-caret-left icono-1"></i>
-                                <i class="fas fa-caret-left icono-2"></i>
                         </div>
                 </div>
                 <script src="js/vendor/modernizr-3.8.0.min.js"></script>
@@ -109,9 +143,11 @@
                                         '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
                                 );
                 </script>
+
                 <script src="js/plugins.js"></script>
-                <script src="js/main.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" />
+                <script src="js/countUp.min.js" type="module"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+                <script src="js/main.js" type="module"></script>
 
                 <!-- Google Analytics: change UA-XXXXX-Y to be your sites ID. -->
                 <script>

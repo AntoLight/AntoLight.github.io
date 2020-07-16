@@ -66,6 +66,11 @@ img {
   margin: 3em inherit;
 }
 
+.revertir {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
 .hero {
   position: relative;
 }
@@ -206,7 +211,7 @@ img {
   .hero .activo-barra {
     background-color: rgba(0, 0, 0, 0.675);
     position: fixed;
-    padding: 0.7em 0;
+    padding: 0.5em 0;
     top: 0;
     left: 0;
     z-index: 2;
@@ -222,18 +227,27 @@ img {
   }
 }
 
-.freelancer {
-  position: relative;
-  height: 17em;
-  margin-top: 5em;
+.display-grid-fw > div {
+  margin-top: 4em;
 }
 
-.freelancer .center-freelancer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+@media only screen and (min-width: 768px) {
+  .display-grid-fw {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    margin-top: 8em;
+  }
+  .display-grid-fw > div {
+    margin-top: 0;
+  }
+}
+
+.center-freelancer {
   background-color: #702fad;
   width: 80%;
+  height: 18em;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
@@ -244,23 +258,27 @@ img {
   box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
 }
 
-.freelancer .center-freelancer h1,
-.freelancer .center-freelancer p {
+.center-freelancer .center-freelancer-content {
+  margin: 0 0.5em 0 1.5em;
+}
+
+.center-freelancer .center-freelancer-content h2,
+.center-freelancer .center-freelancer-content p {
   text-align: left;
 }
 
-.freelancer .center-freelancer p {
+.center-freelancer .center-freelancer-content p {
   margin-top: 1em;
   line-height: 2;
   font-size: 1.2rem;
 }
 
-.freelancer .center-freelancer h1 {
+.center-freelancer .center-freelancer-content h2 {
   font-size: 2.5rem;
   color: #390e4e;
 }
 
-.freelancer .center-freelancer span {
+.center-freelancer .center-freelancer-content span {
   color: #db2e3c;
   font-size: "Work Sans", sans-serif;
   font-weight: 900;
@@ -269,7 +287,7 @@ img {
           animation: span-shadow infinite alternate 4s;
 }
 
-.freelancer .icono-1 {
+.icono-1 {
   position: absolute;
   top: 30px;
   right: -2px;
@@ -277,7 +295,7 @@ img {
   font-size: 2.5em;
 }
 
-.freelancer .icono-2 {
+.icono-2 {
   position: absolute;
   bottom: 30px;
   right: -2px;
@@ -285,22 +303,20 @@ img {
   font-size: 2.5em;
 }
 
-@media only screen and (min-width: 768px) {
-  .freelancer {
-    height: 20em;
-    margin-top: 10em;
-  }
-  .freelancer .center-freelancer {
-    width: 40%;
+@media only screen and (min-width: 400px) {
+  .center-freelancer {
+    width: 80%;
+    padding: 2em 0;
     border-right: #390e4e 20px solid;
   }
-  .freelancer .center-freelancer p {
-    margin-top: 1.2em;
-    line-height: 2;
+  .center-freelancer .center-freelancer-content p {
+    margin-top: 1em;
+    line-height: 1.8;
     font-size: 1em;
   }
-  .freelancer .center-freelancer h1 {
+  .center-freelancer .center-freelancer-content h2 {
     font-size: 2em;
+    line-height: 1;
   }
   .icono-1 {
     font-size: 3em;
@@ -310,38 +326,26 @@ img {
   }
 }
 
-.freelancer-page {
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1);
-  height: 19em;
+.freelance-page {
+  text-align: right;
 }
 
-.freelancer-page h1,
-.freelancer-page p {
+.freelance-page .center-freelancer-content {
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
 }
 
-.freelancer-page span:last-child {
-  font-size: 1.2em;
-  color: #390e4e;
-  -webkit-animation: none;
-          animation: none;
-  text-shadow: none;
+.freelance-page .center-freelancer-content h2,
+.freelance-page .center-freelancer-content p {
+  text-align: right;
 }
 
-@media only screen and (min-width: 768px) {
-  .freelancer-page {
-    height: 25em;
-  }
+.activo-freelancer {
+  -webkit-animation: animation-freelancer 3s ease;
+          animation: animation-freelancer 3s ease;
 }
 
-.activo-freelancer .center-freelancer {
-  -webkit-animation: center-animate 3s ease;
-          animation: center-animate 3s ease;
-}
-
-@-webkit-keyframes center-animate {
+@-webkit-keyframes animation-freelancer {
   0% {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
@@ -352,7 +356,7 @@ img {
   }
 }
 
-@keyframes center-animate {
+@keyframes animation-freelancer {
   0% {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
@@ -378,6 +382,106 @@ img {
   }
   100% {
     text-shadow: 0px 6px 6px rgba(26, 26, 26, 0.911);
+  }
+}
+
+.web-page {
+  background-color: #db2e3c;
+  width: 95%;
+  border: #6e0d15 10px solid;
+  border-radius: 10px;
+}
+
+.web-page h2 {
+  font-size: 3rem;
+  color: #6e0d15;
+  padding-top: 0.5em;
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+  .web-page {
+    height: 24em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .web-page {
+    height: 22em;
+  }
+}
+
+.web-page-content {
+  padding: 1em;
+}
+
+.web-page-content div {
+  text-align: center;
+  margin: 1.5em 0.5em 0 0.5em;
+  background-color: #bd9393;
+  border-radius: 10px;
+}
+
+.web-page-content div p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.web-page-content div span {
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .web-page-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .web-page-content div {
+    margin: 1em 0.3em 0 0.3em;
+  }
+  .web-page-content div p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .web-page-content div {
+    margin: 1em 0.5em 0 0.5em;
+  }
+  .web-page-content div p {
+    font-size: 1.35rem;
+    line-height: 1.7;
+  }
+}
+
+.activo-web-all-div {
+  -webkit-animation: animation-web-div forwards 14s ease;
+          animation: animation-web-div forwards 14s ease;
+}
+
+@-webkit-keyframes animation-web-div {
+  0% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+  }
+}
+
+@keyframes animation-web-div {
+  0% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 0px 75px -12px rgba(0, 0, 0, 0.85);
   }
 }
 /*# sourceMappingURL=style.css.map */

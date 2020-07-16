@@ -1,7 +1,9 @@
+import { CountUp } from "./countUp.min.js";
 $(document).ready(function () {
         //Variables Hero
         var hero_desktop = $("#hero_desktop");
         var hero_movile = $("#hero_movile");
+
         //Cambio de Hero
         (function ($) {
                 function mediaSize() {
@@ -9,8 +11,8 @@ $(document).ready(function () {
                                 hero_desktop.show();
                                 hero_movile.hide();
                         } else {
-                                hero_desktop.hide();
                                 hero_movile.show();
+                                hero_desktop.hide();
                         }
                 }
 
@@ -70,20 +72,49 @@ $(document).ready(function () {
         })(jQuery);
 
         //Freelancer Animation
-        var freelancer_square = $(".freelancer");
+        var freelancer_square = $(".center-freelancer");
         freelancer_square.css({ visibility: "hidden" });
+        var web_page = $(".web-page");
+        var web_page_content = $(".web-page-content-div");
         $(".center-freelancer div h1, .center-freelancer div p").hide();
         var waypoint = new Waypoint({
                 element: $(freelancer_square),
                 handler: function (direction) {
+                        this.destroy();
                         if (direction == "down") {
-                                freelancer_square.addClass("activo-freelancer");
-                                freelancer_square.css({ visibility: "visible" });
-                                $(".center-freelancer div h1, .center-freelancer div p").fadeIn(
-                                        4000
-                                );
+                                if (hero_desktop.height() > 0 && hero_movile.height() > 0) {
+                                        freelancer_square.addClass("activo-freelancer");
+                                        freelancer_square.css({ visibility: "visible" });
+                                        $(
+                                                ".center-freelancer div h1, .center-freelancer div p"
+                                        ).fadeIn(4000);
+                                        web_page_content.addClass("activo-web-all-div");
+                                        const options = {
+                                                duration: 5,
+                                        };
+                                        let demo = new CountUp("animacion_numero_1", 94, options);
+                                        if (!demo.error) {
+                                                demo.start();
+                                        }
+                                        const options2 = {
+                                                duration: 15,
+                                        };
+                                        let demo2 = new CountUp("animacion_numero_2", 66, options2);
+                                        if (!demo2.error) {
+                                                demo2.start();
+                                        }
+                                        const options3 = {
+                                                duration: 25,
+                                        };
+                                        let demo3 = new CountUp("animacion_numero_3", 75, options3);
+                                        if (!demo3.error) {
+                                                demo3.start();
+                                        }
+                                }
                         }
                 },
                 offset: 600,
         });
+
+        //Contador
 });
