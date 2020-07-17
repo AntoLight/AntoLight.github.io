@@ -227,8 +227,8 @@ img {
   }
 }
 
-.display-grid-fw > div {
-  margin-top: 4em;
+.display-grid-fw:first-of-type {
+  margin-top: 6em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -237,7 +237,6 @@ img {
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    margin-top: 8em;
   }
   .display-grid-fw > div {
     margin-top: 0;
@@ -385,15 +384,20 @@ img {
   }
 }
 
+.web-page-section {
+  margin: 5em auto;
+}
+
 .web-page {
   background-color: #db2e3c;
-  width: 95%;
+  width: 90%;
+  margin: auto auto;
   border: #6e0d15 10px solid;
   border-radius: 10px;
 }
 
 .web-page h2 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: #6e0d15;
   padding-top: 0.5em;
   line-height: 1.2;
@@ -402,17 +406,18 @@ img {
 @media only screen and (min-width: 768px) {
   .web-page {
     height: 24em;
+    width: 50%;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .web-page {
-    height: 22em;
+  .web-page h2 {
+    font-size: 3rem;
+    color: #6e0d15;
+    padding-top: 0.5em;
+    line-height: 1.2;
   }
 }
 
 .web-page-content {
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .web-page-content div {
@@ -420,16 +425,18 @@ img {
   margin: 1.5em 0.5em 0 0.5em;
   background-color: #bd9393;
   border-radius: 10px;
+  padding: 0.7em;
 }
 
 .web-page-content div p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
 .web-page-content div span {
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -443,8 +450,13 @@ img {
     margin: 1em 0.3em 0 0.3em;
   }
   .web-page-content div p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.4;
+  }
+  .web-page-content div span {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.3;
   }
 }
 
@@ -453,7 +465,6 @@ img {
     margin: 1em 0.5em 0 0.5em;
   }
   .web-page-content div p {
-    font-size: 1.35rem;
     line-height: 1.7;
   }
 }

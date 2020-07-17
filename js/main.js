@@ -71,11 +71,9 @@ $(document).ready(function () {
                 window.addEventListener("resize", mediaSize, false);
         })(jQuery);
 
-        //Freelancer Animation
-        var freelancer_square = $(".center-freelancer");
+        //Freelancer Animation-1
+        var freelancer_square = $("#freelancer_1");
         freelancer_square.css({ visibility: "hidden" });
-        var web_page = $(".web-page");
-        var web_page_content = $(".web-page-content-div");
         $(".center-freelancer div h1, .center-freelancer div p").hide();
         var waypoint = new Waypoint({
                 element: $(freelancer_square),
@@ -88,33 +86,62 @@ $(document).ready(function () {
                                         $(
                                                 ".center-freelancer div h1, .center-freelancer div p"
                                         ).fadeIn(4000);
-                                        web_page_content.addClass("activo-web-all-div");
-                                        const options = {
-                                                duration: 5,
-                                        };
-                                        let demo = new CountUp("animacion_numero_1", 94, options);
-                                        if (!demo.error) {
-                                                demo.start();
-                                        }
-                                        const options2 = {
-                                                duration: 15,
-                                        };
-                                        let demo2 = new CountUp("animacion_numero_2", 66, options2);
-                                        if (!demo2.error) {
-                                                demo2.start();
-                                        }
-                                        const options3 = {
-                                                duration: 25,
-                                        };
-                                        let demo3 = new CountUp("animacion_numero_3", 75, options3);
-                                        if (!demo3.error) {
-                                                demo3.start();
-                                        }
                                 }
                         }
                 },
                 offset: 600,
         });
 
+        //Web-Page-Content
+        var web_page = $(".web-page");
+        var web_page_content = $(".web-page-content-div");
+        var waypoint = new Waypoint({
+                element: $(web_page),
+                handler: function (direction) {
+                        this.destroy();
+                        if (direction == "down") {
+                                web_page_content.addClass("activo-web-all-div");
+                                const options = {
+                                        duration: 5,
+                                };
+                                let demo = new CountUp("animacion_numero_1", 94, options);
+                                if (!demo.error) {
+                                        demo.start();
+                                }
+                                const options2 = {
+                                        duration: 15,
+                                };
+                                let demo2 = new CountUp("animacion_numero_2", 66, options2);
+                                if (!demo2.error) {
+                                        demo2.start();
+                                }
+                                const options3 = {
+                                        duration: 25,
+                                };
+                                let demo3 = new CountUp("animacion_numero_3", 75, options3);
+                                if (!demo3.error) {
+                                        demo3.start();
+                                }
+                        }
+                },
+                offset: 600,
+        });
+        // Freelancer Animacion-2
+        var freelancer_square2 = $("#freelancer_2");
+        freelancer_square2.css({ visibility: "hidden" });
+        var waypoint = new Waypoint({
+                element: $(freelancer_square2),
+                handler: function (direction) {
+                        this.destroy();
+                        if (direction == "down") {
+                                freelancer_square2.addClass("activo-freelancer");
+                                freelancer_square2.css({ visibility: "visible" });
+                                $(".center-freelancer div h1, .center-freelancer div p").fadeIn(
+                                        4000
+                                );
+                        }
+                },
+                offset: 600,
+        });
         //Contador
 });
