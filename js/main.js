@@ -80,13 +80,11 @@ $(document).ready(function () {
                 handler: function (direction) {
                         this.destroy();
                         if (direction == "down") {
-                                if (hero_desktop.height() > 0 && hero_movile.height() > 0) {
-                                        freelancer_square.addClass("activo-freelancer");
-                                        freelancer_square.css({ visibility: "visible" });
-                                        $(
-                                                ".center-freelancer div h1, .center-freelancer div p"
-                                        ).fadeIn(4000);
-                                }
+                                freelancer_square.addClass("activo-freelancer");
+                                freelancer_square.css({ visibility: "visible" });
+                                $(".center-freelancer div h1, .center-freelancer div p").fadeIn(
+                                        4000
+                                );
                         }
                 },
                 offset: 600,
