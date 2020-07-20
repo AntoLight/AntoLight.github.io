@@ -384,6 +384,11 @@ img {
   }
 }
 
+.images-lay a img {
+  width: 10em;
+  height: 5em;
+}
+
 .web-page-section {
   margin: 5em auto;
 }
