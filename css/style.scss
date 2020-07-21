@@ -55,7 +55,7 @@ h4 {
 p {
         font-family: $fuente-texto;
         text-align: center;
-        margin: 0 auto;
+        margin: 0 0;
 }
 a {
         font-family: $fuente-texto;
@@ -250,7 +250,8 @@ img {
 .about-me {
         margin: 5em auto;
         .about-me-content {
-                width: 70%;
+                width: 90%;
+
                 h2 {
                         text-align: left;
                         font-size: 6.5rem;
@@ -258,10 +259,31 @@ img {
                         border-bottom: 5px $color-principal-oscuro dashed;
                 }
                 p {
+                        background-color: $color-principal-liviano;
+                        border-radius: 10px;
+                        border: 5px $color-principal-oscuro solid;
+                        padding: 0.5em 1em;
                         text-align: left;
                         line-height: 2;
                         font-size: 1.8rem;
                         margin-top: 1em;
+                        span {
+                                font-weight: 900;
+                                font-size: 1.9rem;
+                        }
+                        i {
+                                margin-right: 0.5em;
+                                font-size: 2rem;
+                                color: $color-secundario-rojo;
+                        }
+                }
+        }
+}
+
+@media only screen and (min-width: 768px) {
+        .about-me {
+                .about-me-content {
+                        width: 70%;
                 }
         }
 }
@@ -642,6 +664,27 @@ img {
                 }
         }
 }
-//My pages
 
-//Barra Header
+//Footer
+footer {
+        background-color: rgb(56, 56, 56);
+        padding: 1em 1.5em;
+        margin-top: 5em;
+        .barra-footer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                p {
+                        text-align: start;
+                        color: rgb(189, 189, 189);
+                        border-right: 3px rgb(26, 25, 25) solid;
+                }
+                div {
+                        text-align: end;
+                        a {
+                                color: rgb(189, 189, 189);
+                                margin-right: 2em;
+                        }
+                }
+        }
+}
+//My pages
