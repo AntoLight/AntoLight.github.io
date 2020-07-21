@@ -4,22 +4,6 @@ $(document).ready(function () {
         var hero_desktop = $("#hero_desktop");
         var hero_movile = $("#hero_movile");
 
-        //Cambio de Hero
-        (function ($) {
-                function mediaSize() {
-                        if (window.matchMedia("(min-width: 768px)").matches) {
-                                hero_desktop.show();
-                                hero_movile.hide();
-                        } else {
-                                hero_movile.show();
-                                hero_desktop.hide();
-                        }
-                }
-
-                mediaSize();
-
-                window.addEventListener("resize", mediaSize, false);
-        })(jQuery);
         //Variables Resize Menu inicial
         var barra_hero = $("#barra_hero");
         var barra_header = $("#barra_header");
@@ -87,7 +71,7 @@ $(document).ready(function () {
                                 );
                         }
                 },
-                offset: 600,
+                offset: 450,
         });
 
         //Web-Page-Content
@@ -139,7 +123,7 @@ $(document).ready(function () {
                                 );
                         }
                 },
-                offset: 600,
+                offset: 800,
         });
         //Contador
 });

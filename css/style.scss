@@ -74,12 +74,6 @@ img {
         width: 90%;
         margin: 0 auto;
 }
-@media only screen and (min-width: 768px) {
-        .contenedor {
-                width: 70%;
-                margin: 0 auto;
-        }
-}
 
 .seccion {
         margin: 3em inherit;
@@ -90,6 +84,22 @@ img {
 }
 // Pagina Principal
 
+//Hero change
+
+.img-hero-movil {
+        display: none;
+}
+.img-hero-desk {
+        display: block;
+}
+@media only screen and (max-width: 768px) {
+        .img-hero-movil {
+                display: block;
+        }
+        .img-hero-desk {
+                display: none;
+        }
+}
 //Header
 .hero {
         position: relative;
@@ -235,9 +245,29 @@ img {
         }
 }
 
+//Section About Me
+
+.about-me {
+        margin: 5em auto;
+        .about-me-content {
+                width: 70%;
+                h2 {
+                        text-align: left;
+                        font-size: 6.5rem;
+                        color: $color-principal-oscuro;
+                        border-bottom: 5px $color-principal-oscuro dashed;
+                }
+                p {
+                        text-align: left;
+                        line-height: 2;
+                        font-size: 1.8rem;
+                        margin-top: 1em;
+                }
+        }
+}
 // Grid content Freelnace-WebPage
 .display-grid-fw:first-of-type {
-        margin-top: 6em;
+        margin-top: 8em;
 }
 @media only screen and (min-width: 768px) {
         .display-grid-fw {
@@ -269,7 +299,7 @@ img {
                 }
                 p {
                         margin-top: 1em;
-                        line-height: 2;
+                        line-height: 1.8;
                         font-size: 1.2rem;
                 }
                 h2 {
@@ -302,30 +332,44 @@ img {
 
 @media only screen and (min-width: 400px) {
         .center-freelancer {
-                width: 80%;
-                padding: 2em 0;
-                border-right: $color-principal-oscuro 20px solid;
+                height: 22em;
+
+                .center-freelancer-content {
+                        p {
+                                margin-top: 0.5em;
+                                line-height: 1.6;
+                                font-size: 0.95em;
+                        }
+                }
+        }
+}
+
+@media only screen and (min-width: 768px) {
+        .center-freelancer {
+                height: 20em;
+
+                .center-freelancer-content {
+                        p {
+                                margin-top: 0.7em;
+                                line-height: 1.7;
+                                font-size: 0.95em;
+                        }
+                }
+        }
+}
+@media only screen and (min-width: 998px) {
+        .center-freelancer {
+                height: 18em;
+
                 .center-freelancer-content {
                         p {
                                 margin-top: 1em;
                                 line-height: 1.8;
                                 font-size: 1em;
                         }
-                        h2 {
-                                font-size: 2em;
-                                line-height: 1;
-                        }
                 }
         }
-
-        .icono-1 {
-                font-size: 3em;
-        }
-        .icono-2 {
-                font-size: 3em;
-        }
 }
-
 //Freelancer Page
 .freelance-page {
         text-align: right;
@@ -362,22 +406,28 @@ img {
 }
 
 //Examples layouts
+@media only screen and (min-width: 768px) {
+        .layouts {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+        }
+}
 .content-lay {
+        margin-top: 8em;
         h2 {
                 color: $color-principal-oscuro;
                 font-size: 3rem;
                 margin-bottom: 0.5em;
                 i {
-                        margin-right: 0.3em;
+                        margin-right: 0.5em;
                 }
         }
-        .images-lay {
+        .images-lay-desk,
+        .images-lay-mobile {
                 text-align: center;
                 border: 3px $color-principal-oscuro solid;
                 margin: 1em;
                 a img {
-                        width: 12em;
-                        height: 7em;
                         margin: 0.5em;
                         border: 3px $color-principal-oscuro solid;
                         border-radius: 10px;
@@ -388,6 +438,18 @@ img {
                         -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.64);
                         -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.64);
                         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.64);
+                }
+        }
+        .images-lay-desk {
+                a img {
+                        width: 12em;
+                        height: 7.6em;
+                }
+        }
+        .images-lay-mobile {
+                a img {
+                        width: 5.8em;
+                        height: 16em;
                 }
         }
 }
@@ -403,7 +465,8 @@ img {
 // Web page Information
 
 .web-page-section {
-        margin: 5em auto;
+        margin: 8em auto;
+        position: relative;
 }
 
 .web-page {
@@ -479,6 +542,89 @@ img {
                                 line-height: 1.7;
                         }
                 }
+        }
+}
+
+//Web Page Barras
+
+.barra-web-page-1 {
+        background-color: #6e0d15;
+        position: absolute;
+        top: 175px;
+        left: 0;
+        width: 20.3em;
+        height: 2em;
+        z-index: -1;
+}
+
+.barra-web-page-2 {
+        background-color: #6e0d15;
+        position: absolute;
+        top: 175px;
+        right: 0;
+        width: 20.3em;
+        height: 2em;
+        z-index: -1;
+}
+
+// Web Page Icons
+
+.web-page-section i:nth-child(1) {
+        position: absolute;
+        top: -100px;
+        left: 75px;
+        color: #6e0d15;
+        font-size: 7rem;
+}
+
+.web-page-section i:nth-child(2) {
+        position: absolute;
+        top: -100px;
+        right: 75px;
+        color: #6e0d15;
+        font-size: 7rem;
+}
+
+.web-page-section i:nth-child(5) {
+        position: absolute;
+        bottom: -100px;
+        left: 75px;
+        color: #6e0d15;
+        font-size: 7rem;
+}
+
+.web-page-section i:nth-child(6) {
+        position: absolute;
+        bottom: -100px;
+        right: 75px;
+        color: #6e0d15;
+        font-size: 7rem;
+}
+@media only screen and (min-width: 768px) {
+        .web-page-section i:nth-child(1) {
+                top: 50px;
+                left: 115px;
+                right: unset;
+        }
+
+        .web-page-section i:nth-child(2) {
+                top: 265px;
+                left: 115px;
+                right: unset;
+        }
+
+        .web-page-section i:nth-child(5) {
+                top: 50px;
+                right: 115px;
+                left: unset;
+                bottom: unset;
+        }
+
+        .web-page-section i:nth-child(6) {
+                top: 265px;
+                right: 130px;
+                left: unset;
+                bottom: unset;
         }
 }
 // Web page Animacion
