@@ -20,6 +20,7 @@ $color-principal: rgb(97, 26, 132);
 $color-principal-oscuro: rgb(57, 14, 78);
 $color-principal-liviano: rgb(112, 47, 173);
 $color-secundario-rojo: #db2e3c;
+$color-secundario-rojo-oscuro: #6e0d15;
 $color-secundario-naranja: #ed5d45;
 $color-secundario-naranja-oscuro: #ff7259;
 @mixin transform($property) {
@@ -52,6 +53,13 @@ h4 {
         text-align: center;
         line-height: 1;
 }
+h2 {
+        font-size: 6rem;
+}
+h3 {
+        font-size: 3rem;
+}
+
 p {
         font-family: $fuente-texto;
         text-align: center;
@@ -62,7 +70,6 @@ a {
         text-decoration: none;
         color: black;
         text-align: center;
-        margin: 0 auto;
 }
 
 img {
@@ -76,7 +83,12 @@ img {
 }
 
 .seccion {
-        margin: 3em inherit;
+        margin: 8em auto;
+}
+@media only screen and (min-width: 768px) {
+        .seccion {
+                margin: 12em auto;
+        }
 }
 
 .revertir {
@@ -248,13 +260,12 @@ img {
 //Section About Me
 
 .about-me {
-        margin: 5em auto;
         .about-me-content {
                 width: 90%;
 
                 h2 {
                         text-align: left;
-                        font-size: 6.5rem;
+                        font-size: 6rem;
                         color: $color-principal-oscuro;
                         border-bottom: 5px $color-principal-oscuro dashed;
                 }
@@ -288,9 +299,7 @@ img {
         }
 }
 // Grid content Freelnace-WebPage
-.display-grid-fw:first-of-type {
-        margin-top: 8em;
-}
+
 @media only screen and (min-width: 768px) {
         .display-grid-fw {
                 display: grid;
@@ -302,7 +311,7 @@ img {
 .center-freelancer {
         background-color: $color-principal-liviano;
         width: 80%;
-        height: 18em;
+        height: 24em;
         transform: scaleX(1);
         transform-origin: left;
         border-right: $color-principal-oscuro 15px solid;
@@ -310,22 +319,20 @@ img {
         -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
         -moz-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
         box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
-        margin-top: 1em;
 
         .center-freelancer-content {
                 margin: 0 0.5em 0 1.5em;
 
-                h2,
+                h3,
                 p {
                         text-align: left;
                 }
                 p {
                         margin-top: 1em;
                         line-height: 1.8;
-                        font-size: 1.2rem;
+                        font-size: 1.4rem;
                 }
-                h2 {
-                        font-size: 2.5rem;
+                h3 {
                         color: $color-principal-oscuro;
                 }
                 span {
@@ -397,7 +404,7 @@ img {
         text-align: right;
         .center-freelancer-content {
                 transform: scale(-1, 1);
-                h2,
+                h3,
                 p {
                         text-align: right;
                 }
@@ -435,10 +442,8 @@ img {
         }
 }
 .content-lay {
-        margin-top: 8em;
-        h2 {
+        h3 {
                 color: $color-principal-oscuro;
-                font-size: 3rem;
                 margin-bottom: 0.5em;
                 i {
                         margin-right: 0.5em;
@@ -475,31 +480,34 @@ img {
                 }
         }
 }
+.content-lay:nth-of-type(2) {
+        margin-top: 5em;
+}
 
 @media only screen and (min-width: 768px) {
         .desktop-lay {
-                margin-top: 0;
                 .images-lay {
                         margin: 0 3em 0 0;
                 }
+        }
+        .content-lay:nth-of-type(2) {
+                margin-top: 0em;
         }
 }
 // Web page Information
 
 .web-page-section {
-        margin: 8em auto;
         position: relative;
 }
 
 .web-page {
         background-color: $color-secundario-rojo;
         width: 90%;
-        margin: auto auto;
-        border: #6e0d15 10px solid;
+        margin: 15em auto;
+        border: $color-secundario-rojo-oscuro 10px solid;
         border-radius: 10px;
-        h2 {
-                font-size: 2.3rem;
-                color: #6e0d15;
+        h3 {
+                color: $color-secundario-rojo-oscuro;
                 padding-top: 0.5em;
                 line-height: 1.2;
         }
@@ -508,9 +516,9 @@ img {
         .web-page {
                 height: 24em;
                 width: 50%;
-                h2 {
-                        font-size: 3rem;
-                        color: #6e0d15;
+                margin: 8em auto;
+                h3 {
+                        color: $color-secundario-rojo-oscuro;
                         padding-top: 0.5em;
                         line-height: 1.2;
                 }
@@ -527,8 +535,8 @@ img {
                 padding: 0.7em;
 
                 p {
-                        font-size: 1.2rem;
-                        line-height: 1.8;
+                        font-size: 1.4rem;
+                        line-height: 1.6;
                 }
                 span {
                         font-weight: 900;
@@ -570,7 +578,7 @@ img {
 //Web Page Barras
 
 .barra-web-page-1 {
-        background-color: #6e0d15;
+        background-color: $color-secundario-rojo-oscuro;
         position: absolute;
         top: 175px;
         left: 0;
@@ -580,7 +588,7 @@ img {
 }
 
 .barra-web-page-2 {
-        background-color: #6e0d15;
+        background-color: $color-secundario-rojo-oscuro;
         position: absolute;
         top: 175px;
         right: 0;
@@ -595,7 +603,7 @@ img {
         position: absolute;
         top: -100px;
         left: 75px;
-        color: #6e0d15;
+        color: $color-secundario-rojo-oscuro;
         font-size: 7rem;
 }
 
@@ -603,7 +611,7 @@ img {
         position: absolute;
         top: -100px;
         right: 75px;
-        color: #6e0d15;
+        color: $color-secundario-rojo-oscuro;
         font-size: 7rem;
 }
 
@@ -611,7 +619,7 @@ img {
         position: absolute;
         bottom: -100px;
         left: 75px;
-        color: #6e0d15;
+        color: $color-secundario-rojo-oscuro;
         font-size: 7rem;
 }
 
@@ -619,7 +627,7 @@ img {
         position: absolute;
         bottom: -100px;
         right: 75px;
-        color: #6e0d15;
+        color: $color-secundario-rojo-oscuro;
         font-size: 7rem;
 }
 @media only screen and (min-width: 768px) {
@@ -665,6 +673,79 @@ img {
         }
 }
 
+//Contact
+
+.contact {
+        background-image: url(../img/Hotmail.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin-top: 15em;
+        position: relative;
+        border-top: 5px $color-secundario-rojo-oscuro solid;
+        border-bottom: 5px $color-secundario-rojo-oscuro solid;
+        .contact-content {
+                padding: 1em 1.5em;
+                position: relative;
+
+                h3,
+                p,
+                a {
+                        text-align: left;
+                        color: rgba(0, 0, 0, 1);
+                }
+                h3 {
+                        color: $color-principal-oscuro;
+                }
+
+                p {
+                        font-size: 1.5rem;
+                        margin: 1em 0;
+                        font-weight: 900;
+                        span {
+                                font-size: 1.9rem;
+                                display: inline-block;
+                                margin-top: 1em;
+                                color: $color-principal-oscuro;
+                        }
+                }
+                a {
+                        @include button(
+                                $color-principal-liviano,
+                                0.5em,
+                                1.5em,
+                                0,
+                                0,
+                                10px,
+                                initial
+                        );
+                        display: inline-block;
+                        font-weight: 900;
+                        font-size: 1.9rem;
+                        color: $color-principal-oscuro;
+                        transition: 1s all ease-in-out;
+                }
+                a:hover {
+                        @include transform(scale(1.1));
+                }
+        }
+}
+.contact:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+}
+@media only screen and (min-width: 768px) {
+        .contact {
+                margin-top: 8em;
+
+                .contact-content {
+                }
+        }
+}
 //Footer
 footer {
         background-color: rgb(56, 56, 56);
@@ -678,7 +759,7 @@ footer {
                         color: rgb(189, 189, 189);
                         border-right: 3px rgb(26, 25, 25) solid;
                 }
-                div {
+                nav {
                         text-align: end;
                         a {
                                 color: rgb(189, 189, 189);

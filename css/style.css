@@ -32,6 +32,14 @@ h4 {
   line-height: 1;
 }
 
+h2 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
 p {
   font-family: "Inter", sans-serif;
   text-align: center;
@@ -43,7 +51,6 @@ a {
   text-decoration: none;
   color: black;
   text-align: center;
-  margin: 0 auto;
 }
 
 img {
@@ -57,7 +64,13 @@ img {
 }
 
 .seccion {
-  margin: 3em inherit;
+  margin: 8em auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .seccion {
+    margin: 12em auto;
+  }
 }
 
 .revertir {
@@ -238,17 +251,13 @@ img {
   }
 }
 
-.about-me {
-  margin: 5em auto;
-}
-
 .about-me .about-me-content {
   width: 90%;
 }
 
 .about-me .about-me-content h2 {
   text-align: left;
-  font-size: 6.5rem;
+  font-size: 6rem;
   color: #390e4e;
   border-bottom: 5px #390e4e dashed;
 }
@@ -281,10 +290,6 @@ img {
   }
 }
 
-.display-grid-fw:first-of-type {
-  margin-top: 8em;
-}
-
 @media only screen and (min-width: 768px) {
   .display-grid-fw {
     display: -ms-grid;
@@ -297,7 +302,7 @@ img {
 .center-freelancer {
   background-color: #702fad;
   width: 80%;
-  height: 18em;
+  height: 24em;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
@@ -306,14 +311,13 @@ img {
   padding: 1.5em 0;
   -webkit-box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
   box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.64);
-  margin-top: 1em;
 }
 
 .center-freelancer .center-freelancer-content {
   margin: 0 0.5em 0 1.5em;
 }
 
-.center-freelancer .center-freelancer-content h2,
+.center-freelancer .center-freelancer-content h3,
 .center-freelancer .center-freelancer-content p {
   text-align: left;
 }
@@ -321,11 +325,10 @@ img {
 .center-freelancer .center-freelancer-content p {
   margin-top: 1em;
   line-height: 1.8;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
-.center-freelancer .center-freelancer-content h2 {
-  font-size: 2.5rem;
+.center-freelancer .center-freelancer-content h3 {
   color: #390e4e;
 }
 
@@ -396,7 +399,7 @@ img {
           transform: scale(-1, 1);
 }
 
-.freelance-page .center-freelancer-content h2,
+.freelance-page .center-freelancer-content h3,
 .freelance-page .center-freelancer-content p {
   text-align: right;
 }
@@ -455,17 +458,12 @@ img {
   }
 }
 
-.content-lay {
-  margin-top: 8em;
-}
-
-.content-lay h2 {
+.content-lay h3 {
   color: #390e4e;
-  font-size: 3rem;
   margin-bottom: 0.5em;
 }
 
-.content-lay h2 i {
+.content-lay h3 i {
   margin-right: 0.5em;
 }
 
@@ -503,30 +501,32 @@ img {
   height: 16em;
 }
 
+.content-lay:nth-of-type(2) {
+  margin-top: 5em;
+}
+
 @media only screen and (min-width: 768px) {
-  .desktop-lay {
-    margin-top: 0;
-  }
   .desktop-lay .images-lay {
     margin: 0 3em 0 0;
+  }
+  .content-lay:nth-of-type(2) {
+    margin-top: 0em;
   }
 }
 
 .web-page-section {
-  margin: 8em auto;
   position: relative;
 }
 
 .web-page {
   background-color: #db2e3c;
   width: 90%;
-  margin: auto auto;
+  margin: 15em auto;
   border: #6e0d15 10px solid;
   border-radius: 10px;
 }
 
-.web-page h2 {
-  font-size: 2.3rem;
+.web-page h3 {
   color: #6e0d15;
   padding-top: 0.5em;
   line-height: 1.2;
@@ -536,9 +536,9 @@ img {
   .web-page {
     height: 24em;
     width: 50%;
+    margin: 8em auto;
   }
-  .web-page h2 {
-    font-size: 3rem;
+  .web-page h3 {
     color: #6e0d15;
     padding-top: 0.5em;
     line-height: 1.2;
@@ -558,8 +558,8 @@ img {
 }
 
 .web-page-content div p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .web-page-content div span {
@@ -702,6 +702,80 @@ img {
   }
 }
 
+.contact {
+  background-image: url(../img/Hotmail.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 15em;
+  position: relative;
+  border-top: 5px #6e0d15 solid;
+  border-bottom: 5px #6e0d15 solid;
+}
+
+.contact .contact-content {
+  padding: 1em 1.5em;
+  position: relative;
+}
+
+.contact .contact-content h3,
+.contact .contact-content p,
+.contact .contact-content a {
+  text-align: left;
+  color: black;
+}
+
+.contact .contact-content h3 {
+  color: #390e4e;
+}
+
+.contact .contact-content p {
+  font-size: 1.5rem;
+  margin: 1em 0;
+  font-weight: 900;
+}
+
+.contact .contact-content p span {
+  font-size: 1.9rem;
+  display: inline-block;
+  margin-top: 1em;
+  color: #390e4e;
+}
+
+.contact .contact-content a {
+  background-color: #702fad;
+  padding: 0.5em 1.5em;
+  margin: 0 0;
+  border-radius: 10px;
+  font-size: initial;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.9rem;
+  color: #390e4e;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+.contact .contact-content a:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.contact:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    margin-top: 8em;
+  }
+}
+
 footer {
   background-color: #383838;
   padding: 1em 1.5em;
@@ -721,11 +795,11 @@ footer .barra-footer p {
   border-right: 3px #1a1919 solid;
 }
 
-footer .barra-footer div {
+footer .barra-footer nav {
   text-align: end;
 }
 
-footer .barra-footer div a {
+footer .barra-footer nav a {
   color: #bdbdbd;
   margin-right: 2em;
 }
