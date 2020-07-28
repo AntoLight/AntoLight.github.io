@@ -592,8 +592,9 @@ img {
 
 .web-page .web-page-content div span {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   line-height: 1;
+  color: #6e0d15;
 }
 
 @media only screen and (min-width: 768px) {
@@ -789,7 +790,7 @@ img {
 }
 
 .contact {
-  background-image: url(../img/Hotmail.jpg);
+  background-image: url(../images/Hotmail.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -891,5 +892,47 @@ footer .barra-footer nav {
 footer .barra-footer nav a {
   color: #bdbdbd;
   margin-right: 2em;
+}
+
+.activo-page {
+  border: solid 3px #6e0d15;
+  padding: 0.3em 0.7em;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
+.barra-hero-secundary {
+  background-color: #383838;
+}
+
+.barra-hero-secundary .barra-hero-secundary-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 0;
+}
+
+.barra-hero-secundary .barra-hero-secundary-content a,
+.barra-hero-secundary .barra-hero-secundary-content nav a {
+  font-weight: 900;
+  color: #bdbdbd;
+}
+
+.barra-hero-secundary .barra-hero-secundary-content .logo {
+  font-family: wishper-script;
+  font-size: 2rem;
+}
+
+.barra-hero-secundary .barra-hero-secundary-content nav a {
+  margin-right: 2em;
+}
+
+.barra-hero-secundary .barra-hero-secundary-content nav a:last-of-type {
+  margin-left: 0;
 }
 /*# sourceMappingURL=style.css.map */
