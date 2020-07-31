@@ -119,36 +119,14 @@ $(document).ready(function () {
         if (!demo3.error) {
           demo3.start();
         }
+        $("#icono-web1").addClass("animacion-iconos-webPageOne");
+        $("#icono-web2").addClass("animacion-iconos-webPageOne");
+        $("#icono-web3").addClass("animacion-iconos-webPageTwo");
+        $("#icono-web4").addClass("animacion-iconos-webPageTwo");
       }
     },
     offset: 600,
   });
-
-  //Web page Animation Desktop
-  (function ($) {
-    function mediaSize() {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        var waypoint = new Waypoint({
-          element: $(web_page),
-          handler: function (direction) {
-            this.destroy();
-            if (direction == "down") {
-              $("#icono-web1").addClass("animacion-iconos-desktop1");
-              $("#icono-web2").addClass("animacion-iconos-desktop1");
-              $("#icono-web3").addClass("animacion-iconos-desktop2");
-              $("#icono-web4").addClass("animacion-iconos-desktop2");
-            }
-          },
-          offset: 800,
-        });
-      } else {
-      }
-    }
-
-    mediaSize();
-
-    window.addEventListener("resize", mediaSize, false);
-  })(jQuery);
 
   // Freelancer Animacion-2
 });

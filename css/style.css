@@ -5,7 +5,6 @@ html {
   font-size: 62.5%;
   background-color: #fd9496;
   min-width: 100%;
-  overflow: hidden;
 }
 
 *,
@@ -730,6 +729,7 @@ img {
 
 .web-page-section {
   position: relative;
+  overflow: hidden;
 }
 
 .web-page {
@@ -815,7 +815,7 @@ img {
 .barra-web-page-1 {
   background-color: #6e0d15;
   position: absolute;
-  top: 175px;
+  top: 550px;
   left: 0;
   width: 20.3em;
   height: 2em;
@@ -825,91 +825,94 @@ img {
 .barra-web-page-2 {
   background-color: #6e0d15;
   position: absolute;
-  top: 175px;
+  top: 550px;
   right: 0;
   width: 20.3em;
   height: 2em;
   z-index: -1;
 }
 
-.web-page-section i:nth-child(1) {
-  position: absolute;
-  top: -100px;
-  left: 75px;
+@media only screen and (min-width: 768px) {
+  .barra-web-page-1 {
+    top: 300px;
+  }
+  .barra-web-page-2 {
+    top: 300px;
+  }
+}
+
+.web-page-section i:nth-child(1),
+.web-page-section i:nth-child(2),
+.web-page-section i:nth-child(5),
+.web-page-section i:nth-child(6) {
   color: #6e0d15;
   font-size: 7rem;
   overflow: hidden;
+  position: absolute;
+}
+
+.web-page-section i:nth-child(1) {
+  top: 125px;
+  left: 50px;
 }
 
 .web-page-section i:nth-child(2) {
-  position: absolute;
-  top: -100px;
-  right: 75px;
-  color: #6e0d15;
-  font-size: 7rem;
-  overflow: hidden;
+  top: 125px;
+  right: 50px;
 }
 
 .web-page-section i:nth-child(5) {
-  position: absolute;
-  bottom: -100px;
-  left: 75px;
-  color: #6e0d15;
-  font-size: 7rem;
-  overflow: hidden;
+  bottom: 125px;
+  left: 50px;
 }
 
 .web-page-section i:nth-child(6) {
-  position: absolute;
-  bottom: -100px;
-  right: 75px;
-  color: #6e0d15;
-  font-size: 7rem;
-  overflow: hidden;
+  bottom: 125px;
+  right: 50px;
 }
 
 @media only screen and (min-width: 768px) {
   .web-page-section i:nth-child(1) {
-    top: 50px;
+    top: 175px;
     left: 115px;
     right: unset;
-    -webkit-transform: translateX(-5em);
-            transform: translateX(-5em);
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em);
   }
   .web-page-section i:nth-child(2) {
-    top: 265px;
+    top: 400px;
     left: 115px;
     right: unset;
-    -webkit-transform: translateX(-5em);
-            transform: translateX(-5em);
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em);
   }
   .web-page-section i:nth-child(5) {
-    top: 50px;
+    top: 175px;
     right: 115px;
     left: unset;
     bottom: unset;
-    -webkit-transform: translateX(5em);
-            transform: translateX(5em);
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
   }
   .web-page-section i:nth-child(6) {
-    top: 265px;
+    top: 400px;
     right: 130px;
     left: unset;
     bottom: unset;
-    -webkit-transform: translateX(5em);
-            transform: translateX(5em);
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
   }
 }
 
-.animacion-iconos-desktop1 {
+.animacion-iconos-webPageOne {
   -webkit-animation: 5s forwards animacion-iconos-webPage1;
           animation: 5s forwards animacion-iconos-webPage1;
 }
 
 @-webkit-keyframes animacion-iconos-webPage1 {
   from {
-    -webkit-transform: translateX(-5em);
-            transform: translateX(-5em);
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em);
   }
   to {
     -webkit-transform: translateX(0);
@@ -919,8 +922,8 @@ img {
 
 @keyframes animacion-iconos-webPage1 {
   from {
-    -webkit-transform: translateX(-5em);
-            transform: translateX(-5em);
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em);
   }
   to {
     -webkit-transform: translateX(0);
@@ -928,15 +931,15 @@ img {
   }
 }
 
-.animacion-iconos-desktop2 {
+.animacion-iconos-webPageTwo {
   -webkit-animation: 5s forwards animacion-iconos-webPage2;
           animation: 5s forwards animacion-iconos-webPage2;
 }
 
 @-webkit-keyframes animacion-iconos-webPage2 {
   from {
-    -webkit-transform: translateX(5em);
-            transform: translateX(5em);
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
   }
   to {
     -webkit-transform: translateX(0);
@@ -946,8 +949,8 @@ img {
 
 @keyframes animacion-iconos-webPage2 {
   from {
-    -webkit-transform: translateX(5em);
-            transform: translateX(5em);
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
   }
   to {
     -webkit-transform: translateX(0);
