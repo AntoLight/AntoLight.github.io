@@ -70,7 +70,7 @@ $(document).ready(function () {
         $(".center-freelancer div h1, .center-freelancer div p").fadeIn(4000);
       }
     },
-    offset: 850,
+    offset: 1250,
   });
 
   // Freelancer Animacion-2
@@ -125,8 +125,22 @@ $(document).ready(function () {
         $("#icono-web4").addClass("animacion-iconos-webPageTwo");
       }
     },
-    offset: 600,
+    offset: 800,
   });
 
-  // Freelancer Animacion-2
+  // Choose Me
+  var choose_me = $(".choose-me");
+  var waypoint = new Waypoint({
+    element: $(choose_me),
+    handler: function (direction) {
+      this.destroy();
+      if (direction == "down") {
+        $(".choose-me-parts").addClass("fadeInBottom");
+        $(".choose-me-parts").css({
+          visibility: "visible",
+        });
+      }
+    },
+    offset: 800,
+  });
 });
