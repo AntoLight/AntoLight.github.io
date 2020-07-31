@@ -9,6 +9,7 @@ $(document).ready(function () {
   var barra_header = $("#barra_header");
   var hero = $("#hero");
   var menu = $("#menu");
+
   //BarraHero a BarraHeader
   (function ($) {
     function mediaSize() {
@@ -72,7 +73,24 @@ $(document).ready(function () {
     offset: 850,
   });
 
+  // Freelancer Animacion-2
+  var freelancer_square2 = $("#freelancer_2");
+  freelancer_square2.css({ visibility: "hidden" });
+  var waypoint = new Waypoint({
+    element: $(freelancer_square2),
+    handler: function (direction) {
+      this.destroy();
+      if (direction == "down") {
+        freelancer_square2.addClass("activo-freelancer");
+        freelancer_square2.css({ visibility: "visible" });
+        $(".center-freelancer div h1, .center-freelancer div p").fadeIn(4000);
+      }
+    },
+    offset: 800,
+  });
+
   //Web-Page-Content
+
   var web_page = $(".web-page");
   var web_page_content = $(".web-page-content-div");
   var waypoint = new Waypoint({
@@ -80,7 +98,6 @@ $(document).ready(function () {
     handler: function (direction) {
       this.destroy();
       if (direction == "down") {
-        web_page_content.addClass("activo-web-all-div");
         const options = {
           duration: 5,
         };
@@ -106,19 +123,32 @@ $(document).ready(function () {
     },
     offset: 600,
   });
-  // Freelancer Animacion-2
-  var freelancer_square2 = $("#freelancer_2");
-  freelancer_square2.css({ visibility: "hidden" });
-  var waypoint = new Waypoint({
-    element: $(freelancer_square2),
-    handler: function (direction) {
-      this.destroy();
-      if (direction == "down") {
-        freelancer_square2.addClass("activo-freelancer");
-        freelancer_square2.css({ visibility: "visible" });
-        $(".center-freelancer div h1, .center-freelancer div p").fadeIn(4000);
+
+  //Web page Animation Desktop
+  (function ($) {
+    function mediaSize() {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        var waypoint = new Waypoint({
+          element: $(web_page),
+          handler: function (direction) {
+            this.destroy();
+            if (direction == "down") {
+              $("#icono-web1").addClass("animacion-iconos-desktop1");
+              $("#icono-web2").addClass("animacion-iconos-desktop1");
+              $("#icono-web3").addClass("animacion-iconos-desktop2");
+              $("#icono-web4").addClass("animacion-iconos-desktop2");
+            }
+          },
+          offset: 800,
+        });
+      } else {
       }
-    },
-    offset: 800,
-  });
+    }
+
+    mediaSize();
+
+    window.addEventListener("resize", mediaSize, false);
+  })(jQuery);
+
+  // Freelancer Animacion-2
 });
