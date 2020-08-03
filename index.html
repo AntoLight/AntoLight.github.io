@@ -12,10 +12,10 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/vivify.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/lightbox.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Work+Sans:wght@500;900&family=Merienda+One&display=swap"
       rel="stylesheet"
@@ -104,73 +104,36 @@
       </div>
     </section>
     <!--Layouts-->
-    <section class="seccion contenedor">
-      <h2 class="h2-principal">Layouts Examples</h2>
+    <section class="seccion">
+      <h2 class="h2-principal contenedor">Layouts Examples</h2>
       <div class="layouts">
         <!-- Layout Desktop -->
         <div class="content-lay">
           <h3><i class="fas fa-desktop"></i>Desktop Layouts</h3>
-          <div class="images-lay-desk">
-            <a
-              href="images/Desktop-layout-1.jpg"
-              data-lightbox="deskt-img"
-              data-title="Artistic and Fashion Design"
-              ><img src="images/Desktop-layout-resize-1.jpg" alt=""
-            /></a>
+          <div class="background-color">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="images/Desktop-layout-1.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/Desktop-layout-2.gif" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/Desktop-layout-3.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/Desktop-layout-4.png" alt="" />
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
 
-            <a
-              href="images/Desktop-layout-2.gif"
-              data-lightbox="deskt-img"
-              data-title="Modern Design"
-              ><img src="images/Desktop-layout-resize-2.gif" alt=""
-            /></a>
-
-            <a
-              href="images/Desktop-layout-3.jpg"
-              data-lightbox="deskt-img"
-              data-title="Theme Design"
-              ><img src="images/Desktop-layout-resize-3.jpg" alt=""
-            /></a>
-
-            <a
-              href="images/Desktop-layout-4.png"
-              data-lightbox="deskt-img"
-              data-title="Colors Costum Design"
-              ><img src="images/Desktop-layout-resize-4.png" alt=""
-            /></a>
-          </div>
-        </div>
-        <!-- Layout Mobile -->
-        <div class="content-lay">
-          <h3><i class="fas fa-mobile-alt"></i>Mobile Layouts</h3>
-          <div class="images-lay-mobile">
-            <a
-              href="images/Movile-layout-1.jpg"
-              data-lightbox="movil-img"
-              data-title="Modern Design"
-              ><img src="images/Movile-layout-resize-1.jpg" alt=""
-            /></a>
-
-            <a
-              href="images/Movile-layout-2.jpg"
-              data-lightbox="movil-img"
-              data-title="Theme Desig"
-              ><img src="images/Movile-layout-resize-2.jpg" alt=""
-            /></a>
-
-            <a
-              href="images/Movile-layout-3.jpg"
-              data-lightbox="movil-img"
-              data-title="Pleasing and Geometric Design"
-              ><img src="images/Movile-layout-resize-3.jpg" alt=""
-            /></a>
-
-            <a
-              href="images/Movile-layout-4.jpg"
-              data-lightbox="movil-img"
-              data-title="Well structured design"
-              ><img src="images/Movile-layout-resize-4.jpg" alt=""
-            /></a>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -261,7 +224,7 @@
           /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         </style>
-        <div id="mc_embed_signup">
+        <div id="mc_embed_signup" class="vivify duration-1000">
           <form
             action="https://github.us17.list-manage.com/subscribe/post?u=f498bb1876a12695feef0b85f&amp;id=33f598379e"
             method="post"
@@ -414,7 +377,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/countUp.min.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="js/lightbox.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="js/main.js" type="module"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your sites ID. -->

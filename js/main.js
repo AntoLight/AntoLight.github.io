@@ -89,6 +89,23 @@ $(document).ready(function () {
     offset: 800,
   });
 
+  // Layout
+
+  var mySwiper = new Swiper(".swiper-container", {
+    // Optional parameters
+    direction: "horizontal",
+    grabCursor: true,
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // And if we need scrollbar
+  });
   //Web-Page-Content
 
   var web_page = $(".web-page");
@@ -142,5 +159,19 @@ $(document).ready(function () {
       }
     },
     offset: 800,
+  });
+
+  //Contact
+
+  var contact = $(".contact");
+  var waypoint = new Waypoint({
+    element: $(contact),
+    handler: function (direction) {
+      this.destroy();
+      if (direction == "down") {
+        $("#mc_embed_signup").addClass("fadeInRight");
+      }
+    },
+    offset: 600,
   });
 });
