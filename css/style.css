@@ -87,6 +87,18 @@ img {
   height: auto;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  font-family: "europa", sans-serif;
+  line-height: 1;
+  font-size: 2rem;
+}
+
 /**
 -------Clases Globales---------
 **/
@@ -103,6 +115,14 @@ img {
   z-index: 2;
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
+}
+
+.caja-barra {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
+  box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
+  padding: 2em 1em;
+  border-radius: 2em;
 }
 
 /**
@@ -245,19 +265,17 @@ img {
 /**
 -------Main---------
 **/
+/*** Yo ***/
 .main {
   background-color: #580cbb;
-  padding-top: 4em;
+  padding: 4em;
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
 }
 
 .main .yo {
-  padding: 2em 1em;
-  border-radius: 2em;
   width: 90%;
   text-align: center;
-  background-color: white;
 }
 
 .main .yo h2 {
@@ -292,10 +310,39 @@ img {
 
 @media only screen and (min-width: 968px) {
   .main .yo {
-    width: 50%;
+    width: 40%;
   }
   .main .yo .descripcion img {
     width: 40%;
   }
+}
+
+/*** Lenguajes ***/
+.main .lenguajes-title {
+  text-align: center;
+  padding: 0.2em 0;
+  margin: 0.8em 0;
+  color: #e1e1e1;
+}
+
+.lenguajes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.lenguajes div h2,
+.lenguajes div ul li {
+  color: #7510f7;
+  text-align: center;
+}
+
+.lenguajes div ul li {
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */
