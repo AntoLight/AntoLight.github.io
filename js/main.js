@@ -1,10 +1,10 @@
 import { CountUp } from "./countUp.min.js";
 $(document).ready(function () {
   //Barra Hero Desktop Follow
+  var barra_hero = $("#barra_hero");
   (function ($) {
     function mediaSize() {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        var barra_hero = $("#barra_hero");
+      if (window.matchMedia("(min-width: 480px)").matches) {
         var windowsAltura = $(window).height() - 825;
         var barraAltura = barra_hero.innerHeight();
         $(window).scroll(function () {
@@ -18,6 +18,27 @@ $(document).ready(function () {
           }
         });
       } else {
+      }
+    }
+
+    mediaSize();
+
+    window.addEventListener("resize", mediaSize, false);
+  })(jQuery);
+
+  //Barra Nav Celular
+  (function ($) {
+    function mediaSize() {
+      if (window.matchMedia("(max-width: 480px)").matches) {
+        $("#menu").show();
+
+        $(".links").hide();
+        $("#nav_mobile").append($("#contact"));
+        barra_hero.children().addClass("movile-menu");
+
+        $("#menu").click(function () {
+          $(".links").slideToggle();
+        });
       }
     }
 
