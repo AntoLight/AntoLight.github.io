@@ -118,6 +118,20 @@ ul {
   border-radius: 2em;
 }
 
+.animacion-grid {
+  animation: animacion-grid normal 5s;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@keyframes animacion-grid {
+  from {
+    display: block;
+  }
+  to {
+    display: grid !important;
+  }
+}
 $color-principal: #7510f7;
 $color-principal-oscuro: #580cbb;
 $color-texto-blanco: #e1e1e1;
@@ -139,14 +153,14 @@ $color-texto-blanco: #e1e1e1;
       a {
         transition: all 0.3s ease;
         font-size: 2rem;
-        margin-left: 2.5em;
+        margin-left: 1em;
       }
       a:hover {
         color: $color-principal;
       }
       a:first-child {
         margin-left: 0;
-        width: 10%;
+        width: 20%;
       }
     }
     .contact-link {
@@ -169,15 +183,21 @@ $color-texto-blanco: #e1e1e1;
 
 @media only screen and (min-width: 768px) {
   .navegacion {
-    .links {
-      a {
-        font-size: 2.2rem;
-        margin-left: 1em;
+    div {
+      .links {
+        a {
+          font-size: 2.2rem;
+          margin-left: 1.5em;
+        }
+        a:first-child {
+          margin-left: 0;
+          width: 10%;
+        }
       }
-    }
-    .contact-link {
-      a {
-        font-size: 2.2rem;
+      .contact-link {
+        a {
+          font-size: 2.2rem;
+        }
       }
     }
   }
@@ -254,7 +274,7 @@ $color-texto-blanco: #e1e1e1;
 
 .main {
   background-color: $color-principal-oscuro;
-  padding: 4em;
+  padding: 4em 1em;
   transition: all linear 0.5s;
   .yo {
     width: 90%;
@@ -263,7 +283,7 @@ $color-texto-blanco: #e1e1e1;
       color: $color-principal;
     }
     .descripcion {
-      margin-top: 2em;
+      margin-top: 1em;
       img {
         width: 60%;
         background-color: $color-principal;
@@ -282,7 +302,7 @@ $color-texto-blanco: #e1e1e1;
 @media only screen and (min-width: 768px) {
   .main {
     .yo {
-      width: 70%;
+      width: 60%;
       .descripcion {
         img {
           width: 50%;
@@ -308,6 +328,10 @@ $color-texto-blanco: #e1e1e1;
 /*** Lenguajes ***/
 
 .main {
+  display: block;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  overflow: hidden;
   .lenguajes-title {
     text-align: center;
     padding: 0.2em 0;
@@ -315,17 +339,21 @@ $color-texto-blanco: #e1e1e1;
     color: $color-texto-blanco;
   }
 }
+
 .lenguajes {
-  display: grid;
+  display: block;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 2em;
   div {
-    h2,
-    ul li {
-      color: $color-principal;
+    h2 {
+      color: $color-principal-oscuro;
       text-align: center;
     }
+    ul {
+      margin-top: 1em;
+    }
     ul li {
+      color: #222;
+      text-align: center;
       line-height: 1.5;
       font-weight: 700;
       font-size: 2.5rem;

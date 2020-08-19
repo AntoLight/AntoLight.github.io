@@ -25,4 +25,8 @@ $(document).ready(function () {
 
     window.addEventListener("resize", mediaSize, false);
   })(jQuery);
+
+  /*
+  ----Lenguajes Interactividad----
+  */
 });

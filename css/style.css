@@ -125,6 +125,32 @@ ul li {
   border-radius: 2em;
 }
 
+.animacion-grid {
+  -webkit-animation: animacion-grid normal 5s;
+          animation: animacion-grid normal 5s;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@-webkit-keyframes animacion-grid {
+  from {
+    display: block;
+  }
+  to {
+    display: grid !important;
+  }
+}
+
+@keyframes animacion-grid {
+  from {
+    display: block;
+  }
+  to {
+    display: -ms-grid !important;
+    display: grid !important;
+  }
+}
+
 /**
 -------Navegacion Header---------
 **/
@@ -157,7 +183,7 @@ ul li {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-size: 2rem;
-  margin-left: 2.5em;
+  margin-left: 1em;
 }
 
 .navegacion div .links a:hover {
@@ -166,7 +192,7 @@ ul li {
 
 .navegacion div .links a:first-child {
   margin-left: 0;
-  width: 10%;
+  width: 20%;
 }
 
 .navegacion div .contact-link a {
@@ -188,11 +214,15 @@ ul li {
 }
 
 @media only screen and (min-width: 768px) {
-  .navegacion .links a {
+  .navegacion div .links a {
     font-size: 2.2rem;
-    margin-left: 1em;
+    margin-left: 1.5em;
   }
-  .navegacion .contact-link a {
+  .navegacion div .links a:first-child {
+    margin-left: 0;
+    width: 10%;
+  }
+  .navegacion div .contact-link a {
     font-size: 2.2rem;
   }
 }
@@ -268,7 +298,7 @@ ul li {
 /*** Yo ***/
 .main {
   background-color: #580cbb;
-  padding: 4em;
+  padding: 4em 1em;
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
 }
@@ -283,7 +313,7 @@ ul li {
 }
 
 .main .yo .descripcion {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .main .yo .descripcion img {
@@ -301,7 +331,7 @@ ul li {
 
 @media only screen and (min-width: 768px) {
   .main .yo {
-    width: 70%;
+    width: 60%;
   }
   .main .yo .descripcion img {
     width: 50%;
@@ -318,6 +348,14 @@ ul li {
 }
 
 /*** Lenguajes ***/
+.main {
+  display: block;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  overflow: hidden;
+}
+
 .main .lenguajes-title {
   text-align: center;
   padding: 0.2em 0;
@@ -326,21 +364,23 @@ ul li {
 }
 
 .lenguajes {
-  display: -ms-grid;
-  display: grid;
+  display: block;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -webkit-column-gap: 2em;
-          column-gap: 2em;
 }
 
-.lenguajes div h2,
-.lenguajes div ul li {
-  color: #7510f7;
+.lenguajes div h2 {
+  color: #580cbb;
   text-align: center;
 }
 
+.lenguajes div ul {
+  margin-top: 1em;
+}
+
 .lenguajes div ul li {
+  color: #222;
+  text-align: center;
   line-height: 1.5;
   font-weight: 700;
   font-size: 2.5rem;
