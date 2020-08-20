@@ -65,6 +65,7 @@ $(document).ready(function () {
   var flecha_1 = $("#flecha_1"),
     flecha_2 = $("#flecha_2"),
     puntos = 0,
+    main = $("main"),
     yo = $("#yo"),
     diseño = $("#design");
 
@@ -80,11 +81,35 @@ $(document).ready(function () {
 
   //Funciones
   function mostrarEleMain() {
-    if (puntos % 2 == 1) {
-      mostrarYo();
-    }
-    if (puntos % 2 == 1) {
+    if (puntos == -1) {
       mostrarDesign();
     }
+    if (puntos == 0) {
+      mostrarYo();
+    }
+    if (puntos == 1) {
+      mostrarWork();
+    }
+  }
+
+  function mostrarDesign() {
+    yo.addClass("popOutRight");
+    flecha_1.hide();
+    setTimeout(() => {
+      yo.hide();
+      diseño.show();
+      diseño.removeClass("popOutLeft");
+      diseño.addClass("popInLeft");
+    }, 1500);
+  }
+  function mostrarYo() {
+    diseño.addClass("popOutLeft");
+    setTimeout(() => {
+      diseño.hide();
+      yo.show();
+      yo.removeClass("popOutRight");
+      yo.addClass("popInRight");
+      flecha_1.show();
+    }, 1500);
   }
 });

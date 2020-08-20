@@ -494,6 +494,7 @@ ul li {
 .designer {
   width: 90%;
   text-align: center;
+  display: none;
 }
 
 .designer h2 {
