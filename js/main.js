@@ -1,7 +1,13 @@
 import { CountUp } from "./countUp.min.js";
 $(document).ready(function () {
-  //Barra Hero Desktop Follow
+  /*
+  ----Barra Hero Desktop Follow----
+  */
+
+  //Variables
   var barra_hero = $("#barra_hero");
+
+  //Funciones
   (function ($) {
     function mediaSize() {
       if (window.matchMedia("(min-width: 480px)").matches) {
@@ -26,7 +32,11 @@ $(document).ready(function () {
     window.addEventListener("resize", mediaSize, false);
   })(jQuery);
 
-  //Barra Nav Celular
+  /*
+  ----Barra Nav Celular----
+  */
+
+  //Funciones
   (function ($) {
     function mediaSize() {
       if (window.matchMedia("(max-width: 480px)").matches) {
@@ -48,6 +58,33 @@ $(document).ready(function () {
   })(jQuery);
 
   /*
-  ----Lenguajes Interactividad----
+  ----Main Interactividad----
   */
+
+  //Variables
+  var flecha_1 = $("#flecha_1"),
+    flecha_2 = $("#flecha_2"),
+    puntos = 0,
+    yo = $("#yo"),
+    diseño = $("#design");
+
+  //Eventos
+  flecha_1.click(function () {
+    puntos -= 1;
+    mostrarEleMain();
+  });
+  flecha_2.click(function () {
+    puntos += 1;
+    mostrarEleMain();
+  });
+
+  //Funciones
+  function mostrarEleMain() {
+    if (puntos % 2 == 1) {
+      mostrarYo();
+    }
+    if (puntos % 2 == 1) {
+      mostrarDesign();
+    }
+  }
 });

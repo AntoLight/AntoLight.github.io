@@ -461,7 +461,59 @@ $color-texto-blanco: #e1e1e1;
   }
 }
 
-/*** Lenguajes ***/
+/*** Designer ***/
+
+.designer {
+  width: 90%;
+  text-align: center;
+  h2 {
+    color: $color-principal;
+  }
+  .descripcion {
+    margin-top: 1em;
+    img {
+      width: 80%;
+      fill: none;
+      stroke: none;
+      fill-opacity: 1;
+      padding: 0rem 0rem !important;
+      margin-bottom: 2em;
+      border-radius: 50% !important;
+    }
+    p {
+      color: black;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .main {
+    .designer {
+      .descripcion {
+        img {
+          width: 60% !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    .designer {
+      .descripcion {
+        img {
+          width: 40% !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+-------Lenguajes---------
+**/
 
 .main {
   display: block;
