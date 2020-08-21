@@ -235,16 +235,16 @@ $color-texto-blanco: #e1e1e1;
   }
   .links {
     display: block;
+    width: 100%;
     text-align: center;
     background-color: $color-texto-blanco;
-    border: 2px gray solid;
     padding: 0 !important;
     border-radius: 0px 0px 15px 15px;
     a {
       display: block;
       width: 100%;
       margin-left: 0 !important;
-      border-bottom: 2px gray dashed;
+      border-bottom: 2px gray solid;
       padding: 0.5em 0;
     }
     a:first-child {
@@ -333,6 +333,9 @@ $color-texto-blanco: #e1e1e1;
   background-color: $color-principal-oscuro;
   padding: 4em 1em;
   transition: all linear 0.5s;
+  display: block;
+  position: relative;
+  overflow: hidden;
   .yo {
     width: 90%;
     max-height: 460px;
@@ -594,36 +597,6 @@ $color-texto-blanco: #e1e1e1;
 -------Lenguajes---------
 **/
 
-.main {
-  display: block;
-  grid-template-columns: repeat(2, 1fr);
-  position: relative;
-  overflow: hidden;
-  .lenguajes-title {
-    text-align: center;
-    padding: 0.2em 0;
-    margin: 0.8em 0;
-    color: $color-texto-blanco;
-  }
-}
-
 .lenguajes {
   display: none;
-  grid-template-columns: repeat(2, 1fr);
-  div {
-    h2 {
-      color: $color-principal-oscuro;
-      text-align: center;
-    }
-    ul {
-      margin-top: 1em;
-    }
-    ul li {
-      color: #222;
-      text-align: center;
-      line-height: 1.5;
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
-  }
 }

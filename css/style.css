@@ -261,9 +261,9 @@ ul li {
 
 .movile-menu .links {
   display: block;
+  width: 100%;
   text-align: center;
   background-color: #e1e1e1;
-  border: 2px gray solid;
   padding: 0 !important;
   border-radius: 0px 0px 15px 15px;
 }
@@ -272,7 +272,7 @@ ul li {
   display: block;
   width: 100%;
   margin-left: 0 !important;
-  border-bottom: 2px gray dashed;
+  border-bottom: 2px gray solid;
   padding: 0.5em 0;
 }
 
@@ -364,6 +364,9 @@ ul li {
   padding: 4em 1em;
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .main .yo {
@@ -606,41 +609,7 @@ ul li {
 /**
 -------Lenguajes---------
 **/
-.main {
-  display: block;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  position: relative;
-  overflow: hidden;
-}
-
-.main .lenguajes-title {
-  text-align: center;
-  padding: 0.2em 0;
-  margin: 0.8em 0;
-  color: #e1e1e1;
-}
-
 .lenguajes {
   display: none;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-}
-
-.lenguajes div h2 {
-  color: #580cbb;
-  text-align: center;
-}
-
-.lenguajes div ul {
-  margin-top: 1em;
-}
-
-.lenguajes div ul li {
-  color: #222;
-  text-align: center;
-  line-height: 1.5;
-  font-weight: 700;
-  font-size: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */

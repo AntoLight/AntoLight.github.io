@@ -109,6 +109,7 @@ $(document).ready(function () {
     })(jQuery);
     setTimeout(() => {
       yo.hide();
+      $("#flecha_2 p").html("About Me");
       diseño.show();
       diseño.removeClass("driveOutLeft");
       diseño.addClass("driveInLeft");
@@ -140,6 +141,8 @@ $(document).ready(function () {
     diseño.addClass("driveOutLeft");
     work.addClass("driveOutRight");
     setTimeout(() => {
+      $("#flecha_1 p").html("How i Design?");
+      $("#flecha_2 p").html("How i Work?");
       diseño.hide();
       work.hide();
       yo.show();
@@ -186,6 +189,7 @@ $(document).ready(function () {
       window.addEventListener("resize", mediaSize, false);
     })(jQuery);
     setTimeout(() => {
+      $("#flecha_1 p").html("About Me");
       yo.hide();
       work.show();
       work.removeClass("driveOutRight");
