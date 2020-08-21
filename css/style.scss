@@ -335,6 +335,7 @@ $color-texto-blanco: #e1e1e1;
   transition: all linear 0.5s;
   .yo {
     width: 90%;
+    max-height: 460px;
     text-align: center;
     h2 {
       color: $color-principal;
@@ -399,13 +400,26 @@ $color-texto-blanco: #e1e1e1;
 .flecha-2 {
   color: $color-principal;
   font-size: 4em;
-  cursor: pointer;
+
   width: fit-content;
-  transition: all ease-in-out.5s;
+  position: relative;
+  i {
+    transition: all ease-in-out.5s;
+    cursor: pointer;
+  }
+  p {
+    text-align: center;
+    font-weight: 600;
+    position: absolute;
+    content: "";
+    width: 75px;
+    top: -25px;
+    left: -20px;
+  }
 }
 
-.flecha-1:hover,
-.flecha-2:hover {
+.flecha-1 i:hover,
+.flecha-2 i:hover {
   color: $color-principal-oscuro;
   transform: scale(1.1);
 }
@@ -427,9 +441,14 @@ $color-texto-blanco: #e1e1e1;
   .flecha-1,
   .flecha-2 {
     color: white;
+    p {
+      width: 200px;
+      top: -15px;
+      left: -85px;
+    }
   }
-  .flecha-1:hover,
-  .flecha-2:hover {
+  .flecha-1 i:hover,
+  .flecha-2 i:hover {
     color: $color-texto-blanco;
   }
   .flecha-1 {
@@ -447,6 +466,14 @@ $color-texto-blanco: #e1e1e1;
 }
 
 @media only screen and (min-width: 1024px) {
+  .flecha-1,
+  .flecha-2 {
+    p {
+      width: 200px;
+      top: -25px;
+      left: -75px;
+    }
+  }
   .flecha-1 {
     position: absolute;
     top: 40%;
@@ -502,6 +529,57 @@ $color-texto-blanco: #e1e1e1;
 
 @media only screen and (min-width: 768px) {
   .main {
+    .designer {
+      .descripcion {
+        img {
+          width: 40% !important;
+        }
+      }
+    }
+  }
+}
+
+/** Work **/
+
+.work {
+  width: 90%;
+  text-align: center;
+  display: none;
+  h2 {
+    color: $color-principal;
+  }
+  .descripcion {
+    margin-top: 1em;
+    img {
+      width: 60%;
+      fill: none;
+      stroke: none;
+      fill-opacity: 1;
+      padding: 3rem 2rem !important;
+      margin-bottom: 2em;
+      border-radius: 50% !important;
+    }
+    p {
+      color: black;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .work {
+    .designer {
+      .descripcion {
+        img {
+          width: 60% !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .work {
     .designer {
       .descripcion {
         img {

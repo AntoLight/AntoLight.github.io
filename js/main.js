@@ -67,7 +67,8 @@ $(document).ready(function () {
     puntos = 0,
     main = $("main"),
     yo = $("#yo"),
-    diseño = $("#design");
+    diseño = $("#design"),
+    work = $("#work");
 
   //Eventos
   flecha_1.click(function () {
@@ -93,23 +94,113 @@ $(document).ready(function () {
   }
 
   function mostrarDesign() {
-    yo.addClass("popOutRight");
+    yo.removeClass("popOut");
+    yo.removeClass("popIn");
+    yo.addClass("popOut");
     flecha_1.hide();
+    (function ($) {
+      function mediaSize() {
+        if (window.matchMedia("(max-width: 480px)").matches) {
+          flecha_2.hide();
+        }
+      }
+      mediaSize();
+      window.addEventListener("resize", mediaSize, false);
+    })(jQuery);
     setTimeout(() => {
       yo.hide();
       diseño.show();
-      diseño.removeClass("popOutLeft");
-      diseño.addClass("popInLeft");
-    }, 1500);
+      diseño.removeClass("driveOutLeft");
+      diseño.addClass("driveInLeft");
+      (function ($) {
+        function mediaSize() {
+          if (window.matchMedia("(max-width: 480px)").matches) {
+            setTimeout(() => {
+              flecha_2.show();
+            }, 1000);
+          }
+        }
+        mediaSize();
+        window.addEventListener("resize", mediaSize, false);
+      })(jQuery);
+    }, 1000);
   }
+
   function mostrarYo() {
-    diseño.addClass("popOutLeft");
+    (function ($) {
+      function mediaSize() {
+        if (window.matchMedia("(max-width: 480px)").matches) {
+          flecha_1.hide();
+          flecha_2.hide();
+        }
+      }
+      mediaSize();
+      window.addEventListener("resize", mediaSize, false);
+    })(jQuery);
+    diseño.addClass("driveOutLeft");
+    work.addClass("driveOutRight");
     setTimeout(() => {
       diseño.hide();
+      work.hide();
       yo.show();
-      yo.removeClass("popOutRight");
-      yo.addClass("popInRight");
-      flecha_1.show();
-    }, 1500);
+      yo.removeClass("popOut");
+      yo.removeClass("popIn");
+      yo.addClass("popIn");
+      (function ($) {
+        function mediaSize() {
+          if (window.matchMedia("(max-width: 480px)").matches) {
+            setTimeout(() => {
+              flecha_1.show();
+              flecha_2.show();
+            }, 1000);
+          }
+        }
+        mediaSize();
+        window.addEventListener("resize", mediaSize, false);
+      })(jQuery);
+      (function ($) {
+        function mediaSize() {
+          if (window.matchMedia("(min-width: 480px)").matches) {
+            flecha_1.show();
+            flecha_2.show();
+          }
+        }
+        mediaSize();
+        window.addEventListener("resize", mediaSize, false);
+      })(jQuery);
+    }, 1000);
+  }
+
+  function mostrarWork() {
+    yo.removeClass("popOut");
+    yo.removeClass("popIn");
+    yo.addClass("popOut");
+    flecha_2.hide();
+    (function ($) {
+      function mediaSize() {
+        if (window.matchMedia("(max-width: 480px)").matches) {
+          flecha_1.hide();
+        }
+      }
+      mediaSize();
+      window.addEventListener("resize", mediaSize, false);
+    })(jQuery);
+    setTimeout(() => {
+      yo.hide();
+      work.show();
+      work.removeClass("driveOutRight");
+      work.addClass("driveInRight");
+      (function ($) {
+        function mediaSize() {
+          if (window.matchMedia("(max-width: 480px)").matches) {
+            setTimeout(() => {
+              flecha_1.show();
+            }, 1000);
+          }
+        }
+        mediaSize();
+        window.addEventListener("resize", mediaSize, false);
+      })(jQuery);
+    }, 1000);
   }
 });

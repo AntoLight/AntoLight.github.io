@@ -368,6 +368,7 @@ ul li {
 
 .main .yo {
   width: 90%;
+  max-height: 460px;
   text-align: center;
 }
 
@@ -423,16 +424,32 @@ ul li {
 .flecha-2 {
   color: #7510f7;
   font-size: 4em;
-  cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-transition: all ease-in-out 0.5s;
-  transition: all ease-in-out 0.5s;
+  position: relative;
 }
 
-.flecha-1:hover,
-.flecha-2:hover {
+.flecha-1 i,
+.flecha-2 i {
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+.flecha-1 p,
+.flecha-2 p {
+  text-align: center;
+  font-weight: 600;
+  position: absolute;
+  content: "";
+  width: 75px;
+  top: -25px;
+  left: -20px;
+}
+
+.flecha-1 i:hover,
+.flecha-2 i:hover {
   color: #580cbb;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -457,8 +474,14 @@ ul li {
   .flecha-2 {
     color: white;
   }
-  .flecha-1:hover,
-  .flecha-2:hover {
+  .flecha-1 p,
+  .flecha-2 p {
+    width: 200px;
+    top: -15px;
+    left: -85px;
+  }
+  .flecha-1 i:hover,
+  .flecha-2 i:hover {
     color: #e1e1e1;
   }
   .flecha-1 {
@@ -476,6 +499,12 @@ ul li {
 }
 
 @media only screen and (min-width: 1024px) {
+  .flecha-1 p,
+  .flecha-2 p {
+    width: 200px;
+    top: -25px;
+    left: -75px;
+  }
   .flecha-1 {
     position: absolute;
     top: 40%;
@@ -528,6 +557,48 @@ ul li {
 
 @media only screen and (min-width: 768px) {
   .main .designer .descripcion img {
+    width: 40% !important;
+  }
+}
+
+/** Work **/
+.work {
+  width: 90%;
+  text-align: center;
+  display: none;
+}
+
+.work h2 {
+  color: #7510f7;
+}
+
+.work .descripcion {
+  margin-top: 1em;
+}
+
+.work .descripcion img {
+  width: 60%;
+  fill: none;
+  stroke: none;
+  fill-opacity: 1;
+  padding: 3rem 2rem !important;
+  margin-bottom: 2em;
+  border-radius: 50% !important;
+}
+
+.work .descripcion p {
+  color: black;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 480px) {
+  .work .designer .descripcion img {
+    width: 60% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .work .designer .descripcion img {
     width: 40% !important;
   }
 }
