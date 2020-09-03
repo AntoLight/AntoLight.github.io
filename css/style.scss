@@ -121,13 +121,13 @@ $color-texto-blanco: #e1e1e1;
   width: 100%;
   transition: all linear 0.5s;
   div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
     #nav_mobile {
       display: none;
     }
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5em 0;
-
     i {
       font-size: 2rem;
       color: $color-principal;
@@ -156,9 +156,10 @@ $color-texto-blanco: #e1e1e1;
       }
     }
     .contact-link {
+      height: fit-content;
       a {
         border: 2px solid $color-principal;
-        padding: 0.4em 0.7em 0.2em 0.7em;
+        padding: 0.3em 0.5em;
         border-radius: 15px;
         color: $color-principal;
         font-size: 1.8rem;
@@ -177,7 +178,10 @@ $color-texto-blanco: #e1e1e1;
     div {
       .links {
         a:first-child {
-          width: 10%;
+          width: 16%;
+        }
+        .logo-image {
+          height: 65px;
         }
       }
     }
@@ -189,13 +193,13 @@ $color-texto-blanco: #e1e1e1;
     div {
       .links {
         a {
-          font-size: 2.2rem;
+          font-size: 2rem;
           margin-left: 1.5em;
         }
       }
       .contact-link {
         a {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
       }
     }
@@ -331,7 +335,7 @@ $color-texto-blanco: #e1e1e1;
 
 .main {
   background-color: $color-principal-oscuro;
-  padding: 4em 1em;
+  padding: 8em 1em;
   transition: all linear 0.5s;
   display: block;
   position: relative;
@@ -403,11 +407,10 @@ $color-texto-blanco: #e1e1e1;
 .flecha-2 {
   color: $color-principal;
   font-size: 4em;
-
-  width: fit-content;
+  width: max-content;
   position: relative;
+  transition: all ease-in-out.5s;
   i {
-    transition: all ease-in-out.5s;
     cursor: pointer;
   }
   p {
@@ -421,10 +424,9 @@ $color-texto-blanco: #e1e1e1;
   }
 }
 
-.flecha-1 i:hover,
-.flecha-2 i:hover {
+.flecha-1:hover,
+.flecha-2:hover {
   color: $color-principal-oscuro;
-  transform: scale(1.1);
 }
 
 .flecha-1 {
@@ -443,26 +445,27 @@ $color-texto-blanco: #e1e1e1;
 @media only screen and (min-width: 480px) {
   .flecha-1,
   .flecha-2 {
-    color: white;
-    p {
-      width: 200px;
-      top: -15px;
-      left: -85px;
-    }
+    background-color: white;
+    padding: 0.5em 0.2em;
+    border-radius: 15px;
+    line-height: 1;
+    -webkit-box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
+    -moz-box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
+    box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
   }
-  .flecha-1 i:hover,
-  .flecha-2 i:hover {
-    color: $color-texto-blanco;
+  .flecha-1:hover,
+  .flecha-2:hover {
+    padding: 0.5em 0.1em;
   }
   .flecha-1 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 10%;
     content: "";
   }
@@ -479,13 +482,13 @@ $color-texto-blanco: #e1e1e1;
   }
   .flecha-1 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 20%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 20%;
     content: "";
   }
@@ -594,9 +597,34 @@ $color-texto-blanco: #e1e1e1;
 }
 
 /**
--------Lenguajes---------
+-------Programmer Lenguajes---------
 **/
 
+.burbuja {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1.2em 1em;
+  border-radius: 4em;
+  color: $color-principal;
+  justify-content: center;
+}
+
 .lenguajes {
-  display: none;
+  margin-top: 4em;
+  h2 {
+    text-align: center;
+    color: white;
+  }
+  div {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+  }
+  .front-end {
+    margin: 10em 0;
+  }
 }

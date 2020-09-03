@@ -125,13 +125,16 @@ ul li {
 }
 
 .navegacion div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5em 0;
+  padding: 0;
 }
 
 .navegacion div #nav_mobile {
@@ -179,9 +182,15 @@ ul li {
   width: 20%;
 }
 
+.navegacion div .contact-link {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .navegacion div .contact-link a {
   border: 2px solid #7510f7;
-  padding: 0.4em 0.7em 0.2em 0.7em;
+  padding: 0.3em 0.5em;
   border-radius: 15px;
   color: #7510f7;
   font-size: 1.8rem;
@@ -199,17 +208,20 @@ ul li {
 
 @media only screen and (min-width: 480px) {
   .navegacion div .links a:first-child {
-    width: 10%;
+    width: 16%;
+  }
+  .navegacion div .links .logo-image {
+    height: 65px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .navegacion div .links a {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-left: 1.5em;
   }
   .navegacion div .contact-link a {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
@@ -361,7 +373,7 @@ ul li {
 /*** Yo ***/
 .main {
   background-color: #580cbb;
-  padding: 4em 1em;
+  padding: 8em 1em;
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
   display: block;
@@ -427,16 +439,16 @@ ul li {
 .flecha-2 {
   color: #7510f7;
   font-size: 4em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   position: relative;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
 }
 
 .flecha-1 i,
 .flecha-2 i {
-  -webkit-transition: all ease-in-out 0.5s;
-  transition: all ease-in-out 0.5s;
   cursor: pointer;
 }
 
@@ -451,11 +463,9 @@ ul li {
   left: -20px;
 }
 
-.flecha-1 i:hover,
-.flecha-2 i:hover {
+.flecha-1:hover,
+.flecha-2:hover {
   color: #580cbb;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .flecha-1 {
@@ -475,27 +485,26 @@ ul li {
 @media only screen and (min-width: 480px) {
   .flecha-1,
   .flecha-2 {
-    color: white;
+    background-color: white;
+    padding: 0.5em 0.2em;
+    border-radius: 15px;
+    line-height: 1;
+    -webkit-box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
+    box-shadow: 0px 0px 54px -16px rgba(0, 0, 0, 0.91);
   }
-  .flecha-1 p,
-  .flecha-2 p {
-    width: 200px;
-    top: -15px;
-    left: -85px;
-  }
-  .flecha-1 i:hover,
-  .flecha-2 i:hover {
-    color: #e1e1e1;
+  .flecha-1:hover,
+  .flecha-2:hover {
+    padding: 0.5em 0.1em;
   }
   .flecha-1 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 10%;
     content: "";
   }
@@ -510,13 +519,13 @@ ul li {
   }
   .flecha-1 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 20%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 20%;
     content: "";
   }
@@ -607,9 +616,47 @@ ul li {
 }
 
 /**
--------Lenguajes---------
+-------Programmer Lenguajes---------
 **/
+.burbuja {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  padding: 1.2em 1em;
+  border-radius: 4em;
+  color: #7510f7;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .lenguajes {
-  display: none;
+  margin-top: 4em;
+}
+
+.lenguajes h2 {
+  text-align: center;
+  color: white;
+}
+
+.lenguajes div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lenguajes .front-end {
+  margin: 10em 0;
 }
 /*# sourceMappingURL=style.css.map */

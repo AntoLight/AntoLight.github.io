@@ -97,11 +97,18 @@ $(document).ready(function () {
     yo.removeClass("popOut");
     yo.removeClass("popIn");
     yo.addClass("popOut");
-    flecha_1.hide();
+    flecha_1.fadeTo(100, 0.8);
+    flecha_1.fadeTo(100, 0.4);
+    flecha_1.fadeTo(100, 0);
     (function ($) {
       function mediaSize() {
         if (window.matchMedia("(max-width: 480px)").matches) {
-          flecha_2.hide();
+          flecha_2.fadeTo(100, 0.8);
+          flecha_2.fadeTo(100, 0.4);
+          flecha_2.fadeTo(100, 0);
+          setTimeout(() => {
+            flecha_2.hide();
+          }, 1000);
         }
       }
       mediaSize();
@@ -109,14 +116,17 @@ $(document).ready(function () {
     })(jQuery);
     setTimeout(() => {
       yo.hide();
-      $("#flecha_2 p").html("About Me");
       diseño.show();
       diseño.removeClass("driveOutLeft");
       diseño.addClass("driveInLeft");
+      flecha_1.hide();
       (function ($) {
         function mediaSize() {
           if (window.matchMedia("(max-width: 480px)").matches) {
             setTimeout(() => {
+              flecha_2.fadeTo(100, 0);
+              flecha_2.fadeTo(100, 0.5);
+              flecha_2.fadeTo(100, 1);
               flecha_2.show();
             }, 1000);
           }
@@ -131,6 +141,12 @@ $(document).ready(function () {
     (function ($) {
       function mediaSize() {
         if (window.matchMedia("(max-width: 480px)").matches) {
+          flecha_1.fadeTo(100, 0.8);
+          flecha_1.fadeTo(100, 0.4);
+          flecha_1.fadeTo(100, 0);
+          flecha_2.fadeTo(100, 0.8);
+          flecha_2.fadeTo(100, 0.4);
+          flecha_2.fadeTo(100, 0);
           flecha_1.hide();
           flecha_2.hide();
         }
@@ -141,8 +157,6 @@ $(document).ready(function () {
     diseño.addClass("driveOutLeft");
     work.addClass("driveOutRight");
     setTimeout(() => {
-      $("#flecha_1 p").html("How i Design?");
-      $("#flecha_2 p").html("How i Work?");
       diseño.hide();
       work.hide();
       yo.show();
@@ -153,6 +167,12 @@ $(document).ready(function () {
         function mediaSize() {
           if (window.matchMedia("(max-width: 480px)").matches) {
             setTimeout(() => {
+              flecha_1.fadeTo(100, 0);
+              flecha_1.fadeTo(100, 0.5);
+              flecha_1.fadeTo(100, 1);
+              flecha_2.fadeTo(100, 0);
+              flecha_2.fadeTo(100, 0.5);
+              flecha_2.fadeTo(100, 1);
               flecha_1.show();
               flecha_2.show();
             }, 1000);
@@ -164,6 +184,12 @@ $(document).ready(function () {
       (function ($) {
         function mediaSize() {
           if (window.matchMedia("(min-width: 480px)").matches) {
+            flecha_1.fadeTo(100, 0);
+            flecha_1.fadeTo(100, 0.5);
+            flecha_1.fadeTo(100, 1);
+            flecha_2.fadeTo(100, 0);
+            flecha_2.fadeTo(100, 0.5);
+            flecha_2.fadeTo(100, 1);
             flecha_1.show();
             flecha_2.show();
           }
@@ -178,26 +204,36 @@ $(document).ready(function () {
     yo.removeClass("popOut");
     yo.removeClass("popIn");
     yo.addClass("popOut");
-    flecha_2.hide();
+    flecha_2.fadeTo(100, 0.8);
+    flecha_2.fadeTo(100, 0.4);
+    flecha_2.fadeTo(100, 0);
     (function ($) {
       function mediaSize() {
         if (window.matchMedia("(max-width: 480px)").matches) {
-          flecha_1.hide();
+          flecha_1.fadeTo(100, 0.8);
+          flecha_1.fadeTo(100, 0.4);
+          flecha_1.fadeTo(100, 0);
+          setTimeout(() => {
+            flecha_1.hide();
+          }, 1000);
         }
       }
       mediaSize();
       window.addEventListener("resize", mediaSize, false);
     })(jQuery);
     setTimeout(() => {
-      $("#flecha_1 p").html("About Me");
       yo.hide();
       work.show();
       work.removeClass("driveOutRight");
       work.addClass("driveInRight");
+      flecha_2.hide();
       (function ($) {
         function mediaSize() {
           if (window.matchMedia("(max-width: 480px)").matches) {
             setTimeout(() => {
+              flecha_1.fadeTo(100, 0);
+              flecha_1.fadeTo(100, 0.5);
+              flecha_1.fadeTo(100, 1);
               flecha_1.show();
             }, 1000);
           }
