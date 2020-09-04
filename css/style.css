@@ -445,10 +445,6 @@ ul li {
   position: relative;
   -webkit-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
-}
-
-.flecha-1 i,
-.flecha-2 i {
   cursor: pointer;
 }
 
@@ -470,14 +466,14 @@ ul li {
 
 .flecha-1 {
   position: absolute;
-  top: 40%;
+  top: 22%;
   left: 15%;
   content: "";
 }
 
 .flecha-2 {
   position: absolute;
-  top: 40%;
+  top: 22%;
   right: 15%;
   content: "";
 }
@@ -498,13 +494,13 @@ ul li {
   }
   .flecha-1 {
     position: absolute;
-    top: 30%;
+    top: 22%;
     left: 10%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 30%;
+    top: 22%;
     right: 10%;
     content: "";
   }
@@ -513,20 +509,20 @@ ul li {
 @media only screen and (min-width: 1024px) {
   .flecha-1 p,
   .flecha-2 p {
-    width: 200px;
+    width: 220px;
     top: -25px;
     left: -75px;
   }
   .flecha-1 {
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 22%;
+    left: 22%;
     content: "";
   }
   .flecha-2 {
     position: absolute;
-    top: 30%;
-    right: 20%;
+    top: 22%;
+    right: 22%;
     content: "";
   }
 }
@@ -618,21 +614,28 @@ ul li {
 /**
 -------Programmer Lenguajes---------
 **/
-.lenguajes {
-  margin-top: 4em;
-}
-
 .lenguajes h2 {
   text-align: center;
   color: white;
   font-size: 4rem;
   border-bottom: 3px solid #e1e1e1;
   width: 35%;
-  margin: 0 auto;
+  margin: 2em auto;
   padding-bottom: 0.2em;
 }
 
-.lenguajes div .len-cont {
+.lenguajes .lenguajes-fb {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.lenguajes .lenguajes-fb div {
+  position: relative;
+}
+
+.lenguajes .lenguajes-fb div .len-cont {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -647,7 +650,7 @@ ul li {
   margin: 0 auto;
 }
 
-.lenguajes div .len-cont .burbuja {
+.lenguajes .lenguajes-fb div .len-cont .burbuja {
   text-align: center;
   height: 100px;
   width: 100px;
@@ -665,84 +668,73 @@ ul li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  z-index: 99;
+  z-index: 2;
 }
 
-.lenguajes div .len-cont .burbuja p {
+.lenguajes .lenguajes-fb div .len-cont .burbuja p {
+  display: none;
+  opacity: 0;
   font-size: 2.3rem;
   font-family: "eurostile", sans-serif;
   font-weight: 700;
 }
 
-.lenguajes div .len-cont .b-1 {
-  position: relative;
+.lenguajes .lenguajes-fb div .len-cont .burbuja .fa-check {
+  font-size: 2.5em;
+  color: green;
+  display: none;
+  opacity: 0;
 }
 
-.lenguajes div .len-cont .b-1 div {
+.lenguajes .lenguajes-fb div .len-cont .burbuja .fa-ban {
+  font-size: 2.9em;
+  color: red;
+}
+
+.lenguajes .lenguajes-fb div .b-1,
+.lenguajes .lenguajes-fb div .b-2,
+.lenguajes .lenguajes-fb div .b-3,
+.lenguajes .lenguajes-fb div .b-4,
+.lenguajes .lenguajes-fb div .b-5,
+.lenguajes .lenguajes-fb div .b-6 {
   position: absolute;
   content: "";
-  top: 80%;
-  height: 100px;
-  width: 20px;
   background-color: white;
 }
 
-.lenguajes div .len-cont .b-4 {
-  position: relative;
+.lenguajes .lenguajes-fb div .b-1 {
+  top: 36%;
+  left: 15%;
+  height: 0px;
+  width: 20px;
 }
 
-.lenguajes div .len-cont .b-4 div {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 90%;
+.lenguajes .lenguajes-fb div .b-4 {
+  bottom: 14%;
+  left: 22%;
   height: 20px;
-  width: 310px;
-  background-color: white;
+  width: 0px;
 }
 
-.lenguajes div .len-cont .b-5 {
-  position: relative;
-}
-
-.lenguajes div .len-cont .b-5 div {
-  position: absolute;
-  content: "";
-  bottom: 80%;
-  height: 100px;
+.lenguajes .lenguajes-fb div .b-5 {
+  bottom: 26%;
+  left: 48.5%;
+  height: 0px;
   width: 20px;
-  background-color: white;
 }
 
-.lenguajes div .len-cont .b-2 {
-  position: relative;
-}
-
-.lenguajes div .len-cont .b-2 div {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 90%;
+.lenguajes .lenguajes-fb div .b-2 {
+  top: 16%;
+  left: 57%;
   height: 20px;
-  width: 310px;
-  background-color: white;
+  width: 0px;
 }
 
-.lenguajes div .len-cont .b-6 {
-  position: relative;
-}
-
-.lenguajes div .len-cont .b-6 div {
-  position: absolute;
-  content: "";
-  bottom: 80%;
-  height: 100px;
+.lenguajes .lenguajes-fb div .b-3 {
+  top: 36%;
+  right: 15%;
+  height: 0px;
   width: 20px;
-  background-color: white;
-}
-
-.lenguajes .front-end {
-  margin: 6em 0;
 }
 
 /** Burbujas Barras **/

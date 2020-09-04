@@ -93,6 +93,7 @@ $(document).ready(function () {
     }
   }
 
+  //Mostrar Parte Diseño
   function mostrarDesign() {
     yo.removeClass("popOut");
     yo.removeClass("popIn");
@@ -137,6 +138,7 @@ $(document).ready(function () {
     }, 1000);
   }
 
+  //Mostrar Parte Yo
   function mostrarYo() {
     (function ($) {
       function mediaSize() {
@@ -200,6 +202,7 @@ $(document).ready(function () {
     }, 1000);
   }
 
+  //Mostrar Parte Trabajo
   function mostrarWork() {
     yo.removeClass("popOut");
     yo.removeClass("popIn");
@@ -243,4 +246,145 @@ $(document).ready(function () {
       })(jQuery);
     }, 1000);
   }
+
+  /*
+  ----Lenguajes Programacion----
+  */
+
+  //Variables
+  var b_1 = $(".b-1"),
+    b_2 = $(".b-2"),
+    b_3 = $(".b-3"),
+    b_4 = $(".b-4"),
+    b_5 = $(".b-5"),
+    b_6 = $(".b-6"),
+    fc_1 = $(".fc-1"),
+    fc_2 = $(".fc-2"),
+    fc_3 = $(".fc-3"),
+    fc_4 = $(".fc-4"),
+    fc_5 = $(".fc-5"),
+    fc_6 = $(".fc-6"),
+    fb_1 = $(".fb-1"),
+    fb_2 = $(".fb-2"),
+    fb_3 = $(".fb-3"),
+    fb_4 = $(".fb-4"),
+    fb_5 = $(".fb-5"),
+    fb_6 = $(".fb-6"),
+    p_1 = $(".p-1"),
+    p_2 = $(".p-2"),
+    p_3 = $(".p-3"),
+    p_4 = $(".p-4"),
+    p_5 = $(".p-5"),
+    p_6 = $(".p-6");
+
+  //Funciones
+
+  //Funcion Progreso Barra e iconos
+  function progressBar() {
+    progressIconosH(b_1, fb_1, fc_1, p_1);
+    setTimeout(() => {
+      progressIconosW(b_4, fb_4, fc_4, p_4);
+      setTimeout(() => {
+        progressIconosH(b_5, fb_5, fc_5, p_5);
+        setTimeout(() => {
+          progressIconosW(b_2, fb_2, fc_2, p_2);
+          setTimeout(() => {
+            progressIconosH(b_3, fb_3, fc_3, p_3);
+            setTimeout(() => {
+              progressIconosH(b_6, fb_6, fc_6, p_6);
+            }, 2500);
+          }, 2500);
+        }, 2500);
+      }, 2500);
+    }, 2500);
+  }
+
+  //Funcion Barra Height
+  function progressIconosH(barra, ban, check, texto) {
+    //Barra
+    barra.animate(
+      {
+        height: "100px",
+      },
+      3000
+    );
+    //Ban
+    ban.fadeTo(100, 1);
+    ban.fadeTo(100, 0.5);
+    ban.fadeTo(100, 0);
+    //Check
+    setTimeout(() => {
+      ban.css({
+        display: "none",
+      });
+      check.css({
+        display: "block",
+      });
+      check.fadeTo(100, 0);
+      check.fadeTo(100, 0.5);
+      check.fadeTo(100, 1);
+      //Texto
+      setTimeout(() => {
+        check.fadeTo(100, 1);
+        check.fadeTo(100, 0.5);
+        check.fadeTo(100, 0);
+        setTimeout(() => {
+          check.css({
+            display: "none",
+          });
+          texto.css({
+            display: "none",
+          });
+          texto.fadeTo(100, 0);
+          texto.fadeTo(100, 0.5);
+          texto.fadeTo(100, 1);
+        }, 500);
+      }, 1000);
+    }, 600);
+  }
+
+  //Funcion Barra Width
+  function progressIconosW(barra, ban, check, texto) {
+    //Barra
+    barra.animate(
+      {
+        width: "120px",
+      },
+      3000
+    );
+    //Ban
+    ban.fadeTo(100, 1);
+    ban.fadeTo(100, 0.5);
+    ban.fadeTo(100, 0);
+    //Check
+    setTimeout(() => {
+      ban.css({
+        display: "none",
+      });
+      check.css({
+        display: "block",
+      });
+      check.fadeTo(100, 0);
+      check.fadeTo(100, 0.5);
+      check.fadeTo(100, 1);
+      //Texto
+      setTimeout(() => {
+        check.fadeTo(100, 1);
+        check.fadeTo(100, 0.5);
+        check.fadeTo(100, 0);
+        setTimeout(() => {
+          check.css({
+            display: "none",
+          });
+          texto.css({
+            display: "none",
+          });
+          texto.fadeTo(100, 0);
+          texto.fadeTo(100, 0.5);
+          texto.fadeTo(100, 1);
+        }, 500);
+      }, 1000);
+    }, 600);
+  }
+  progressBar();
 });
