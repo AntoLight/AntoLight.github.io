@@ -248,7 +248,7 @@ $(document).ready(function () {
   }
 
   /*
-  ----Lenguajes Programacion----
+  ----Lenguajes Programacion Desktop----
   */
 
   //Variables
@@ -258,18 +258,6 @@ $(document).ready(function () {
     b_4 = $(".b-4"),
     b_5 = $(".b-5"),
     b_6 = $(".b-6"),
-    fc_1 = $(".fc-1"),
-    fc_2 = $(".fc-2"),
-    fc_3 = $(".fc-3"),
-    fc_4 = $(".fc-4"),
-    fc_5 = $(".fc-5"),
-    fc_6 = $(".fc-6"),
-    fb_1 = $(".fb-1"),
-    fb_2 = $(".fb-2"),
-    fb_3 = $(".fb-3"),
-    fb_4 = $(".fb-4"),
-    fb_5 = $(".fb-5"),
-    fb_6 = $(".fb-6"),
     p_1 = $(".p-1"),
     p_2 = $(".p-2"),
     p_3 = $(".p-3"),
@@ -277,114 +265,86 @@ $(document).ready(function () {
     p_5 = $(".p-5"),
     p_6 = $(".p-6");
 
-  //Funciones
+  (function ($) {
+    function mediaSize() {
+      if (window.matchMedia("(max-width: 480px)").matches) {
+        programeLanguages("85px", "80px");
+      }
+    }
+    mediaSize();
+    window.addEventListener("resize", mediaSize, false);
+  })(jQuery);
 
-  //Funcion Progreso Barra e iconos
-  function progressBar() {
-    progressIconosH(b_1, fb_1, fc_1, p_1);
-    setTimeout(() => {
-      progressIconosW(b_4, fb_4, fc_4, p_4);
+  (function ($) {
+    function mediaSize() {
+      if (window.matchMedia("(min-width: 481px)").matches) {
+        programeLanguages("120px", "100px");
+      }
+    }
+    mediaSize();
+    window.addEventListener("resize", mediaSize, false);
+  })(jQuery);
+
+  //Funciones
+  function programeLanguages(anchura, altura) {
+    function progressBar() {
+      progressIconosH(b_1, p_1);
       setTimeout(() => {
-        progressIconosH(b_5, fb_5, fc_5, p_5);
+        progressIconosW(b_4, p_4);
         setTimeout(() => {
-          progressIconosW(b_2, fb_2, fc_2, p_2);
+          progressIconosH(b_5, p_5);
           setTimeout(() => {
-            progressIconosH(b_3, fb_3, fc_3, p_3);
+            progressIconosW(b_2, p_2);
             setTimeout(() => {
-              progressIconosH(b_6, fb_6, fc_6, p_6);
+              progressIconosH(b_3, p_3);
+              setTimeout(() => {
+                progressIconosH(b_6, p_6);
+              }, 2500);
             }, 2500);
           }, 2500);
         }, 2500);
       }, 2500);
-    }, 2500);
-  }
+    }
 
-  //Funcion Barra Height
-  function progressIconosH(barra, ban, check, texto) {
-    //Barra
-    barra.animate(
-      {
-        height: "100px",
-      },
-      3000
-    );
-    //Ban
-    ban.fadeTo(100, 1);
-    ban.fadeTo(100, 0.5);
-    ban.fadeTo(100, 0);
-    //Check
-    setTimeout(() => {
-      ban.css({
-        display: "none",
-      });
-      check.css({
-        display: "block",
-      });
-      check.fadeTo(100, 0);
-      check.fadeTo(100, 0.5);
-      check.fadeTo(100, 1);
-      //Texto
+    //Funcion Barra Height
+    function progressIconosH(barra, texto) {
+      //Barra
+      barra.animate(
+        {
+          height: altura,
+        },
+        3000
+      );
       setTimeout(() => {
-        check.fadeTo(100, 1);
-        check.fadeTo(100, 0.5);
-        check.fadeTo(100, 0);
-        setTimeout(() => {
-          check.css({
-            display: "none",
-          });
-          texto.css({
-            display: "none",
-          });
-          texto.fadeTo(100, 0);
-          texto.fadeTo(100, 0.5);
-          texto.fadeTo(100, 1);
-        }, 500);
-      }, 1000);
-    }, 600);
-  }
+        //Texto
+        texto.css({
+          display: "block",
+        });
+        texto.fadeTo(100, 0);
+        texto.fadeTo(100, 0.5);
+        texto.fadeTo(100, 1);
+      }, 600);
+    }
 
-  //Funcion Barra Width
-  function progressIconosW(barra, ban, check, texto) {
-    //Barra
-    barra.animate(
-      {
-        width: "120px",
-      },
-      3000
-    );
-    //Ban
-    ban.fadeTo(100, 1);
-    ban.fadeTo(100, 0.5);
-    ban.fadeTo(100, 0);
-    //Check
-    setTimeout(() => {
-      ban.css({
-        display: "none",
-      });
-      check.css({
-        display: "block",
-      });
-      check.fadeTo(100, 0);
-      check.fadeTo(100, 0.5);
-      check.fadeTo(100, 1);
-      //Texto
+    //Funcion Barra Height
+    function progressIconosW(barra, texto) {
+      //Barra
+      barra.animate(
+        {
+          width: anchura,
+        },
+        3000
+      );
       setTimeout(() => {
-        check.fadeTo(100, 1);
-        check.fadeTo(100, 0.5);
-        check.fadeTo(100, 0);
-        setTimeout(() => {
-          check.css({
-            display: "none",
-          });
-          texto.css({
-            display: "none",
-          });
-          texto.fadeTo(100, 0);
-          texto.fadeTo(100, 0.5);
-          texto.fadeTo(100, 1);
-        }, 500);
-      }, 1000);
-    }, 600);
+        //Texto
+        texto.css({
+          display: "block",
+        });
+        texto.fadeTo(100, 0);
+        texto.fadeTo(100, 0.5);
+        texto.fadeTo(100, 1);
+      }, 600);
+    }
+    progressBar();
   }
-  progressBar();
 });

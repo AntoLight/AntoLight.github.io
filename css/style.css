@@ -617,18 +617,17 @@ ul li {
 .lenguajes h2 {
   text-align: center;
   color: white;
-  font-size: 4rem;
+  font-size: 3rem;
   border-bottom: 3px solid #e1e1e1;
-  width: 35%;
+  width: 85%;
   margin: 2em auto;
   padding-bottom: 0.2em;
 }
 
 .lenguajes .lenguajes-fb {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  display: block;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .lenguajes .lenguajes-fb div {
@@ -652,29 +651,29 @@ ul li {
 
 .lenguajes .lenguajes-fb div .len-cont .burbuja {
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  background: radial-gradient(circle at 40% 55%, #7510f7 60%, #cccccc);
   padding: 1.2em 1em;
   border-radius: 4em;
-  color: #7510f7;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  z-index: 2;
+  z-index: 99;
 }
 
 .lenguajes .lenguajes-fb div .len-cont .burbuja p {
   display: none;
+  color: white;
   opacity: 0;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   font-family: "eurostile", sans-serif;
   font-weight: 700;
 }
@@ -699,42 +698,199 @@ ul li {
 .lenguajes .lenguajes-fb div .b-6 {
   position: absolute;
   content: "";
-  background-color: white;
+  border-radius: 5px;
 }
 
 .lenguajes .lenguajes-fb div .b-1 {
-  top: 36%;
-  left: 15%;
+  top: 34%;
+  left: 17.5%;
   height: 0px;
-  width: 20px;
+  width: 15px;
+  background: #7510f7;
+  background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+  background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
 }
 
 .lenguajes .lenguajes-fb div .b-4 {
-  bottom: 14%;
+  bottom: 20%;
   left: 22%;
-  height: 20px;
+  height: 15px;
   width: 0px;
+  background: #7510f7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+  background: linear-gradient(180deg, #7510f7 73%, #ab6dfa 99%);
 }
 
 .lenguajes .lenguajes-fb div .b-5 {
-  bottom: 26%;
-  left: 48.5%;
+  bottom: 34%;
+  left: 48%;
   height: 0px;
-  width: 20px;
+  width: 15px;
+  background: #7510f7;
+  background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+  background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
 }
 
 .lenguajes .lenguajes-fb div .b-2 {
-  top: 16%;
+  top: 22%;
   left: 57%;
-  height: 20px;
+  height: 15px;
   width: 0px;
+  background: #7510f7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+  background: linear-gradient(180deg, #7510f7 73%, #ab6dfa 99%);
 }
 
 .lenguajes .lenguajes-fb div .b-3 {
-  top: 36%;
-  right: 15%;
+  top: 34%;
+  right: 18%;
   height: 0px;
-  width: 20px;
+  width: 15px;
+  background: #7510f7;
+  background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+  background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
+}
+
+.lenguajes .front-end {
+  margin-bottom: 5em;
+}
+
+@media only screen and (min-width: 600px) {
+  .lenguajes h2 {
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    border-bottom: 3px solid #e1e1e1;
+    width: 60%;
+    margin: 2em auto;
+    padding-bottom: 0.2em;
+  }
+  .lenguajes .lenguajes-fb {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .lenguajes .lenguajes-fb div {
+    position: relative;
+  }
+  .lenguajes .lenguajes-fb div .len-cont {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 4em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+  }
+  .lenguajes .lenguajes-fb div .len-cont .burbuja {
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: radial-gradient(circle at 40% 55%, #7510f7 60%, #cccccc);
+    padding: 1.2em 1em;
+    border-radius: 4em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    z-index: 99;
+  }
+  .lenguajes .lenguajes-fb div .len-cont .burbuja p {
+    display: none;
+    color: white;
+    opacity: 0;
+    font-size: 2.3rem;
+    font-family: "eurostile", sans-serif;
+    font-weight: 700;
+  }
+  .lenguajes .lenguajes-fb div .len-cont .burbuja .fa-check {
+    font-size: 2.5em;
+    color: green;
+    display: none;
+    opacity: 0;
+  }
+  .lenguajes .lenguajes-fb div .len-cont .burbuja .fa-ban {
+    font-size: 2.9em;
+    color: red;
+  }
+  .lenguajes .lenguajes-fb div .b-1,
+  .lenguajes .lenguajes-fb div .b-2,
+  .lenguajes .lenguajes-fb div .b-3,
+  .lenguajes .lenguajes-fb div .b-4,
+  .lenguajes .lenguajes-fb div .b-5,
+  .lenguajes .lenguajes-fb div .b-6 {
+    position: absolute;
+    content: "";
+    border-radius: 5px;
+  }
+  .lenguajes .lenguajes-fb div .b-1 {
+    top: 36%;
+    left: 16.5%;
+    height: 0px;
+    width: 20px;
+    background: #7510f7;
+    background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+    background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
+  }
+  .lenguajes .lenguajes-fb div .b-4 {
+    bottom: 20%;
+    left: 22%;
+    height: 20px;
+    width: 0px;
+    background: #7510f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+    background: linear-gradient(180deg, #7510f7 73%, #ab6dfa 99%);
+  }
+  .lenguajes .lenguajes-fb div .b-5 {
+    bottom: 36%;
+    left: 48%;
+    height: 0px;
+    width: 20px;
+    background: #7510f7;
+    background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+    background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
+  }
+  .lenguajes .lenguajes-fb div .b-2 {
+    top: 22%;
+    left: 57%;
+    height: 20px;
+    width: 0px;
+    background: #7510f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+    background: linear-gradient(180deg, #7510f7 73%, #ab6dfa 99%);
+  }
+  .lenguajes .lenguajes-fb div .b-3 {
+    top: 36%;
+    right: 17%;
+    height: 0px;
+    width: 20px;
+    background: #7510f7;
+    background: -webkit-gradient(linear, left top, right top, color-stop(73%, #7510f7), color-stop(99%, #ab6dfa));
+    background: linear-gradient(90deg, #7510f7 73%, #ab6dfa 99%);
+  }
+  .lenguajes .front-end {
+    margin-bottom: 5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .lenguajes h2 {
+    width: 35%;
+  }
+  .lenguajes .lenguajes-fb {
+    width: 50%;
+  }
 }
 
 /** Burbujas Barras **/

@@ -602,15 +602,16 @@ $color-texto-blanco: #e1e1e1;
   h2 {
     text-align: center;
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     border-bottom: 3px solid #e1e1e1;
-    width: 35%;
+    width: 85%;
     margin: 2em auto;
     padding-bottom: 0.2em;
   }
   .lenguajes-fb {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: block;
+    width: 95%;
+    margin: 0 auto;
     div {
       position: relative;
       .len-cont {
@@ -622,21 +623,25 @@ $color-texto-blanco: #e1e1e1;
         margin: 0 auto;
         .burbuja {
           text-align: center;
-          height: 100px;
-          width: 100px;
+          height: 60px;
+          width: 60px;
           display: flex;
           align-items: center;
-          background-color: white;
+          background: radial-gradient(
+            circle at 40% 55%,
+            $color-principal 60%,
+            #cccccc
+          );
           padding: 1.2em 1em;
           border-radius: 4em;
-          color: $color-principal;
           justify-content: center;
           margin: 0 auto;
-          z-index: 2;
+          z-index: 99;
           p {
             display: none;
+            color: white;
             opacity: 0;
-            font-size: 2.3rem;
+            font-size: 1.5rem;
             font-family: "eurostile", sans-serif;
             font-weight: 700;
           }
@@ -660,38 +665,220 @@ $color-texto-blanco: #e1e1e1;
       .b-6 {
         position: absolute;
         content: "";
-        background-color: white;
+        border-radius: 5px;
       }
       .b-1 {
-        top: 36%;
-        left: 15%;
+        top: 34%;
+        left: 17.5%;
         height: 0px;
-        width: 20px;
+        width: 15px;
+        background: rgb(117, 16, 247);
+        background: linear-gradient(
+          90deg,
+          rgba(117, 16, 247, 1) 73%,
+          rgba(171, 109, 250, 1) 99%
+        );
       }
       .b-4 {
-        bottom: 14%;
+        bottom: 20%;
         left: 22%;
-        height: 20px;
+        height: 15px;
         width: 0px;
+        background: rgb(117, 16, 247);
+        background: linear-gradient(
+          180deg,
+          rgba(117, 16, 247, 1) 73%,
+          rgba(171, 109, 250, 1) 99%
+        );
       }
       .b-5 {
-        bottom: 26%;
-        left: 48.5%;
+        bottom: 34%;
+        left: 48%;
         height: 0px;
-        width: 20px;
+        width: 15px;
+        background: rgb(117, 16, 247);
+        background: linear-gradient(
+          90deg,
+          rgba(117, 16, 247, 1) 73%,
+          rgba(171, 109, 250, 1) 99%
+        );
       }
       .b-2 {
-        top: 16%;
+        top: 22%;
         left: 57%;
-        height: 20px;
+        height: 15px;
         width: 0px;
+        background: rgb(117, 16, 247);
+        background: linear-gradient(
+          180deg,
+          rgba(117, 16, 247, 1) 73%,
+          rgba(171, 109, 250, 1) 99%
+        );
       }
       .b-3 {
-        top: 36%;
-        right: 15%;
+        top: 34%;
+        right: 18%;
         height: 0px;
-        width: 20px;
+        width: 15px;
+        background: rgb(117, 16, 247);
+        background: linear-gradient(
+          90deg,
+          rgba(117, 16, 247, 1) 73%,
+          rgba(171, 109, 250, 1) 99%
+        );
       }
+    }
+  }
+  .front-end {
+    margin-bottom: 5em;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .lenguajes {
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 4rem;
+      border-bottom: 3px solid #e1e1e1;
+      width: 60%;
+      margin: 2em auto;
+      padding-bottom: 0.2em;
+    }
+    .lenguajes-fb {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      div {
+        position: relative;
+        .len-cont {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          row-gap: 4em;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 auto;
+          .burbuja {
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(
+              circle at 40% 55%,
+              $color-principal 60%,
+              #cccccc
+            );
+            padding: 1.2em 1em;
+            border-radius: 4em;
+            justify-content: center;
+            margin: 0 auto;
+            z-index: 99;
+            p {
+              display: none;
+              color: white;
+              opacity: 0;
+              font-size: 2.3rem;
+              font-family: "eurostile", sans-serif;
+              font-weight: 700;
+            }
+            .fa-check {
+              font-size: 2.5em;
+              color: green;
+              display: none;
+              opacity: 0;
+            }
+            .fa-ban {
+              font-size: 2.9em;
+              color: red;
+            }
+          }
+        }
+        .b-1,
+        .b-2,
+        .b-3,
+        .b-4,
+        .b-5,
+        .b-6 {
+          position: absolute;
+          content: "";
+          border-radius: 5px;
+        }
+        .b-1 {
+          top: 36%;
+          left: 16.5%;
+          height: 0px;
+          width: 20px;
+          background: rgb(117, 16, 247);
+          background: linear-gradient(
+            90deg,
+            rgba(117, 16, 247, 1) 73%,
+            rgba(171, 109, 250, 1) 99%
+          );
+        }
+        .b-4 {
+          bottom: 20%;
+          left: 22%;
+          height: 20px;
+          width: 0px;
+          background: rgb(117, 16, 247);
+          background: linear-gradient(
+            180deg,
+            rgba(117, 16, 247, 1) 73%,
+            rgba(171, 109, 250, 1) 99%
+          );
+        }
+        .b-5 {
+          bottom: 36%;
+          left: 48%;
+          height: 0px;
+          width: 20px;
+          background: rgb(117, 16, 247);
+          background: linear-gradient(
+            90deg,
+            rgba(117, 16, 247, 1) 73%,
+            rgba(171, 109, 250, 1) 99%
+          );
+        }
+        .b-2 {
+          top: 22%;
+          left: 57%;
+          height: 20px;
+          width: 0px;
+          background: rgb(117, 16, 247);
+          background: linear-gradient(
+            180deg,
+            rgba(117, 16, 247, 1) 73%,
+            rgba(171, 109, 250, 1) 99%
+          );
+        }
+        .b-3 {
+          top: 36%;
+          right: 17%;
+          height: 0px;
+          width: 20px;
+          background: rgb(117, 16, 247);
+          background: linear-gradient(
+            90deg,
+            rgba(117, 16, 247, 1) 73%,
+            rgba(171, 109, 250, 1) 99%
+          );
+        }
+      }
+    }
+    .front-end {
+      margin-bottom: 5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .lenguajes {
+    h2 {
+      width: 35%;
+    }
+    .lenguajes-fb {
+      width: 50%;
     }
   }
 }
