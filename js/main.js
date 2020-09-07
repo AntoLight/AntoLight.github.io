@@ -263,27 +263,29 @@ $(document).ready(function () {
     p_3 = $(".p-3"),
     p_4 = $(".p-4"),
     p_5 = $(".p-5"),
-    p_6 = $(".p-6");
-
-  (function ($) {
-    function mediaSize() {
-      if (window.matchMedia("(max-width: 480px)").matches) {
-        programeLanguages("85px", "80px");
+    p_6 = $(".p-6"),
+    len_desc = $("#len_desc1");
+  len_desc.on("click", function () {
+    (function ($) {
+      function mediaSize() {
+        if (window.matchMedia("(max-width: 480px)").matches) {
+          programeLanguages("70px", "70px");
+        }
       }
-    }
-    mediaSize();
-    window.addEventListener("resize", mediaSize, false);
-  })(jQuery);
+      mediaSize();
+      window.addEventListener("resize", mediaSize, false);
+    })(jQuery);
 
-  (function ($) {
-    function mediaSize() {
-      if (window.matchMedia("(min-width: 481px)").matches) {
-        programeLanguages("120px", "100px");
+    (function ($) {
+      function mediaSize() {
+        if (window.matchMedia("(min-width: 481px)").matches) {
+          programeLanguages("120px", "100px");
+        }
       }
-    }
-    mediaSize();
-    window.addEventListener("resize", mediaSize, false);
-  })(jQuery);
+      mediaSize();
+      window.addEventListener("resize", mediaSize, false);
+    })(jQuery);
+  });
 
   //Funciones
   function programeLanguages(anchura, altura) {
@@ -345,6 +347,5 @@ $(document).ready(function () {
         texto.fadeTo(100, 1);
       }, 600);
     }
-    progressBar();
   }
 });

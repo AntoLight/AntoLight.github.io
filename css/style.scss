@@ -614,10 +614,44 @@ $color-texto-blanco: #e1e1e1;
     margin: 0 auto;
     div {
       position: relative;
+      .language-description {
+        width: fit-content;
+        padding: 1em;
+        border-radius: 15px;
+        background-color: $color-principal-oscuro;
+        color: white;
+        margin: 38.5px auto;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s all ease;
+        display: block;
+        //152 - 77 = 75 / 2 = 38.5
+        h3 {
+          font-size: 2rem;
+          padding-bottom: 0.5em;
+        }
+        p {
+          font-style: italic;
+        }
+      }
+      .language-description:hover {
+        animation: movimientoLineal infinite 0.2s;
+      }
+      @keyframes movimientoLineal {
+        0% {
+          transform: translateX(-0.1em);
+        }
+        50% {
+          transform: translateX(0.1em);
+        }
+        100% {
+          transform: translateX(-0.1em);
+        }
+      }
       .len-cont {
-        display: grid;
+        display: none;
         grid-template-columns: repeat(3, 1fr);
-        row-gap: 4em;
+        row-gap: 2em;
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
@@ -645,16 +679,6 @@ $color-texto-blanco: #e1e1e1;
             font-family: "eurostile", sans-serif;
             font-weight: 700;
           }
-          .fa-check {
-            font-size: 2.5em;
-            color: green;
-            display: none;
-            opacity: 0;
-          }
-          .fa-ban {
-            font-size: 2.9em;
-            color: red;
-          }
         }
       }
       .b-1,
@@ -680,7 +704,7 @@ $color-texto-blanco: #e1e1e1;
         );
       }
       .b-4 {
-        bottom: 20%;
+        bottom: 25%;
         left: 22%;
         height: 15px;
         width: 0px;
@@ -704,7 +728,7 @@ $color-texto-blanco: #e1e1e1;
         );
       }
       .b-2 {
-        top: 22%;
+        top: 25%;
         left: 57%;
         height: 15px;
         width: 0px;
@@ -737,132 +761,56 @@ $color-texto-blanco: #e1e1e1;
 @media only screen and (min-width: 600px) {
   .lenguajes {
     h2 {
-      text-align: center;
-      color: white;
       font-size: 4rem;
-      border-bottom: 3px solid #e1e1e1;
       width: 60%;
-      margin: 2em auto;
-      padding-bottom: 0.2em;
     }
     .lenguajes-fb {
-      display: block;
       width: 70%;
-      margin: 0 auto;
       div {
-        position: relative;
-        .len-cont {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          row-gap: 4em;
-          align-items: center;
-          justify-content: space-between;
-          margin: 0 auto;
-          .burbuja {
-            text-align: center;
-            height: 100px;
-            width: 100px;
-            display: flex;
-            align-items: center;
-            background: radial-gradient(
-              circle at 40% 55%,
-              $color-principal 60%,
-              #cccccc
-            );
-            padding: 1.2em 1em;
-            border-radius: 4em;
-            justify-content: center;
-            margin: 0 auto;
-            z-index: 99;
-            p {
-              display: none;
-              color: white;
-              opacity: 0;
-              font-size: 2.3rem;
-              font-family: "eurostile", sans-serif;
-              font-weight: 700;
-            }
-            .fa-check {
-              font-size: 2.5em;
-              color: green;
-              display: none;
-              opacity: 0;
-            }
-            .fa-ban {
-              font-size: 2.9em;
-              color: red;
-            }
+        .language-description {
+          margin: 82px auto;
+          //264 - 100 = 164 / 2 = 82
+          h3 {
+            font-size: 3rem;
+          }
+          p {
+            font-size: 2.3rem;
           }
         }
-        .b-1,
-        .b-2,
-        .b-3,
-        .b-4,
-        .b-5,
-        .b-6 {
-          position: absolute;
-          content: "";
-          border-radius: 5px;
+        .len-cont {
+          row-gap: 4em;
+          .burbuja {
+            height: 100px;
+            width: 100px;
+            p {
+              font-size: 2.3rem;
+            }
+          }
         }
         .b-1 {
           top: 36%;
           left: 16.5%;
-          height: 0px;
           width: 20px;
-          background: rgb(117, 16, 247);
-          background: linear-gradient(
-            90deg,
-            rgba(117, 16, 247, 1) 73%,
-            rgba(171, 109, 250, 1) 99%
-          );
         }
         .b-4 {
           bottom: 20%;
           left: 22%;
           height: 20px;
-          width: 0px;
-          background: rgb(117, 16, 247);
-          background: linear-gradient(
-            180deg,
-            rgba(117, 16, 247, 1) 73%,
-            rgba(171, 109, 250, 1) 99%
-          );
         }
         .b-5 {
           bottom: 36%;
           left: 48%;
-          height: 0px;
           width: 20px;
-          background: rgb(117, 16, 247);
-          background: linear-gradient(
-            90deg,
-            rgba(117, 16, 247, 1) 73%,
-            rgba(171, 109, 250, 1) 99%
-          );
         }
         .b-2 {
           top: 22%;
           left: 57%;
           height: 20px;
-          width: 0px;
-          background: rgb(117, 16, 247);
-          background: linear-gradient(
-            180deg,
-            rgba(117, 16, 247, 1) 73%,
-            rgba(171, 109, 250, 1) 99%
-          );
         }
         .b-3 {
           top: 36%;
           right: 17%;
-          height: 0px;
           width: 20px;
-          background: rgb(117, 16, 247);
-          background: linear-gradient(
-            90deg,
-            rgba(117, 16, 247, 1) 73%,
-            rgba(171, 109, 250, 1) 99%
-          );
         }
       }
     }
@@ -878,7 +826,13 @@ $color-texto-blanco: #e1e1e1;
       width: 35%;
     }
     .lenguajes-fb {
-      width: 50%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5em;
+    }
+    .front-end {
+      margin-bottom: 0;
     }
   }
 }
