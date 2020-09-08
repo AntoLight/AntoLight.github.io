@@ -650,6 +650,7 @@ $color-texto-blanco: #e1e1e1;
       }
       .len-cont {
         display: none;
+        opacity: 0;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 2em;
         align-items: center;

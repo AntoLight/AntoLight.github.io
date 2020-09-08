@@ -252,61 +252,81 @@ $(document).ready(function () {
   */
 
   //Variables
-  var b_1 = $(".b-1"),
-    b_2 = $(".b-2"),
-    b_3 = $(".b-3"),
-    b_4 = $(".b-4"),
-    b_5 = $(".b-5"),
-    b_6 = $(".b-6"),
-    p_1 = $(".p-1"),
-    p_2 = $(".p-2"),
-    p_3 = $(".p-3"),
-    p_4 = $(".p-4"),
-    p_5 = $(".p-5"),
-    p_6 = $(".p-6"),
-    len_desc = $("#len_desc1");
-  len_desc.on("click", function () {
-    (function ($) {
-      function mediaSize() {
-        if (window.matchMedia("(max-width: 480px)").matches) {
-          programeLanguages("70px", "70px");
-        }
-      }
-      mediaSize();
-      window.addEventListener("resize", mediaSize, false);
-    })(jQuery);
+  var len_desc = $("#len_desc1"),
+    len_cont = $("#len_cont1"),
+    len_desc2 = $("#len_desc2"),
+    len_cont2 = $("#len_cont2");
 
-    (function ($) {
-      function mediaSize() {
-        if (window.matchMedia("(min-width: 481px)").matches) {
-          programeLanguages("120px", "100px");
-        }
-      }
-      mediaSize();
-      window.addEventListener("resize", mediaSize, false);
-    })(jQuery);
+  len_desc.on("click", function () {
+    sas(len_desc, len_cont);
   });
 
-  //Funciones
-  function programeLanguages(anchura, altura) {
-    function progressBar() {
-      progressIconosH(b_1, p_1);
+  len_desc2.on("click", function () {
+    sas(len_desc2, len_cont2);
+  });
+
+  function sas(desc, cont) {
+    desc.fadeTo("slow", 0);
+    setTimeout(() => {
+      desc.hide();
+      cont.css("display", "grid");
+      cont.fadeTo("slow", 1);
+      cont.show();
       setTimeout(() => {
-        progressIconosW(b_4, p_4);
+        (function ($) {
+          function mediaSize() {
+            if (window.matchMedia("(max-width: 480px)").matches) {
+              programeLanguages("70px", "70px", cont);
+            }
+          }
+          mediaSize();
+          window.addEventListener("resize", mediaSize, false);
+        })(jQuery);
+
+        (function ($) {
+          function mediaSize() {
+            if (window.matchMedia("(min-width: 481px)").matches) {
+              programeLanguages("120px", "100px", cont);
+            }
+          }
+          mediaSize();
+          window.addEventListener("resize", mediaSize, false);
+        })(jQuery);
+      }, 500);
+    }, 1000);
+  }
+
+  //Funciones
+  function programeLanguages(anchura, altura, cont) {
+    var b_1 = cont.parent().children(".b-1"),
+      b_2 = cont.parent().children(".b-2"),
+      b_3 = cont.parent().children(".b-3"),
+      b_4 = cont.parent().children(".b-4"),
+      b_5 = cont.parent().children(".b-5"),
+      b_6 = cont.parent().children(".b-6"),
+      p_1 = cont.children().children(".p-1"),
+      p_2 = cont.children().children(".p-2"),
+      p_3 = cont.children().children(".p-3"),
+      p_4 = cont.children().children(".p-4"),
+      p_5 = cont.children().children(".p-5"),
+      p_6 = cont.children().children(".p-6");
+
+    progressIconosH(b_1, p_1);
+    setTimeout(() => {
+      progressIconosW(b_4, p_4);
+      setTimeout(() => {
+        progressIconosH(b_5, p_5);
         setTimeout(() => {
-          progressIconosH(b_5, p_5);
+          progressIconosW(b_2, p_2);
           setTimeout(() => {
-            progressIconosW(b_2, p_2);
+            progressIconosH(b_3, p_3);
             setTimeout(() => {
-              progressIconosH(b_3, p_3);
-              setTimeout(() => {
-                progressIconosH(b_6, p_6);
-              }, 2500);
-            }, 2500);
-          }, 2500);
-        }, 2500);
-      }, 2500);
-    }
+              progressIconosH(b_6, p_6);
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    }, 2000);
 
     //Funcion Barra Height
     function progressIconosH(barra, texto) {
@@ -325,7 +345,7 @@ $(document).ready(function () {
         texto.fadeTo(100, 0);
         texto.fadeTo(100, 0.5);
         texto.fadeTo(100, 1);
-      }, 600);
+      }, 100);
     }
 
     //Funcion Barra Height

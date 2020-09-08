@@ -696,6 +696,7 @@ ul li {
 
 .lenguajes .lenguajes-fb div .len-cont {
   display: none;
+  opacity: 0;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   row-gap: 2em;
