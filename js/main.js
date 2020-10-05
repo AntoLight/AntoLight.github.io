@@ -1,249 +1,326 @@
-import { CountUp } from "./countUp.min.js";
-$(document).ready(function () {
-  /*
-  ----Barra Hero Desktop Follow----
-  */
+/* ===================================================================
+ * Ethos 1.0.0 - Main JS
+ *
+ * ------------------------------------------------------------------- */
 
-  //Variables
-  var barra_hero = $("#barra_hero");
+(function ($) {
+    "use strict";
 
-  //Funciones
-  (function ($) {
-    function mediaSize() {
-      if (window.matchMedia("(min-width: 480px)").matches) {
-        var windowsAltura = $(window).height() - 825;
-        var barraAltura = barra_hero.innerHeight();
-        $(window).scroll(function () {
-          var scroll = $(window).scrollTop();
-          if (scroll > windowsAltura) {
-            barra_hero.addClass("activo-barra");
-            $("body").css({ "padding-top": `61px` });
-          } else {
-            barra_hero.removeClass("activo-barra");
-            $("body").css({ "padding-top": "0px" });
-          }
+    const cfg = {
+        scrollDuration: 800, // smoothscroll duration
+        mailChimpURL: "", // mailchimp url
+    };
+    const $WIN = $(window);
+
+    // Add the User Agent to the <html>
+    // will be used for IE10/IE11 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; rv:11.0))
+    const doc = document.documentElement;
+    doc.setAttribute("data-useragent", navigator.userAgent);
+
+    /* preloader
+     * -------------------------------------------------- */
+    const ssPreloader = function () {
+        $("html").addClass("ss-preload");
+
+        $WIN.on("load", function () {
+            // force page scroll position to top at page refresh
+            $("html, body").animate({ scrollTop: 0 }, "normal");
+
+            // will first fade out the loading animation
+            $("#loader").fadeOut("slow", function () {
+                // will fade out the whole DIV that covers the website.
+                $("#preloader").delay(300).fadeOut("slow");
+            });
+
+            // for hero content animations
+            $("html").removeClass("ss-preload");
+            $("html").addClass("ss-loaded");
         });
-      } else {
-      }
-    }
+    };
 
-    mediaSize();
-
-    window.addEventListener("resize", mediaSize, false);
-  })(jQuery);
-
-  /*
-  ----Barra Nav Celular----
-  */
-
-  //Funciones
-  (function ($) {
-    function mediaSize() {
-      if (window.matchMedia("(max-width: 480px)").matches) {
-        $("#menu").show();
-
-        $(".links").hide();
-        $("#nav_mobile").append($("#contact"));
-        barra_hero.children().addClass("movile-menu");
-
-        $("#menu").click(function () {
-          $(".links").slideToggle();
+    /* pretty print
+     * -------------------------------------------------- */
+    const ssPrettyPrint = function () {
+        $("pre").addClass("prettyprint");
+        $(document).ready(function () {
+            prettyPrint();
         });
-      }
+    };
+
+    /* move header
+     * -------------------------------------------------- */
+    const ssMoveHeader = function () {
+        const $hero = $(".s-hero"),
+            $hdr = $(".s-header"),
+            triggerHeight = $hero.outerHeight() - 170;
+
+        $WIN.on("scroll", function () {
+            let loc = $WIN.scrollTop();
+
+            if (loc > triggerHeight) {
+                $hdr.addClass("sticky");
+            } else {
+                $hdr.removeClass("sticky");
+            }
+
+            if (loc > triggerHeight + 20) {
+                $hdr.addClass("offset");
+            } else {
+                $hdr.removeClass("offset");
+            }
+
+            if (loc > triggerHeight + 150) {
+                $hdr.addClass("scrolling");
+            } else {
+                $hdr.removeClass("scrolling");
+            }
+        });
+    };
+
+    /* mobile menu
+     * ---------------------------------------------------- */
+    const ssMobileMenu = function () {
+        const $toggleButton = $(".header-menu-toggle");
+        const $headerContent = $(".header-content");
+        const $siteBody = $("body");
+
+        $toggleButton.on("click", function (event) {
+            event.preventDefault();
+            $toggleButton.toggleClass("is-clicked");
+            $siteBody.toggleClass("menu-is-open");
+        });
+
+        $headerContent.find(".header-nav a, .btn").on("click", function () {
+            // at 900px and below
+            if (window.matchMedia("(max-width: 900px)").matches) {
+                $toggleButton.toggleClass("is-clicked");
+                $siteBody.toggleClass("menu-is-open");
+            }
+        });
+
+        $WIN.on("resize", function () {
+            // above 900px
+            if (window.matchMedia("(min-width: 901px)").matches) {
+                if ($siteBody.hasClass("menu-is-open")) $siteBody.removeClass("menu-is-open");
+                if ($toggleButton.hasClass("is-clicked")) $toggleButton.removeClass("is-clicked");
+            }
+        });
+    };
+
+    /* accordion
+     * ------------------------------------------------------ */
+    const ssAccordion = function () {
+        const $allItems = $(".services-list__item");
+        const $allPanels = $allItems.children(".services-list__item-body");
+
+        $allPanels.slice(1).hide();
+
+        $allItems.on("click", ".services-list__item-header", function () {
+            const $this = $(this),
+                $curItem = $this.parent(),
+                $curPanel = $this.next();
+
+            if (!$curItem.hasClass("is-active")) {
+                $allPanels.slideUp();
+                $curPanel.slideDown();
+                $allItems.removeClass("is-active");
+                $curItem.addClass("is-active");
+            }
+
+            return false;
+        });
+    };
+
+    /* photoswipe
+     * ----------------------------------------------------- */
+    const ssPhotoswipe = function () {
+        const items = [],
+            $pswp = $(".pswp")[0],
+            $folioItems = $(".folio-item");
+
+        // get items
+        $folioItems.each(function (i) {
+            let $folio = $(this),
+                $thumbLink = $folio.find(".folio-item__thumb-link"),
+                $title = $folio.find(".folio-item__title"),
+                $caption = $folio.find(".folio-item__caption"),
+                $titleText = "<h4>" + $.trim($title.html()) + "</h4>",
+                $captionText = $.trim($caption.html()),
+                $href = $thumbLink.attr("href"),
+                $size = $thumbLink.data("size").split("x"),
+                $width = $size[0],
+                $height = $size[1];
+
+            let item = {
+                src: $href,
+                w: $width,
+                h: $height,
+            };
+
+            if ($caption.length > 0) {
+                item.title = $.trim($titleText + $captionText);
+            }
+
+            items.push(item);
+        });
+
+        // bind click event
+        $folioItems.each(function (i) {
+            $(this)
+                .find(".folio-item__thumb-link")
+                .on("click", function (e) {
+                    e.preventDefault();
+                    let options = {
+                        index: i,
+                        showHideOpacity: true,
+                    };
+
+                    // initialize PhotoSwipe
+                    let lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                    lightBox.init();
+                });
+        });
+    };
+
+    /* slick slider
+     * ------------------------------------------------------ */
+    const ssSlickSlider = function () {
+        $(".testimonial-slider").slick({
+            arrows: false,
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            pauseOnFocus: false,
+            autoplaySpeed: 1500,
+            responsive: [
+                {
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    },
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                },
+            ],
+        });
+    };
+
+    /* Animate On Scroll
+     * ------------------------------------------------------ */
+    const ssAOS = function () {
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: "ease-in-out",
+            delay: 300,
+            once: true,
+            disable: "mobile",
+        });
+    };
+
+    /* alert boxes
+     * ------------------------------------------------------ */
+    const ssAlertBoxes = function () {
+        $(".alert-box").on("click", ".alert-box__close", function () {
+            $(this).parent().fadeOut(500);
+        });
+    };
+
+    /* smooth scrolling
+     * ------------------------------------------------------ */
+    const ssSmoothScroll = function () {
+        $(".smoothscroll").on("click", function (e) {
+            const target = this.hash;
+            const $target = $(target);
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            $("html, body")
+                .stop()
+                .animate(
+                    {
+                        scrollTop: $target.offset().top,
+                    },
+                    cfg.scrollDuration,
+                    "swing"
+                )
+                .promise()
+                .done(function () {
+                    window.location.hash = target;
+                });
+        });
+    };
+
+    /* back to top
+     * ------------------------------------------------------ */
+    const ssBackToTop = function () {
+        const pxShow = 800;
+        const $goTopButton = $(".ss-go-top");
+
+        // Show or hide the button
+        if ($(window).scrollTop() >= pxShow) $goTopButton.addClass("link-is-visible");
+
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() >= pxShow) {
+                if (!$goTopButton.hasClass("link-is-visible")) $goTopButton.addClass("link-is-visible");
+            } else {
+                $goTopButton.removeClass("link-is-visible");
+            }
+        });
+    };
+
+    /*
+    Form Función
+    */
+
+    $(".body-container").on("click", ocultarForm);
+    $(".form-boton-integrado").on("click", ocultarForm);
+
+    function ocultarForm() {
+        $("#mc_embed_signup").hide("1000");
+        $(".body-container").animate({
+            opacity: "1",
+        });
+        $(".body-container").css({
+            cursor: "auto",
+        });
+        $(".form-boton").click(true);
     }
 
-    mediaSize();
+    $(".form-boton").on("click", function () {
+        setTimeout(() => {
+            $("#mc_embed_signup").show("1000");
+            $(".body-container").animate({
+                opacity: "0.5",
+            });
+            $(".body-container").css({
+                cursor: "pointer",
+            });
+            $(".form-boton").click(false);
+        }, 500);
+    });
 
-    window.addEventListener("resize", mediaSize, false);
-  })(jQuery);
-
-  /*
-  ----Main Interactividad----
-  */
-
-  //Variables
-  var flecha_1 = $("#flecha_1"),
-    flecha_2 = $("#flecha_2"),
-    puntos = 0,
-    main = $("main"),
-    yo = $("#yo"),
-    diseño = $("#design"),
-    work = $("#work");
-
-  //Eventos
-  flecha_1.click(function () {
-    puntos -= 1;
-    mostrarEleMain();
-  });
-  flecha_2.click(function () {
-    puntos += 1;
-    mostrarEleMain();
-  });
-
-  //Funciones
-  function mostrarEleMain() {
-    if (puntos == -1) {
-      mostrarDesign();
-    }
-    if (puntos == 0) {
-      mostrarYo();
-    }
-    if (puntos == 1) {
-      mostrarWork();
-    }
-  }
-
-  //Mostrar Parte Diseño
-  function mostrarDesign() {
-    yo.removeClass("popOut");
-    yo.removeClass("popIn");
-    yo.addClass("popOut");
-    flecha_1.fadeTo(100, 0.8);
-    flecha_1.fadeTo(100, 0.4);
-    flecha_1.fadeTo(100, 0);
-    (function ($) {
-      function mediaSize() {
-        if (window.matchMedia("(max-width: 480px)").matches) {
-          flecha_2.fadeTo(100, 0.8);
-          flecha_2.fadeTo(100, 0.4);
-          flecha_2.fadeTo(100, 0);
-          setTimeout(() => {
-            flecha_2.hide();
-          }, 1000);
-        }
-      }
-      mediaSize();
-      window.addEventListener("resize", mediaSize, false);
-    })(jQuery);
-    setTimeout(() => {
-      yo.hide();
-      diseño.show();
-      diseño.removeClass("driveOutLeft");
-      diseño.addClass("driveInLeft");
-      flecha_1.hide();
-      (function ($) {
-        function mediaSize() {
-          if (window.matchMedia("(max-width: 480px)").matches) {
-            setTimeout(() => {
-              flecha_2.fadeTo(100, 0);
-              flecha_2.fadeTo(100, 0.5);
-              flecha_2.fadeTo(100, 1);
-              flecha_2.show();
-            }, 1000);
-          }
-        }
-        mediaSize();
-        window.addEventListener("resize", mediaSize, false);
-      })(jQuery);
-    }, 1000);
-  }
-
-  //Mostrar Parte Yo
-  function mostrarYo() {
-    (function ($) {
-      function mediaSize() {
-        if (window.matchMedia("(max-width: 480px)").matches) {
-          flecha_1.fadeTo(100, 0.8);
-          flecha_1.fadeTo(100, 0.4);
-          flecha_1.fadeTo(100, 0);
-          flecha_2.fadeTo(100, 0.8);
-          flecha_2.fadeTo(100, 0.4);
-          flecha_2.fadeTo(100, 0);
-          flecha_1.hide();
-          flecha_2.hide();
-        }
-      }
-      mediaSize();
-      window.addEventListener("resize", mediaSize, false);
-    })(jQuery);
-    diseño.addClass("driveOutLeft");
-    work.addClass("driveOutRight");
-    setTimeout(() => {
-      diseño.hide();
-      work.hide();
-      yo.show();
-      yo.removeClass("popOut");
-      yo.removeClass("popIn");
-      yo.addClass("popIn");
-      (function ($) {
-        function mediaSize() {
-          if (window.matchMedia("(max-width: 480px)").matches) {
-            setTimeout(() => {
-              flecha_1.fadeTo(100, 0);
-              flecha_1.fadeTo(100, 0.5);
-              flecha_1.fadeTo(100, 1);
-              flecha_2.fadeTo(100, 0);
-              flecha_2.fadeTo(100, 0.5);
-              flecha_2.fadeTo(100, 1);
-              flecha_1.show();
-              flecha_2.show();
-            }, 1000);
-          }
-        }
-        mediaSize();
-        window.addEventListener("resize", mediaSize, false);
-      })(jQuery);
-      (function ($) {
-        function mediaSize() {
-          if (window.matchMedia("(min-width: 480px)").matches) {
-            flecha_1.fadeTo(100, 0);
-            flecha_1.fadeTo(100, 0.5);
-            flecha_1.fadeTo(100, 1);
-            flecha_2.fadeTo(100, 0);
-            flecha_2.fadeTo(100, 0.5);
-            flecha_2.fadeTo(100, 1);
-            flecha_1.show();
-            flecha_2.show();
-          }
-        }
-        mediaSize();
-        window.addEventListener("resize", mediaSize, false);
-      })(jQuery);
-    }, 1000);
-  }
-
-  //Mostrar Parte Trabajo
-  function mostrarWork() {
-    yo.removeClass("popOut");
-    yo.removeClass("popIn");
-    yo.addClass("popOut");
-    flecha_2.fadeTo(100, 0.8);
-    flecha_2.fadeTo(100, 0.4);
-    flecha_2.fadeTo(100, 0);
-    (function ($) {
-      function mediaSize() {
-        if (window.matchMedia("(max-width: 480px)").matches) {
-          flecha_1.fadeTo(100, 0.8);
-          flecha_1.fadeTo(100, 0.4);
-          flecha_1.fadeTo(100, 0);
-          setTimeout(() => {
-            flecha_1.hide();
-          }, 1000);
-        }
-      }
-      mediaSize();
-      window.addEventListener("resize", mediaSize, false);
-    })(jQuery);
-    setTimeout(() => {
-      yo.hide();
-      work.show();
-      work.removeClass("driveOutRight");
-      work.addClass("driveInRight");
-      flecha_2.hide();
-      (function ($) {
-        function mediaSize() {
-          if (window.matchMedia("(max-width: 480px)").matches) {
-            setTimeout(() => {
-              flecha_1.fadeTo(100, 0);
-              flecha_1.fadeTo(100, 0.5);
-              flecha_1.fadeTo(100, 1);
-              flecha_1.show();
-            }, 1000);
-          }
-        }
-        mediaSize();
-        window.addEventListener("resize", mediaSize, false);
-      })(jQuery);
-    }, 1000);
-  }
-});
+    /* initialize
+     * ------------------------------------------------------ */
+    (function ssInit() {
+        ssPreloader();
+        ssPrettyPrint();
+        ssMoveHeader();
+        ssMobileMenu();
+        ssAccordion();
+        ssPhotoswipe();
+        ssSlickSlider();
+        ssAOS();
+        ssAlertBoxes();
+        ssSmoothScroll();
+        ssBackToTop();
+    })();
+})(jQuery);

@@ -1,142 +1,525 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8" />
-    <title>NebulaTech</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html class="no-js" lang="en">
+    <head>
+        <!--- basic page needs
+    ================================================== -->
+        <meta charset="utf-8" />
+        <title>NebulaTech</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="icon" href="images/logo.png" type="image/png" />
-    <!-- Place favicon.ico in the root directory -->
+        <!-- mobile specific metas
+    ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/vivify.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <meta name="theme-color" content="#fafafa" />
-  </head>
+        <!-- CSS
+    ================================================== -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/vendor.css" />
 
-  <body>
-    <!-- Navegacion -->
-    <nav id="barra_hero" class="navegacion">
-      <div class="contenedor">
-        <div id="nav_mobile">
-          <i id="menu" class="fas fa-bars"></i>
+        <!-- script
+    ================================================== -->
+        <script src="js/modernizr.js"></script>
+
+        <!-- favicons
+    ================================================== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+    </head>
+
+    <body id="top">
+        <!-- Begin Mailchimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+            <form action="https://github.us17.list-manage.com/subscribe/post?u=f498bb1876a12695feef0b85f&amp;id=33f598379e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Contact Me</h2>
+                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                        <div class="mc-field-group">
+                        <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-FNAME">First Name </label>
+                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-LNAME">Last Name </label>
+                    <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f498bb1876a12695feef0b85f_33f598379e" tabindex="-1" value=""></div>
+                <div class="clear form-boton-integrado"><input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+        <div class="body-container">
+        <!-- preloader
+    ================================================== -->
+        <div id="preloader">
+            <div id="loader" class="dots-fade">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
 
-        <div class="links">
-          <a href=""
-            ><img class="logo-image" src="images/logo.png" alt="Logo"
-          /></a>
-          <a id="project" href="">Projects</a>
-          <a id="note" href="">Notes</a>
+        <!-- header
+    ================================================== -->
+        <header class="s-header">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Homepage" />
+                </a>
+            </div>
+
+            <div class="header-content">
+                <nav class="row header-nav-wrap">
+                    <ul class="header-nav">
+                        <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
+                        <li><a class="smoothscroll" href="#about" title="About">About</a></li>
+                        <li><a class="smoothscroll" href="#services" title="Services">Services</a></li>
+                        <li><a class="smoothscroll" href="#portfolio" title="Works">Works</a></li>
+                        <li><a href="" title="Contact us" class="form-boton">Say Hello</a></li>
+                    </ul>
+                </nav>
+                <!-- end header-nav-wrap -->
+
+                <a href="CV 16-09-20 English.pdf" class="btn btn--stroke btn--small" download="CV Antonio Glorioso">Download CV</a>
+            </div>
+            <!-- end header-content -->
+
+            <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        </header>
+
+        <!-- hero
+    ================================================== -->
+        <section id="hero" class="s-hero target-section" data-parallax="scroll" data-image-src="images/hero.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
+            <div class="row hero-content">
+                <div class="column large-full">
+                    <h1>
+                        Hello, I'm Antonio Glorioso <br />
+                        a Web and IT developer, <br />
+                        currently based <br />
+                        in Argentina.
+                    </h1>
+
+                    <ul class="hero-social">
+                        <li>
+                            <a target="_blank" href="https://github.com/AntoLight">GitHub</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.linkedin.com/in/antonio-fgc/">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://twitter.com/FelixCeretti">Twitter</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/antofelixdev/">Instagram</a>
+                        </li>
+                    </ul>
+                    <!-- end hero-social -->
+                </div>
+            </div>
+            <!-- end hero-content -->
+
+            <div class="hero-scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z" /></svg>
+                </a>
+            </div>
+            <!-- end hero-scroll -->
+        </section>
+        <!-- end s-hero -->
+
+        <!-- about
+    ================================================== -->
+        <section id="about" class="s-about target-section">
+            <div class="s-about__section s-about__section--profile">
+                <div class="right-vert-line"></div>
+
+                <div class="row">
+                    <div class="column large-6 medium-8 tab-full">
+                        <div class="section-intro" data-num="01" data-aos="fade-up">
+                            <h3 class="subhead">About Me</h3>
+                            <h1 class="display-1">I'm the kind of person who isn't afraid of challenges.</h1>
+                        </div>
+
+                        <h3 data-aos="fade-up">Profile</h3>
+
+                        <p data-aos="fade-up">
+                            Passionate programmer that learns everything he can. Web Designer accomplished from the Internet, and a future graduate on computer science. <br />
+                            I love programming, not only for a job, but also for a hobbie. This started as a little interest, and now it's the most important part of my life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- end s-about__section--profile -->
+
+            <div class="s-about__section">
+                <div class="row">
+                    <div class="column">
+                        <h3 data-aos="fade-up">Career</h3>
+                    </div>
+                </div>
+
+                <div class="row block-large-1-2 block-900-full work-positions">
+                    <div class="column" data-aos="fade-up">
+                        <div class="position">
+                            <div class="position__header">
+                                <h6>
+                                    <span class="position__co">College</span>
+                                    <span class="position__pos">Computer Science</span>
+                                </h6>
+                                <div class="position__timeframe">May 2018 - Present</div>
+                            </div>
+
+                            <p>I been in college for 2 years, gaining knowledge and resources for programming. Obviously the path of the career isn't web development, but it helps to understand the principals.</p>
+                        </div>
+                    </div>
+                    <!-- end column -->
+                    <div class="column" data-aos="fade-up">
+                        <div class="position">
+                            <div class="position__header">
+                                <h6>
+                                    <span class="position__co">Internet</span>
+                                    <span class="position__pos">Freelancing</span>
+                                </h6>
+                                <div class="position__timeframe">Feb 2017 - Present</div>
+                            </div>
+
+                            <p>My experience on web development has reached the three years, many clients have passed but every time that I do a job, I design and I program better. Working isn't just for the money, the knowledge that I get for every web page has make me who I am today.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- work positions -->
+            </div>
+            <!-- end s-about__section -->
+        </section>
+        <!-- end s-about -->
+
+        <!-- services
+    ================================================== -->
+        <section id="services" class="s-services target-section h-dark-bg">
+            <div class="row s-services__content">
+                <div class="vert-line"></div>
+
+                <div class="column large-6 s-services__leftcol">
+                    <div class="section-intro" data-num="02" data-aos="fade-up">
+                        <h3 class="subhead">Expertise</h3>
+
+                        <h1 class="display-1">I focus on crafting web experiences and designs that works.</h1>
+                    </div>
+
+                    <p class="lead" data-aos="fade-up">
+                        My experience on coding over the last few years has let me develop the most useful skills to create a succesful website. You can see them here on the left, and touch on them to understand why i learn them.
+                    </p>
+                </div>
+                <!-- end  s-services--leftcol -->
+
+                <div class="column large-6">
+                    <ul class="services-list" data-aos="fade-up">
+                        <li class="services-list__item is-active">
+                            <div class="services-list__item-header">
+                                <h5>Front-End</h5>
+                            </div>
+                            <div class="services-list__item-body">
+                                <p>Front-End is crucial to make your website pleasent to the user eye. With this i can design how the information is estructured and in what way interacts with the consumer.</p>
+                            </div>
+                        </li>
+                        <!-- services-list__item -->
+                        <li class="services-list__item">
+                            <div class="services-list__item-header">
+                                <h5>Back-End</h5>
+                            </div>
+                            <div class="services-list__item-body">
+                                <p>Back-End is the bridge between the Front-End and the Database. We need the information that the user give us through the design, and with this skill we transport it to the database.</p>
+                            </div>
+                        </li>
+                        <!-- services-list__item -->
+                        <li class="services-list__item">
+                            <div class="services-list__item-header">
+                                <h5>Database</h5>
+                            </div>
+                            <div class="services-list__item-body">
+                                <p>Databases work in the website to storage all the information that users give us. This details are crucial if we want to understand how the costumer behaves.</p>
+                            </div>
+                        </li>
+                        <!-- services-list__item -->
+                        <li class="services-list__item">
+                            <div class="services-list__item-header">
+                                <h5>Web Placement</h5>
+                            </div>
+                            <div class="services-list__item-body">
+                                <p>Web Placement comprehends how your website is contained on the internet and the accesability that users have to reach you.   </p>
+                            </div>
+                        </li>
+
+                        <!-- services-list__item -->
+                    </ul>
+                    <!-- end services-list -->
+                </div>
+            </div>
+            <!-- s-services__content -->
+        </section>
+        <!-- end s-services -->
+
+        <!-- portfolio
+    ================================================== -->
+        <section id="portfolio" class="s-portfolio target-section">
+            <div class="row s-portfolio__header">
+                <div class="column large-6 medium-8 tab-full">
+                    <div class="section-intro" data-num="03" data-aos="fade-up">
+                        <h3 class="subhead">Examples</h3>
+                        <h1 class="display-1">A selection of designs that may be of your like</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- s-porfolio__header -->
+
+            <div class="row images-all-div s-porfolio__list block-large-1-2 block-tab-full collapse">
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-1.png" title="Windows in The City" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-1.png" srcset="images/Examples/example-1.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Travel Company</div>
+                            <h4 class="folio-item__title">Modern and Serious Design</h4>
+                        </div>
+                        <a href="example-1/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+                    </div>
+                </div>
+                <!-- end column -->
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-2.png" title="Building Blocks" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-2.png" srcset="images/Examples/example-2.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Photography Portfolio</div>
+                            <h4 class="folio-item__title">Artistic and Professional Design</h4>
+                        </div>
+                        <a href="example-2/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+    
+                    </div>
+                </div>
+                <!-- end column -->
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-3.png" title="Shout and Jump" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-3.png" srcset="images/Examples/example-3.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Legal Services</div>
+                            <h4 class="folio-item__title">Formal and Simple Design</h4>
+                        </div>
+                        <a href="example-3/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+                    </div>
+                </div>
+                <!-- end column -->
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-4.png" title="Sand Dunes" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-4.png" srcset="images/Examples/example-4.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Architecture</div>
+                            <h4 class="folio-item__title">Minimal and White/Black design</h4>
+                        </div>
+                        <a href="example-4/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+    
+                    </div>
+                </div>
+                <!-- end column -->
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-5.png" title="Sand Dunes" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-5.png" srcset="images/Examples/example-5.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Professional Barber</div>
+                            <h4 class="folio-item__title">Color Theme Design</h4>
+                        </div>
+                        <a href="example-5/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+                    </div>
+                </div>
+                <!-- end column -->
+                <div class="column image-portfolio-div" data-aos="fade-up">
+                    <div class="folio-item">
+                        <div class="folio-item__thumb">
+                            <a class="folio-item__thumb-link" href="images/Examples/example-6.png" title="The Lamp" data-size="1050x700">
+                                <img class="image-portfolio"src="images/Examples/example-6.png" srcset="images/Examples/example-6.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="folio-item__info">
+                            <div class="folio-item__cat">Restaurant Business</div>
+                            <h4 class="folio-item__title">Stylish and Contemporary Design</h4>
+                        </div>
+                        <a href="example-6/index.html" target="_blank" title="Project Link" class="folio-item__project-link">Website Demo</a>
+                    </div>
+                </div>
+                <!-- end column -->
+            </div>
+            <!-- folio-list -->
+        </section>
+        <!-- end portfolio -->
+
+            <!-- CTA
+        ================================================== -->
+            <div class="s-cta">
+                <div class="row">
+                    <div class="column large-full">
+                        <h2 class="section-desc" data-aos="fade-up">Need a great reliable web hosting?</h2>
+                    </div>
+                </div>
+
+                <div class="row cta-content" data-aos="fade-up">
+                    <div class="column large-full">
+                        <p>I don't host or do the server side of your pages, but i highly recommend <a target="_blank" href="https://www.hostgator.com">HostGator</a></p>
+
+                        <a target="_blank" href="https://www.google.com/search?sxsrf=ALeKk01FKHm5xbFefE4_jocM9AskG6qqfQ%3A1600239226419&source=hp&ei=erZhX5KrF4HH5OUPhqqUkA4&q=Hosting&oq=Hosting&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECCMQJzIECAAQQzIFCAAQsQMyBQgAELEDMgoIABCxAxAUEIcCMgQIABBDMgcIABAUEIcCMgUIABCxAzICCAA6CAgAELEDEIMBOgYIIxAnEBM6BwgAELEDEENQ6w9Y8hZg5BtoAHAAeACAAX-IAfwEkgEDNi4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiS0JPVi-3rAhWBI7kGHQYVBeIQ4dUDCAc&uact=5" class="btn btn--primary h-full-width">Or search Others in Google</a>
+                    </div>
+                </div>
+                <!-- end cta-content -->
+            </div>
+            <!-- end s-cta -->
+        </section>
+        <!-- end s-testimonials -->
+
+        <!-- footer
+    ================================================== -->
+        <footer class="s-footer h-dark-bg">
+            <div class="right-vert-line"></div>
+
+            <div class="row s-footer__main">
+                <div class="column large-6">
+                    <div class="section-intro" data-aos="fade-up">
+                        <h3 class="subhead">Get In Touch</h3>
+
+                        <h1 class="display-1">Have an idea or a concept that really excite you? Let's turn that idea into reality. Shoot me a message.</h1>
+                    </div>
+
+                    <div class="footer-email-us">
+                        <div href="" class="btn btn--primary h-full-width form-boton" >Let's Talk</div>
+                    </div>
+                </div>
+
+                <div class="column large-5">
+                    <div class="footer-contacts">
+                        <div class="footer-contact-block" data-aos="fade-up">
+                            <h5 class="footer-contact-block__header">Email</h5>
+                            <p class="footer-contact-block__content">
+                                <a href="mailto:antoniogloriosodev@hotmail.com">antoniogloriosodev@hotmail.com</a>
+                            </p>
+                        </div>
+                        <!-- end footer-contact-block -->
+                        <div class="footer-contact-block" data-aos="fade-up">
+                            <h5 class="footer-contact-block__header">Phone</h5>
+                            <p class="footer-contact-block__content">
+                                <a href="tel:+542215464041">+54 221 546 4041</a>
+                            </p>
+                        </div>
+                        <!-- end footer-contact-block -->
+                        <br />
+                        <div class="footer-contact-block" data-aos="fade-up">
+                            <h5 class="footer-contact-block__header">Social</h5>
+                            <ul class="footer-contact-block__list">
+                                <li><a target="_blank" href="https://twitter.com/FelixCeretti">Twitter</a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/antofelixdev/">Instagram</a></li>
+                                <li><a target="_blank" href="https://github.com/AntoLight">GitHub</a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/antonio-fgc/">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <!-- end footer-contact-block -->
+                    </div>
+                </div>
+            </div>
+            <!-- end s-footer__main -->
+
+            <div class="row s-footer__bottom">
+                <div class="column large-full ss-copyright">
+                    <span>© Copyright NebulaTech 2020</span>
+                </div>
+                <!-- end ss-copyright -->
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z" /></svg>
+                    </a>
+                </div>
+                <!-- end ss-go-top -->
+            </div>
+            <!-- end s-footer__bottom -->
+        </footer>
+        <!-- end s-footer -->
+
+        
+
+        <!-- photoswipe background
+    ================================================== -->
+        <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-link">
-          <a id="contact" href="">Contact</a>
-        </div>
-      </div>
-    </nav>
+        <!-- end photoSwipe background -->
 
-    <!-- Hero -->
-    <div class="hero contenedor">
-      <h1>Full-Stack Developer</h1>
-      <h2>I will love to do your website!</h2>
-    </div>
-
-    <!-- Imagenes Dispositivos -->
-    <div class="dispositivos contenedor">
-      <img src="images/dispositivos.svg" alt="devices" />
-    </div>
-
-    <!-- Main -->
-    <section class="main">
-      <!-- Yo -->
-      <div id="yo" class="yo caja-barra contenedor vivify duration-1000">
-        <h2>Who am I?</h2>
-        <div class="descripcion">
-          <img src="images/person.svg" alt="Imagen" />
-          <p>
-            My name is Antonio and i'm a passionate freelancer programmer that
-            specialize in making websites. I work with front-end, doing modern
-            and visually pleasing looks, while also building the most efficient
-            back-end.
-          </p>
-        </div>
-      </div>
-
-      <!-- Design -->
-      <div
-        id="design"
-        class="yo designer caja-barra contenedor vivify duration-1000"
-      >
-        <h2>How i Design?</h2>
-        <div class="descripcion">
-          <img src="images/designer.svg" alt="Imagen" />
-          <p>
-            As do you see in my website i like designing in a minimalistic way,
-            playing with the color wheel, color harmony, and the context of how
-            colors are used. The information plays with forms and placemente,
-            making it more plasing to look at it.
-          </p>
-        </div>
-      </div>
-
-      <!-- Work -->
-      <div id="work" class="yo work caja-barra contenedor vivify duration-1000">
-        <h2>How i Work?</h2>
-        <div class="descripcion">
-          <img src="images/work.svg" alt="Imagen" />
-          <p>
-            I just need your ideas for the website or what public you want to
-            achieve. The design, colors and structuration doesn't have to be on
-            me all the way, you can have all the importance in the production as
-            you want.
-          </p>
-        </div>
-      </div>
-      <div class="flecha-1" id="flecha_1">
-        <i class="fas fa-angle-left"></i>
-      </div>
-      <div class="flecha-2" id="flecha_2">
-        <i class="fas fa-angle-right"></i>
-      </div>
-    </section>
-
-    <!-- Programmer Languages -->
-
-    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
-        );
-    </script>
-    <script src="js/plugins.js"></script>
-    <script src="js/countUp.min.js" type="module"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="js/main.js" type="module"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your sites ID. -->
-    <script>
-      window.ga = function () {
-        ga.q.push(arguments);
-      };
-      ga.q = [];
-      ga.l = +new Date();
-      ga("create", "UA-XXXXX-Y", "auto");
-      ga("set", "transport", "beacon");
-      ga("send", "pageview");
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
-  </body>
+        <!-- Java Script
+    ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f498bb1876a12695feef0b85f/efe86a17fe7859c28fa8f6233.js");</script>
+       </div>
+    </body>
 </html>
